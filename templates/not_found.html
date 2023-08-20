@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% block title %}404 Not Found{% endblock title %}
+
+{% block content %}
+
+    <header class="text-center my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="display-4">404 Not Found!</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>The page you are trying to reach doesn't exist!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="text-center mt-3">
+        <a class="btn btn-primary" href="{% url 'index' %}">Home</a>
+    </div>
+
+{% endblock %}
+
+

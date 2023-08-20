@@ -1,0 +1,26 @@
+{
+  "name": "python-oc-lettings-fr",
+  "version": "1.0.0",
+  "description": "Site web d'Orange County Lettings",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "ncp node_modules/bootstrap/dist/css static/css && ncp node_modules/bootstrap/dist/js static/js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bubhux/Python-OC-Lettings-FR.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bubhux/Python-OC-Lettings-FR/issues"
+  },
+  "homepage": "https://github.com/Bubhux/Python-OC-Lettings-FR#readme",
+  "devDependencies": {
+    "ncp": "^2.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.1",
+    "jquery": "^3.7.0"
+  }
+}
