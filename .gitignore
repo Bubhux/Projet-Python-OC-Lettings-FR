@@ -1,8 +1,27 @@
-**/__pycache__
+# Exclure les fichiers et dossiers générés par Python lors de la compilation
+**/__pycache__/
 *.pyc
+
+# Exclure les caches de fichiers générés par pytest
 *.pytest_cache
-venv
-.venv
-.htmlcov
-.coveragerc
+
+# Exclure le dossier venv (environnement virtuel Python)
+venv/
+
+# Exclure le dossier de couverture de code HTML (coverage report)
+htmlcov/
+
+# Exclure le fichier .env (variables d'environnement)
+.env
+
+# Exclure le fichier de configuration de Flake8 (linting Python)
+.flake8
+
+# Exclure les rapports de couverture de code (coverage reports)
 .coverage
+
+# Exclure le fichier de configuration de couverture de code
+.coveragerc
+
+# Exclure le fichier de débogage debug.log
+debug.log

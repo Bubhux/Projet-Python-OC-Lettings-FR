@@ -21,4 +21,4 @@ def profile(request, username):
         context = {'profile': profile}
         return render(request, 'profiles/profile.html', context)
     else:
-        return render(request, 'not_found.html')
+        return render(request, 'error_template.html', {'error_code': 500}, status=500)
