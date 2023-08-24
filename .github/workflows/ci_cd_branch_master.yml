@@ -68,8 +68,8 @@ jobs:
       - name: Build and push Docker image
         run: |
           docker buildx build --load --file Dockerfile --tag bubhux-oc-image-build:${{ github.sha }} .
-          docker push bubhux/bubhux-oc-image-build:${{ github.sha }}
+          docker push bubhux-oc-image-build:${{ github.sha }}
 
       - name: Tag Docker image with commit hash
         run: |
-          docker tag bubhux/bubhux-oc-image-build:${{ github.sha }} bubhux/bubhux-oc-image-build:commit-${{ github.sha }}
+          docker tag bubhux-oc-image-build:${{ github.sha }} bubhux-oc-image-build:commit-${{ github.sha }}
