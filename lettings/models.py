@@ -1,5 +1,11 @@
+import logging
+
 from django.db import models
 from django.core.validators import MaxValueValidator, MinLengthValidator
+
+
+# Initialisation du logger
+logger = logging.getLogger(__name__)
 
 
 class Address(models.Model):
@@ -20,6 +26,16 @@ class Address(models.Model):
         """
         Renvoie une représentation lisible par l'humain de l'adresse.
         """
+
+        # Méthode logger_debug pour enregistrer des messages de débogage.
+        logger.debug("Adresse convertie en chaîne : %s %s, %s %s, %s %s",
+                     self.number,
+                     self.street,
+                     self.city,
+                     self.state,
+                     self.zip_code,
+                     self.country_iso_code)
+
         return f'{self.number} {self.street}'
 
 
@@ -34,4 +50,7 @@ class Letting(models.Model):
         """
         Renvoie une représentation lisible par l'humain de la location.
         """
+
+        # Méthode logger_debug pour enregistrer des messages de débogage.
+        logger.debug("Location convertie en chaîne : %s, Adresse : %s", self.title, self.address)
         return self.title

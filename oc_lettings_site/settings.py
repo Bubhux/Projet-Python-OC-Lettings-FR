@@ -1,21 +1,63 @@
 import os
+import sentry_sdk
 
-from pathlib import Path
+from sentry_sdk.integrations.django import DjangoIntegration
+from decouple import config
+from django.core.management.utils import get_random_secret_key
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
+# Chargement des variables d'environnement depuis le fichier .env
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s'
+SECRET_KEY = config('DJANGO_SECRET_KEY', default=get_random_secret_key())
+SENTRY_DSN = config('SENTRY_DSN', default='')
+HEROKU_APP_NAME = config('HEROKU_APP_NAME', default='')
+
+# Affiche le contenu de SENTRY_DSN (pour débogage)
+# Décommenter pour vérifier la clé "SENTRY_DSN"
+# print("SENTRY_DSN:", SENTRY_DSN)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.99.100', f'{HEROKU_APP_NAME}.herokuapp.com']
+
+# Initialisation de Sentry
+sentry_sdk.init(
+    dsn=SENTRY_DSN,
+    integrations=[
+        DjangoIntegration(
+            transaction_style='url',
+            middleware_spans=True,
+            signals_spans=False,
+            cache_spans=False,
+        ),
+    ],
+    traces_sample_rate=1.0,
+    send_default_pii=True
+)
+
+# Configuration du modèle de logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'sentry': {
+            'level': 'ERROR',  # Niveau de logging minimum à envoyer à Sentry
+            'class': 'sentry_sdk.integrations.logging.EventHandler',
+        },
+        'console': {
+            'level': 'DEBUG',  # Niveau de logging minimum à afficher dans la console
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['sentry', 'console'],  # Utilisez à la fois Sentry et la console
+        'level': 'DEBUG',                   # Niveau de logging minimum global (peut être ajusté)
+    },
+}
 
 
 # Application definition

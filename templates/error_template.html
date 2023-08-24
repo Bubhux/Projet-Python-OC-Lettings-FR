@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% block title %}
+    {% if error_code == 404 %}404 Not Found{% endif %}
+    {% if error_code == 500 %}500 Internal Server Error{% endif %}
+{% endblock title %}
+
+{% block content %}
+
+    <header class="text-center my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="display-4">
+                        {% if error_code == 404 %}404 Not Found{% endif %}
+                        {% if error_code == 500 %}500 Internal Server Error{% endif %}
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% if error_code == 404 %}
+                        <p>The page you are trying to reach doesn't exist!</p>
+                    {% endif %}
+                    {% if error_code == 500 %}
+                        <p>Something went wrong on the server!</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="text-center mt-3">
+        <a class="btn btn-primary" href="{% url 'index' %}">Home</a>
+    </div>
+
+{% endblock %}
