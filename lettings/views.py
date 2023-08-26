@@ -2,7 +2,6 @@ import logging
 
 from sentry_sdk import capture_exception
 from django.shortcuts import render
-from django.http import HttpResponseNotFound
 
 from .models import Letting
 
@@ -44,10 +43,16 @@ def letting(request, letting_id):
                 return render(request, 'lettings/letting.html', context)
             else:
                 capture_exception(Exception("Invalid ID"))
-                return render(request, 'oc_lettings_site/error_template.html', {'error_code': 500}, status=500)
+                return render(
+                    request,
+                    'oc_lettings_site/error_template.html', {'error_code': 500}, status=500
+                )
         else:
             capture_exception(TypeError("Type error invalid ID"))
-            return render(request, 'oc_lettings_site/error_template.html', {'error_code': 500}, status=500)
+            return render(
+                request,
+                'oc_lettings_site/error_template.html', {'error_code': 500}, status=500
+            )
     except Exception as e:
         logger.error("Erreur dans la fonction letting : %s", str(e))
         capture_exception(e)
