@@ -43,31 +43,35 @@ def letting(request, letting_id):
                 }
                 return render(request, 'lettings/letting.html', context)
             else:
-                return render(request, 'error_template.html', {'error_code': 500}, status=500)
+                capture_exception(Exception("Invalid ID"))
+                return render(request, 'oc_lettings_site/error_template.html', {'error_code': 500}, status=500)
         else:
-            return render(request, 'error_template.html', {'error_code': 404}, status=404)
+            capture_exception(TypeError("Type error invalid ID"))
+            return render(request, 'oc_lettings_site/error_template.html', {'error_code': 500}, status=500)
     except Exception as e:
-        logger.exception("Erreur dans la fonction letting : %s", str(e))
-        return render(request, 'error.html')
+        logger.error("Erreur dans la fonction letting : %s", str(e))
+        capture_exception(e)
 
 
-def not_found(request, exception):
+def server_error(request):
     """
-    Gère les erreurs 404 (page not_found) et envoie une alerte à Sentry.
+    Gère les erreurs 500 (page server_error) et envoie une alerte à Sentry.
     :param request: La requête HTTP reçue du navigateur
-    :param exception: L'exception qui a déclenché l'erreur 404
-    :return: Une page HTML pour l'erreur 404
+    :return: Une page HTML pour l'erreur 500
     """
-    logger.error("Erreur 404 : %s", str(exception))
+    logger.error("Erreur 500")
+    capture_exception()
 
-    # Envoie une alerte à Sentry
-    capture_exception(exception)
-    return render(request, 'not_found.html', status=404)
+    return render(request, 'oc_lettings_site/error_template.html', {'error_code': 500}, status=500)
 
 
 def test_404(request):
     """
     Fonction de test pour générer une erreur 404 personnalisée.
+    Et envoie une alerte à Sentry.
+    :param request: La requête HTTP reçue du navigateur
+    :return: Une page HTML pour l'erreur 404
     """
-    error_message = "Cette page n'existe pas, erreur 404 à des fins de test."
-    return HttpResponseNotFound(error_message)
+    logger.error("Erreur 404")
+    capture_exception()
+    return render(request, 'oc_lettings_site/error_template.html', {'error_code': 404}, status=404)

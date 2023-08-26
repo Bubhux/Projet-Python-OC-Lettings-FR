@@ -21,4 +21,4 @@ def profile(request, username):
         context = {'profile': profile}
         return render(request, 'profiles/profile.html', context)
     else:
-        return render(request, 'error_template.html', {'error_code': 500}, status=500)
+        return render(request, 'oc_lettings_site/error_template.html', {'error_code': 500}, status=500)
