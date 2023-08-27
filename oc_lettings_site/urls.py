@@ -1,6 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include
-from django.conf.urls import url
+from django.urls import path, include, re_path
 from django.views.static import serve
 from django.conf import settings
 from django.http import HttpResponseServerError
@@ -33,12 +32,12 @@ urlpatterns = [
     path(r'profiles/', include('profiles.urls', namespace='profiles')),
     path('admin/', admin.site.urls),
 
-    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
-    url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 
-    url(r'^404/$', custom_404),
-    url(r'^500/$', server_error_500),
+    re_path(r'^404/$', custom_404),
+    re_path(r'^500/$', server_error_500),
 
     # Utiliser le gestionnaire 404 par défaut pour le reste des cas
-    url(r'^.*$', custom_404)
+    re_path(r'^.*$', custom_404)
 ]

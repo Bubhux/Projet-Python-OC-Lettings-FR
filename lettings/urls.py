@@ -1,5 +1,5 @@
 from django.urls import path
-from django.conf.urls import url
+from django.conf.urls import re_path
 from .views import index, letting, server_error, test_404
 
 
@@ -16,5 +16,5 @@ urlpatterns = [
     path('test_404/', test_404, name='test_404'),
 
     # Utilise la vue server_error par défaut pour le reste des cas
-    url(r'^.*$', server_error),
+    re_path(r'^.*$', server_error),
 ]

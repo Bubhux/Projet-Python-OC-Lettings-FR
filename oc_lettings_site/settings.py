@@ -105,6 +105,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'oc_lettings_site.wsgi.application'
 
+# Configuration du modèle de clé primaire automatique par défaut
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -116,11 +118,13 @@ DATABASES = {
     }
 }
 
-# Configure la base de données par défaut
-# en utilisant les paramètres de la variable d'environnement 'DATABASE_URL'
-# et définir une durée maximale de connexion de 600 secondes.
-# Exiger le chiffrement SSL pour les connexions à la base de données.
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# Récupérer les paramètres de connexion de la base de données à partir de DATABASE_URL
+# Définis une durée maximale de connexion de 600 secondes.
+# Exige le chiffrement SSL pour les connexions à la base de données.
+check_db_config = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+# Mettre à jour la configuration de la base de données existante avec les paramètres récupérés
+DATABASES['default'].update(check_db_config)
 
 
 # Password validation
