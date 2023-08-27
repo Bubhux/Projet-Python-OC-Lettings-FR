@@ -1,5 +1,6 @@
 import os
 import sentry_sdk
+import dj_database_url
 
 from sentry_sdk.integrations.django import DjangoIntegration
 from decouple import config
@@ -114,6 +115,12 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'oc-lettings-site.sqlite3'),
     }
 }
+
+# Configure la base de données par défaut
+# en utilisant les paramètres de la variable d'environnement 'DATABASE_URL'
+# et définir une durée maximale de connexion de 600 secondes.
+# Exiger le chiffrement SSL pour les connexions à la base de données.
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation

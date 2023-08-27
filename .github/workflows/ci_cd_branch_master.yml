@@ -74,3 +74,24 @@ jobs:
       - name: Tag Docker image with commit hash
         run: |
           docker tag bubhux/bubhux-oc-image-build:${{ github.sha }} bubhux/bubhux-oc-image-build:commit-${{ github.sha }}
+
+  deploy_to_heroku:
+      needs: build_and_push_to_dockerhub
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        - name: Set up Heroku CLI
+          uses: akhileshns/heroku-deploy@v3.4.6
+          with:
+            heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+            heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+            heroku_email: ${{ secrets.HEROKU_EMAIL }}
+
+        - name: Deploy to Heroku
+          run: |
+            heroku container:login
+            heroku container:release web -a ${{ secrets.HEROKU_APP_NAME }}
+
