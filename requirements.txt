@@ -13,6 +13,8 @@ iniconfig==2.0.0
 mccabe==0.6.1
 packaging==23.1
 pluggy==1.2.0
+psycopg2==2.9.7
+psycopg2-binary==2.9.7
 pycodestyle==2.5.0
 pyflakes==2.1.1
 pytest==7.4.0
