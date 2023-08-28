@@ -21,8 +21,3 @@ release:
     HEROKU_EMAIL: ${HEROKU_EMAIL}
     DOCKER_USERNAME: ${DOCKER_USERNAME}
     DOCKER_PASSWORD: ${DOCKER_PASSWORD}
-
-# Configuration des informations d'identification Docker pour la récupération de l'image
-pull:
-  image:
-    web: bubhux/bubhux-oc-image-build:${HEROKU_SHA}
