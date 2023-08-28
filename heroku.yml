@@ -7,7 +7,7 @@ build:
     DEBUG: 0
 
 release:
-  image: bubhux/bubhux-oc-image-build:${HEROKU_SHA}
+  image: bubhux/bubhux-oc-image-build:latest
   command:
     - /bin/sh
     - -c
