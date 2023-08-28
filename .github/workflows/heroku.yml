@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+      - master
+
+build:
+  docker:
+    web: Dockerfile
+  config:
+    # Spécifiez les variables d'environnement pour l'application
+    DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
+    DEBUG: 0
+
+release:
+  image: bubhux/bubhux-oc-image-build:${HEROKU_SHA}
+  command:
+    - /bin/sh
+    - -c
+    - |
+      # Commandes ou scripts de déploiement supplémentaires si nécessaire
+      HEROKU_DEBUG=1 heroku container:release web
+  env:
+    # Configuration des variables d'environnement pour le déploiement sur Heroku
+    HEROKU_API_KEY: ${HEROKU_API_KEY}
+    HEROKU_APP_NAME: ${HEROKU_APP_NAME}
+    HEROKU_EMAIL: ${HEROKU_EMAIL}
+    DOCKER_USERNAME: ${DOCKER_USERNAME}
+    DOCKER_PASSWORD: ${DOCKER_PASSWORD}
+
+# Configuration des informations d'identification Docker pour la récupération de l'image
+pull:
+  image:
+    web: bubhux/bubhux-oc-image-build:${HEROKU_SHA}
+
+
