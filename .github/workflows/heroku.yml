@@ -1,0 +1,17 @@
+build:
+  docker:
+    web: Dockerfile
+  config:
+    # Specify the environment variables for your application
+    DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+    DEBUG: 0
+    # Add more environment variables as needed
+
+release:
+  image: bubhux/bubhux-oc-image-build:${{ github.sha }}
+  command:
+    - /bin/sh
+    - -c
+    - |
+      # Additional release commands or scripts if needed
+      HEROKU_DEBUG=1 heroku container:release web
