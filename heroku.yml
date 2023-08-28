@@ -14,10 +14,3 @@ release:
     - |
       # Commandes ou scripts de déploiement supplémentaires si nécessaire
       HEROKU_DEBUG=1 heroku container:release web
-  env:
-    # Configuration des variables d'environnement pour le déploiement sur Heroku
-    HEROKU_API_KEY: ${HEROKU_API_KEY}
-    HEROKU_APP_NAME: ${HEROKU_APP_NAME}
-    HEROKU_EMAIL: ${HEROKU_EMAIL}
-    DOCKER_USERNAME: ${DOCKER_USERNAME}
-    DOCKER_PASSWORD: ${DOCKER_PASSWORD}
