@@ -87,6 +87,11 @@ jobs:
 
       - name: Install Heroku CLI
         run: curl https://cli-assets.heroku.com/install.sh | sh
+      
+      - name: Purge Heroku cache
+        run: |
+          heroku plugins:install heroku-repo
+          heroku repo:purge_cache -a ${{ secrets.HEROKU_APP_NAME }}
 
       - name: Log in to Heroku Container Registry
         run: heroku container:login
