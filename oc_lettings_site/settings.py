@@ -121,7 +121,7 @@ DATABASES = {
 # Récupérer les paramètres de connexion de la base de données à partir de DATABASE_URL
 # Définis une durée maximale de connexion de 600 secondes.
 # Exige le chiffrement SSL pour les connexions à la base de données.
-check_db_config = dj_database_url.config(conn_max_age=600, ssl_require=True)
+check_db_config = dj_database_url.config(conn_max_age=600, ssl_require=False)
 
 # Mettre à jour la configuration de la base de données existante avec les paramètres récupérés
 DATABASES['default'].update(check_db_config)
