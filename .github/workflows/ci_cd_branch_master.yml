@@ -87,12 +87,9 @@ jobs:
           run: curl https://cli-assets.heroku.com/install.sh | sh
 
         - name: Use Node.js 16
-          uses: actions/setup-node@v2
+          uses: actions/setup-node@v3
           with:
             node-version: 16
-
-        - run: npm install
-        - run: npm run build --if-present
 
         - name: Set up Heroku CLI
           uses: akhileshns/heroku-deploy@v3.12.14
