@@ -1,3 +1,8 @@
+on:
+  push:
+    branches:
+      - master
+
 build:
   docker:
     web: Dockerfile
@@ -26,4 +31,5 @@ release:
 pull:
   image:
     web: bubhux/bubhux-oc-image-build:${HEROKU_SHA}
+
 
