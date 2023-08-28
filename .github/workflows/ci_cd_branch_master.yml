@@ -89,11 +89,12 @@ jobs:
           run: curl https://cli-assets.heroku.com/install.sh | sh
 
         - name: Set up Heroku CLI
-          uses: yonycalsin/deploy-simple-to-heroku@v2.0.1
+          uses: CDNievas/heroku-action@v1.0
           with:
             heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
             heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
             heroku_email: ${{ secrets.HEROKU_EMAIL }}
+            buildpacks: "['heroku/python']"
     
         - name: Log in to Heroku Container Registry
           run: heroku container:login
