@@ -1,3 +1,8 @@
+on:
+  push:
+    branches:
+      - master
+
 build:
   docker:
     web: Dockerfile
