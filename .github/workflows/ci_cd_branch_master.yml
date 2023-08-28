@@ -81,31 +81,17 @@ jobs:
 
       steps:
         - name: Checkout code
-          uses: actions/checkout@v3
+          uses: actions/checkout@v2
 
         - name: Install Heroku CLI
           run: curl https://cli-assets.heroku.com/install.sh | sh
 
-        - name: Use Node.js 16
-          uses: actions/setup-node@v3
-          with:
-            node-version: 16
-
         - name: Set up Heroku CLI
-          uses: akhileshns/heroku-deploy@v3.12.14
+          uses: nyakaz73/heroku-django-deploy@v0.68 
           with:
             heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
             heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
             heroku_email: ${{ secrets.HEROKU_EMAIL }}
-    
-        - name: Log in to Heroku Container Registry
-          run: heroku container:login
-          env:
-            HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-    
-        - name: Push to Heroku Container Registry
-          run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
+            use_git: true
+            git_branch: master
 
-        - name: Deploy to Heroku
-          run: |
-            HEROKU_DEBUG=1 heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
