@@ -93,6 +93,7 @@ jobs:
           with:
             herokuApiKey: ${{ secrets.HEROKU_API_KEY}}
             herokuAppName: ${{ secrets.HEROKU_APP_NAME}}
+            useDocker: true
     
         - name: Log in to Heroku Container Registry
           run: heroku container:login
