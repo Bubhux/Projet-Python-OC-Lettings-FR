@@ -4,3 +4,6 @@ build:
 
 release:
   image: bubhux/bubhux-oc-image-build:latest
+
+run:
+  web: gunicorn oc_lettings_site.wsgi
