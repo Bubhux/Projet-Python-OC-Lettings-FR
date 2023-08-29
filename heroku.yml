@@ -14,3 +14,6 @@ release:
       # Commandes ou scripts de déploiement supplémentaires si nécessaire
       heroku container:release web
   image: bubhux/bubhux-oc-image-build:latest
+
+run:
+  web: gunicorn oc_lettings_site.wsgi
