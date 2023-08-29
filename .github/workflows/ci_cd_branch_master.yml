@@ -71,13 +71,14 @@ jobs:
       - name: Tag Docker image with commit hash
         run: |
           docker tag bubhux/bubhux-oc-image-build:${{ github.sha }} bubhux/bubhux-oc-image-build:commit-${{ github.sha }}
+
   deploy_to_heroku:
       needs: build_and_push_to_dockerhub
       runs-on: ubuntu-latest
 
       steps:
         - name: Checkout code
-          uses: actions/checkout@v2
+          uses: actions/checkout@v3
 
         - name: Install Heroku CLI
           run: curl https://cli-assets.heroku.com/install.sh | sh
@@ -88,11 +89,10 @@ jobs:
             heroku repo:purge_cache -a ${{ secrets.HEROKU_APP_NAME }}
 
         - name: Set up Heroku CLI
-          uses: ElayGelbart/Heroku-Auto-Deployment@v1.0.6
+          uses: ElayGelbart/Heroku-Auto-Deployment@v1.0.8
           with:
-            heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-            heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-            heroku_email: ${{ secrets.HEROKU_EMAIL }}
+            herokuApiKey: ${{ secrets.HEROKU_API_KEY}}
+            herokuAppName: ${{ secrets.HEROKU_APP_NAME}}
     
         - name: Log in to Heroku Container Registry
           run: heroku container:login
