@@ -1,10 +1,14 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+  config:
+    DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
+    DEBUG: 0
+
 build:
   docker:
     web: Dockerfile
-  config:
-    # Spécifiez les variables d'environnement pour l'application
-    DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
-    DEBUG: 0
 
 release:
   command:
