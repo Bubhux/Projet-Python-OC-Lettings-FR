@@ -1,0 +1,9 @@
+release:
+  image: bubhux/bubhux-oc-image-build:latest
+  command:
+    - /bin/sh
+    - -c
+    - |
+      # Commandes ou scripts de déploiement supplémentaires si nécessaire
+      HEROKU_DEBUG=1 heroku container:release web
+
