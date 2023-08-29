@@ -1,3 +1,6 @@
 build:
   docker:
-    web: bubhux/bubhux-oc-image-build:latest
+    web: Dockerfile
+
+release:
+  image: bubhux/bubhux-oc-image-build:latest
