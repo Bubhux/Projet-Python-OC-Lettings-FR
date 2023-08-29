@@ -12,20 +12,20 @@ build:
 
 release:
   image: bubhux/bubhux-oc-image-build:latest
+  command:
+    - /bin/sh
+    - -c |
+        sudo curl https://cli-assets.heroku.com/install.sh | sh
+        heroku container:login
+        heroku config:set DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} -a ${{ secrets.HEROKU_APP_NAME }}
+        heroku config:set SENTRY_DSN=$SENTRY_DSN -a ${{ secrets.HEROKU_APP_NAME }}
+        heroku config:set DEBUG=0 -a ${{ secrets.HEROKU_APP_NAME }}
+        heroku container:push -a ${{ secrets.HEROKU_APP_NAME }}
+        heroku container:release -a ${{ secrets.HEROKU_APP_NAME }}
+        heroku run python manage.py migrate -a ${{ secrets.HEROKU_APP_NAME }}
+        heroku run python manage.py loaddata data.json -a ${{ secrets.HEROKU_APP_NAME }}
 
 run:
   web: gunicorn oc_lettings_site.wsgi
-  worker:
-    command:
-      - /bin/sh
-      - -c |
-          sudo curl https://cli-assets.heroku.com/install.sh | sh
-          heroku container:login
-          heroku config:set DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} -a ${{ secrets.HEROKU_APP_NAME }}
-          heroku config:set SENTRY_DSN=$SENTRY_DSN -a ${{ secrets.HEROKU_APP_NAME }}
-          heroku config:set DEBUG=0 -a ${{ secrets.HEROKU_APP_NAME }}
-          heroku container:push -a ${{ secrets.HEROKU_APP_NAME }}
-          heroku container:release -a ${{ secrets.HEROKU_APP_NAME }}
-          heroku run python manage.py migrate -a ${{ secrets.HEROKU_APP_NAME }}
-          heroku run python manage.py loaddata data.json -a ${{ secrets.HEROKU_APP_NAME }}
-    image: bubhux/bubhux-oc-image-build:latest
+
+
