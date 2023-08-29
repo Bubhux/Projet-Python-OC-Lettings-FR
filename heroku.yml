@@ -1,3 +1,7 @@
+build:
+  docker:
+    web: Dockerfile
+
 release:
   image: bubhux/bubhux-oc-image-build:latest
   command:
@@ -6,4 +10,3 @@ release:
     - |
       # Commandes ou scripts de déploiement supplémentaires si nécessaire
       HEROKU_DEBUG=1 heroku container:release web
-
