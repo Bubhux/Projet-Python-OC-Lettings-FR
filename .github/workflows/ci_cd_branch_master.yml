@@ -104,7 +104,4 @@ jobs:
 
       - name: Deploy to Heroku
         run: |
-          HEROKU_API_KEY=${{ secrets.HEROKU_API_KEY }} \
-          HEROKU_APP_NAME=${{ secrets.HEROKU_APP_NAME }} \
-          HEROKU_EMAIL=${{ secrets.HEROKU_EMAIL }} \
           HEROKU_DEBUG=1 heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
