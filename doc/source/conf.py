@@ -14,9 +14,7 @@ release = 'v.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = [
-    'sphinx_rtd_theme',
-]
+extensions = []
 
 
 templates_path = ['_templates']
@@ -30,7 +28,4 @@ language = 'fr'
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
-html_theme_options = {
-    "sidebarbgcolor": "grey",
-    "bgcolor": "white"
-}
+html_theme_options = {}
