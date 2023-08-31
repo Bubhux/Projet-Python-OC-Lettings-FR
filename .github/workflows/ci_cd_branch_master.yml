@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - master
-      - development
   pull_request:
     branches:
       - master
-      - development
 
 jobs:
   build_and_test:
@@ -96,21 +94,17 @@ jobs:
           heroku plugins:install heroku-repo
           heroku repo:purge_cache -a ${{ secrets.HEROKU_APP_NAME }}
 
-      - name: Set up Heroku CLI
-        uses: akhileshns/heroku-deploy@v3.12.14
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-          heroku_email: ${{ secrets.HEROKU_EMAIL }}
-  
       - name: Log in to Heroku Container Registry
         run: heroku container:login
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-  
+
       - name: Push to Heroku Container Registry
         run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
 
       - name: Deploy to Heroku
         run: |
+          HEROKU_API_KEY=${{ secrets.HEROKU_API_KEY }} \
+          HEROKU_APP_NAME=${{ secrets.HEROKU_APP_NAME }} \
+          HEROKU_EMAIL=${{ secrets.HEROKU_EMAIL }} \
           HEROKU_DEBUG=1 heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
