@@ -10,7 +10,7 @@ Documentation du Projet - OC Lettings
 .. raw:: html
 
    <a href="_static/Orange-County-Lettings.PNG" target="_blank">
-       <img src="_static/Orange-County-Lettings.PNG" alt="Orange County Lettings Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+       <img src="_static/Orange-County-Lettings.PNG" alt="Orange County Lettings Screenshot" style="max-width: 80%; border: 1px solid #ccc;">
    </a>
 
 .. toctree::
