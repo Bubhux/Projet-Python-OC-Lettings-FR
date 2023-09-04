@@ -285,7 +285,6 @@ GitHub Actions |github-actions-logo|
 .. note::
     Pour voir le flux de travail GitHub Actions correspondant. `Cliquez ici : workflow GitHub Actions <https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608>`_
 
-
 Docker |docker-logo| 
 ====================
 

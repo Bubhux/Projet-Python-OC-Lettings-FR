@@ -442,8 +442,8 @@ Vous pouvez voir ce flux de travail avec plus de détails sur toutes les étapes
 - `build_and_push_to_dockerhub`
 - `deploy_to_heroku`
 
-- `Cliquez ici : workflow GitHub Actions <https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608>`_
-
+.. note::
+    - `Cliquez ici : workflow GitHub Actions <https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608>`_
 
 Lancement de l'apllication
 ==========================
