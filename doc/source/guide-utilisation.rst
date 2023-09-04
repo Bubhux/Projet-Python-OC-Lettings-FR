@@ -279,8 +279,8 @@ Elle correspond à "**Erreur 500**""
 
 .. raw:: html
 
-   <a href="_static/sentry-screen.png" target="_blank">
-       <img src="_static/sentry-screen.png" alt="Sentry Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+   <a href="_static/sentry-error.png" target="_blank">
+       <img src="_static/sentry-error.png" alt="Sentry Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
    </a>
 
 
