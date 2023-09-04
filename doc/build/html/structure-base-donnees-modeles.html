@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Titre &mdash; Documentation oc-lettings v.1</title>
+  <title>Description de la structure de la base de données et des modèles de données &mdash; Documentation oc-lettings v.1</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Titre" href="interfaces-programmation.html" />
-    <link rel="prev" title="Titre" href="technologies-et-langages.html" /> 
+    <link rel="next" title="Description des interfaces de programmation" href="interfaces-programmation.html" />
+    <link rel="prev" title="Technologies et Langages" href="technologies-et-langages.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,14 +46,29 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="description-du-projet.html">Description du Projet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide-de-demarrage-rapide.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technologies-et-langages.html">Titre</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interfaces-programmation.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide-utilisation.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="procedures-de-deploiement-gestion.html">Titre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description-du-projet.html">Description du Projet - OC Lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide-de-demarrage-rapide.html">Guide de démarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies-et-langages.html">Technologies et Langages</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Description de la structure de la base de données et des modèles de données</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#structure-de-la-base-de-donnees-sqlite-logo">Structure de la base de données </a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#utilisation-de-sqlite3">1. Utilisation de SQLite3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ouverture-de-la-base-de-donnees">2. Ouverture de la base de données</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liste-des-tables">3. Liste des tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#informations-sur-la-table-profiles-profile">4. Informations sur la table « profiles_profile »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exemple-de-requete">5. Exemple de requête</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quitter-sqlite3">6. Quitter SQLite3</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modeles-de-donnees-python-logo">Modèles de données </a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modeles-de-donnees-python">1. Modèles de données Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="interfaces-programmation.html">Description des interfaces de programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide-utilisation.html">Guide d’utilisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures-de-deploiement-gestion.html">Procédures de déploiement et de gestion de l’application</a></li>
 </ul>
 
         </div>
@@ -70,7 +85,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Titre</li>
+      <li class="breadcrumb-item active">Description de la structure de la base de données et des modèles de données</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/structure-base-donnees-modeles.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -80,17 +95,106 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="titre">
-<h1>Titre<a class="headerlink" href="#titre" title="Lien permanent vers cette rubrique"></a></h1>
-<p>Contenu du document…</p>
+  <section id="description-de-la-structure-de-la-base-de-donnees-et-des-modeles-de-donnees">
+<h1>Description de la structure de la base de données et des modèles de données<a class="headerlink" href="#description-de-la-structure-de-la-base-de-donnees-et-des-modeles-de-donnees" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="structure-de-la-base-de-donnees-sqlite-logo">
+<h2>Structure de la base de données <a class="reference internal" href="_images/sqlite-logo-rectangle.svg"><img alt="SqLite Logo" src="_images/sqlite-logo-rectangle.svg" width="80px" /></a><a class="headerlink" href="#structure-de-la-base-de-donnees-sqlite-logo" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Dans le cadre de ce projet Django, nous avons opté pour l’utilisation de la base de données SQLite3. SQLite3 est un système de gestion de base de données relationnelles léger, efficace et performant. Il est idéal pour les petites et moyennes applications web.</p>
+<p>L’avantage d’SQLite3 réside dans sa facilité d’utilisation et sa portabilité. Il est intégré directement dans Django, ce qui signifie que vous n’avez pas besoin d’installer un système de gestion de base de données externe. Vous pouvez accéder à votre base de données SQLite3 de deux manières principales :</p>
+<ol class="arabic simple">
+<li><p><strong>Via la ligne de commande SQLite3 CLI :</strong> Vous pouvez utiliser l’outil en ligne de commande SQLite3 CLI pour interagir directement avec la base de données, exécuter des requêtes SQL, et examiner les données. Pour utiliser cet outil, assurez-vous d’avoir SQLite3 installé sur votre système, puis exécutez la commande <cite>sqlite3 chemin_vers_la_base_de_données</cite> pour ouvrir la base de données.</p></li>
+<li><p><strong>Via l’interface d’administration de Django :</strong> Django fournit une interface d’administration conviviale qui permet de gérer facilement les données de l’application. Vous pouvez accéder à cette interface en démarrant le serveur de développement Django et en vous rendant sur la page d’administration dans votre navigateur web a l’adresse (<a class="reference external" href="http://127.0.0.1:8000/admin/">http://127.0.0.1:8000/admin/</a>). À partir de là, vous pouvez ajouter, modifier ou supprimer des données, et effectuer diverses opérations de gestion de la base de données.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>En résumé, la structure de la base de données de notre projet repose sur SQLite3, offrant ainsi une solution légère, performante et pratique pour le stockage et la gestion des données de l’application.</p></li>
+</ul>
+</div>
+<section id="utilisation-de-sqlite3">
+<h3>1. Utilisation de SQLite3<a class="headerlink" href="#utilisation-de-sqlite3" title="Lien permanent vers cette rubrique"></a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\B</span>ubhux<span class="se">\D</span>esktop<span class="se">\O</span>P<span class="w"> </span>projet<span class="w"> </span><span class="m">13</span><span class="se">\O</span>range-County-Lettings<span class="se">\P</span>ython-OC-Lettings-FR&gt;sqlite3
+SQLite<span class="w"> </span>version<span class="w"> </span><span class="m">3</span>.42.0<span class="w"> </span><span class="m">2023</span>-05-16<span class="w"> </span><span class="m">12</span>:36:15
+Enter<span class="w"> </span><span class="s2">&quot;.help&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>usage<span class="w"> </span>hints.
+</pre></div>
+</div>
+</section>
+<section id="ouverture-de-la-base-de-donnees">
+<h3>2. Ouverture de la base de données<a class="headerlink" href="#ouverture-de-la-base-de-donnees" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour ouvrir une base de données existante, utilisez la commande suivante :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>.open<span class="w"> </span>oc-lettings-site.sqlite3
+</pre></div>
+</div>
+</section>
+<section id="liste-des-tables">
+<h3>3. Liste des tables<a class="headerlink" href="#liste-des-tables" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour afficher la liste des tables dans la base de données, utilisez la commande :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>.tables
+</pre></div>
+</div>
+</section>
+<section id="informations-sur-la-table-profiles-profile">
+<h3>4. Informations sur la table « profiles_profile »<a class="headerlink" href="#informations-sur-la-table-profiles-profile" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour afficher les informations sur les colonnes de la table « profiles_profile », utilisez la commande suivante :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pragma<span class="w"> </span>table_info<span class="o">(</span>profiles_profile<span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="exemple-de-requete">
+<h3>5. Exemple de requête<a class="headerlink" href="#exemple-de-requete" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour effectuer une requête sur la table « profiles_profile » pour sélectionner les utilisateurs dont la ville favorite commence par « B », utilisez la commande suivante :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>SELECT<span class="w"> </span>user_id,<span class="w"> </span>favorite_city<span class="w"> </span>FROM<span class="w"> </span>profiles_profile<span class="w"> </span>WHERE<span class="w"> </span>favorite_city<span class="w"> </span>LIKE<span class="w"> </span><span class="s1">&#39;B%&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="quitter-sqlite3">
+<h3>6. Quitter SQLite3<a class="headerlink" href="#quitter-sqlite3" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour quitter SQLite3, utilisez la commande suivante :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>.quit
+</pre></div>
+</div>
+</section>
+</section>
+<section id="modeles-de-donnees-python-logo">
+<h2>Modèles de données <a class="reference internal" href="_images/python-logo-only.svg"><img alt="Python Logo" src="_images/python-logo-only.svg" width="20px" /></a><a class="headerlink" href="#modeles-de-donnees-python-logo" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="modeles-de-donnees-python">
+<h3>1. Modèles de données Python<a class="headerlink" href="#modeles-de-donnees-python" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Les modèles de données sont essentiels pour la définition de la structure de la base de données et la gestion des informations de l’application. Dans notre projet, nous utilisons le langage de programmation Python pour créer ces modèles.</p>
+<p>Les modèles Django représentent les différentes entités et relations au sein de l’application. Chaque modèle est associé à une table de base de données, et les champs du modèle correspondent aux colonnes de la table. Ces modèles permettent de définir comment les données seront stockées et manipulées.</p>
+<p>Par exemple, voici un modèle de classe de notre projet :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">Letting</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="w">   </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">   Représente une location avec un titre et une adresse associée.</span>
+<span class="sd">   &quot;&quot;&quot;</span>
+   <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
+   <span class="n">address</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="n">Address</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+
+   <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">      </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Renvoie une représentation lisible par l&#39;humain de la location.</span>
+<span class="sd">      &quot;&quot;&quot;</span>
+
+      <span class="c1"># Méthode logger_debug pour enregistrer des messages de débogage.</span>
+      <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Location convertie en chaîne : </span><span class="si">%s</span><span class="s2">, Adresse : </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span>
+</pre></div>
+</div>
+<p>Dans cet exemple, nous avons un modèle de données appelé <strong>Letting</strong> avec des champs tels que <strong>title</strong> et <strong>address</strong>.</p>
+<p>Les relations entre les modèles, telles que les clés étrangères et les clés primaires, sont également définies dans les modèles Django, ce qui garantit la cohérence et l’intégrité des données.</p>
+<p>L’utilisation du langage Python pour la définition des modèles facilite la création et la gestion de la base de données. Vous pouvez définir des modèles de manière intuitive en utilisant des classes Python, ce qui rend le code plus lisible et maintenable.</p>
+<p>En résumé, la base de données SQLite3 associée aux modèles Django forme le socle de données de l’application, permettant de stocker et de récupérer efficacement les informations nécessaires au bon fonctionnement de l’application web.</p>
+</section>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="technologies-et-langages.html" class="btn btn-neutral float-left" title="Titre" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="interfaces-programmation.html" class="btn btn-neutral float-right" title="Titre" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="technologies-et-langages.html" class="btn btn-neutral float-left" title="Technologies et Langages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="interfaces-programmation.html" class="btn btn-neutral float-right" title="Description des interfaces de programmation" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
