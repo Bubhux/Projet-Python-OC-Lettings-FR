@@ -433,7 +433,7 @@ Dans cet exemple, nous avons configuré un workflow qui s'exécute à chaque `pu
 .. raw:: html
 
    <a href="_static/github-actions-workflow.png" target="_blank">
-       <img src="_static/github-actions-workflow.PNG" alt="GitHub Actions Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+       <img src="_static/github-actions-workflow.png" alt="GitHub Actions Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
    </a>
 
 Vous pouvez voir ce flux de travail avec plus de détails sur toutes les étapes :
