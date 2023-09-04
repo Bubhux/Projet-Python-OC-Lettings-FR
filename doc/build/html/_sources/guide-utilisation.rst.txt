@@ -193,7 +193,7 @@ Vous pouvez en créer un ou utiliser celui existant et le modifier selon vos bes
 
     .. code-block:: bash
 
-        $ docker push Namespace/repository_name:latest
+        $ docker push Namespace/repository_name-oc-image-build:latest
 
 3. Tester le fonctionnement de l'image
 --------------------------------------
@@ -235,16 +235,16 @@ Qui est accessible à l'adresse. (http://127.0.0.1:8000/admin/)
 
 .. raw:: html
 
-   <a href="_static/django-admin.png" target="_blank">
-       <img src="_static/django-admin.png" alt="Django Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+   <a href="_static/django-admin.PNG" target="_blank">
+       <img src="_static/django-admin.PNG" alt="Django Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
    </a>
 
 Une fois connecter, vous pourrez administrer les utilisateurs et les objets *Lettings* et *Addresses*.
 
 .. raw:: html
 
-   <a href="_static/django-admin-connect.png" target="_blank">
-       <img src="_static/django-admin-connect.png" alt="Django Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+   <a href="_static/django-admin-connect.PNG" target="_blank">
+       <img src="_static/django-admin-connect.PNG" alt="Django Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
    </a>
 
 
@@ -279,8 +279,8 @@ Elle correspond à "**Erreur 500**""
 
 .. raw:: html
 
-   <a href="_static/sentry-error.png" target="_blank">
-       <img src="_static/sentry-error.png" alt="Sentry Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+   <a href="_static/sentry-screen.PNG" target="_blank">
+       <img src="_static/sentry-screen.PNG" alt="Sentry Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
    </a>
 
 
@@ -432,8 +432,8 @@ Dans cet exemple, nous avons configuré un workflow qui s'exécute à chaque `pu
 
 .. raw:: html
 
-   <a href="_static/github-actions.png" target="_blank">
-       <img src="_static/github-actions.png" alt="GitHub Actions Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+   <a href="_static/github-actions-workflow.PNG" target="_blank">
+       <img src="_static/github-actions-workflow.PNG" alt="GitHub Actions Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
    </a>
 
 Vous pouvez voir ce flux de travail avec plus de détails sur toutes les étapes :

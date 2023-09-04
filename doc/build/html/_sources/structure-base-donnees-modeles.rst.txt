@@ -116,5 +116,4 @@ Les relations entre les modèles, telles que les clés étrangères et les clés
 
 L'utilisation du langage Python pour la définition des modèles facilite la création et la gestion de la base de données. Vous pouvez définir des modèles de manière intuitive en utilisant des classes Python, ce qui rend le code plus lisible et maintenable.
 
-.. note::
-   En résumé, la base de données SQLite3 associée aux modèles Django forme le socle de données de l'application, permettant de stocker et de récupérer efficacement les informations nécessaires au bon fonctionnement de l'application web.
+En résumé, la base de données SQLite3 associée aux modèles Django forme le socle de données de l'application, permettant de stocker et de récupérer efficacement les informations nécessaires au bon fonctionnement de l'application web.

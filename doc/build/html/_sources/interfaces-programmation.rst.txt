@@ -282,8 +282,8 @@ GitHub Actions |github-actions-logo|
             run: |
             HEROKU_DEBUG=1 heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
 
-.. note::
-    Pour voir le flux de travail GitHub Actions correspondant. `Cliquez ici : workflow GitHub Actions <https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608>`_
+
+Pour voir le flux de travail GitHub Actions correspondant. `Cliquez ici : workflow GitHub Actions <https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608>`_
 
 
 Docker |docker-logo| 
