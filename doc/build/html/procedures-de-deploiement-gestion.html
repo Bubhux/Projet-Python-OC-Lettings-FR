@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Titre &mdash; Documentation oc-lettings v.1</title>
+  <title>Procédures de déploiement et de gestion de l’application &mdash; Documentation oc-lettings v.1</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="prev" title="Titre" href="guide-utilisation.html" /> 
+    <link rel="prev" title="Guide d’utilisation" href="guide-utilisation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,13 +46,36 @@
               <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="description-du-projet.html">Description du Projet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide-de-demarrage-rapide.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technologies-et-langages.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structure-base-donnees-modeles.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interfaces-programmation.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide-utilisation.html">Titre</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Titre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide-de-demarrage-rapide.html">Guide de démarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies-et-langages.html">Technologies et Langages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure-base-donnees-modeles.html">Description de la structure de la base de données et des modèles de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interfaces-programmation.html">Description des interfaces de programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide-utilisation.html">Guide d’utilisation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Procédures de déploiement et de gestion de l’application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#deploiement-et-gestion">Déploiement et gestion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-de-heroku-heroku-logo">Configuration de Heroku </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parametrer-heroku">1. Paramétrer Heroku</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creer-une-appplication-sur-heroku">2. Créer une appplication sur Heroku</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#lancer-un-premier-deploiement-sur-heroku-heroku-logo">Lancer un premier déploiement sur Heroku </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#executez-un-premier-deploiement">1. Exécutez un premier déploiement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#lancer-un-deuxieme-deploiement-heroku-heroku-logo">Lancer un deuxième déploiement Heroku </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#creer-un-pipeline-pour-l-application">1. Créer un pipeline pour l’application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creer-un-review-apps">2. Créer un Review apps</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#activez-sentry-pour-le-monitoring-sur-heroku">Activez Sentry pour le monitoring sur Heroku</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#activez-sentry-dans-heroku">1. Activez Sentry dans Heroku</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -69,7 +92,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Titre</li>
+      <li class="breadcrumb-item active">Procédures de déploiement et de gestion de l’application</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/procedures-de-deploiement-gestion.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -79,16 +102,130 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="titre">
-<h1>Titre<a class="headerlink" href="#titre" title="Lien permanent vers cette rubrique"></a></h1>
-<p>Contenu du document…</p>
+  <section id="procedures-de-deploiement-et-de-gestion-de-l-application">
+<h1>Procédures de déploiement et de gestion de l’application<a class="headerlink" href="#procedures-de-deploiement-et-de-gestion-de-l-application" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="deploiement-et-gestion">
+<h2>Déploiement et gestion<a class="headerlink" href="#deploiement-et-gestion" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="configuration-de-heroku-heroku-logo">
+<h3>Configuration de Heroku <a class="reference internal" href="_images/heroku.svg"><img alt="Heroku Logo" src="_images/heroku.svg" width="20px" /></a><a class="headerlink" href="#configuration-de-heroku-heroku-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<p>La plateforme d’hébergement utilisé pour le déploiement de l’application est Heroku.</p>
+<section id="parametrer-heroku">
+<h4>1. Paramétrer Heroku<a class="headerlink" href="#parametrer-heroku" title="Lien permanent vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p>Après la création de votre compte Heroku. (<a class="reference external" href="https://www.heroku.com/">https://www.heroku.com/</a>)</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Vous pourrez récupérer la clé <cite>HEROKU_API_KEY</cite> en allant dans <cite>Account settings</cite> ensuite dans le menu <cite>Account</cite> ou se trouve <strong>API Key</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="creer-une-appplication-sur-heroku">
+<h4>2. Créer une appplication sur Heroku<a class="headerlink" href="#creer-une-appplication-sur-heroku" title="Lien permanent vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p>Pour créer une application rendez-vous sur le <cite>Dashboard</cite>, cliquer sur <strong>`New`</strong> et <strong>`Create new app`</strong>.</p></li>
+<li><p>Une fois, votre application créée, rentrée dans celle-ci, se rendre dans le menu <cite>Deploy</cite> comme montré sur la capture d’écran et connectez-vous à votre compte <cite>GitHub</cite>.</p></li>
+<li><p>Et connecter votre <cite>repository</cite>.</p></li>
+</ul>
+<a href="_static/heroku-configuration-1.PNG" target="_blank">
+    <img src="_static/heroku-configuration-1.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+</a></section>
+</section>
+<section id="lancer-un-premier-deploiement-sur-heroku-heroku-logo">
+<h3>Lancer un premier déploiement sur Heroku <a class="reference internal" href="_images/heroku.svg"><img alt="Heroku Logo" src="_images/heroku.svg" width="20px" /></a><a class="headerlink" href="#lancer-un-premier-deploiement-sur-heroku-heroku-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="executez-un-premier-deploiement">
+<h4>1. Exécutez un premier déploiement<a class="headerlink" href="#executez-un-premier-deploiement" title="Lien permanent vers cette rubrique"></a></h4>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Pour effectuer un premier déploiement, il faut lancer un push sur la branche <cite>master</cite> de <cite>GitHub</cite> ce qui aura pour effet de lancer le workflow sur <cite>GitHub Actions</cite>.</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>Une fois que le workflow a passé toutes les étapes avec succés.</p></li>
+<li><p>Retourner sur <cite>Heroku</cite> dans votre apllication allez dans le menu <cite>Deploy</cite> comme montré sur la capture d’écran.</p></li>
+<li><p>Dans la partie <cite>Manual deploy</cite> choisissez la branche <cite>master</cite> et cliquer sur <strong>`Deploy Branch`</strong>.</p></li>
+</ul>
+<a href="_static/heroku-configuration-2.PNG" target="_blank">
+    <img src="_static/heroku-configuration-2.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+</a><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Après que le build soit finis vous pourrez accéder à l’application en cliquant sur <strong>Open app</strong>.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="lancer-un-deuxieme-deploiement-heroku-heroku-logo">
+<h3>Lancer un deuxième déploiement Heroku <a class="reference internal" href="_images/heroku.svg"><img alt="Heroku Logo" src="_images/heroku.svg" width="20px" /></a><a class="headerlink" href="#lancer-un-deuxieme-deploiement-heroku-heroku-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="creer-un-pipeline-pour-l-application">
+<h4>1. Créer un pipeline pour l’application<a class="headerlink" href="#creer-un-pipeline-pour-l-application" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Pour déployer une nouvelle version de l’application, vous devez créer un pipeline.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Pour effectuer un deuxième déploiement et déployer une nouvelle version de l’application, il faut lancer un push sur la branche <cite>master</cite> de <cite>GitHub</cite> ce qui aura pour effet de lancer le workflow sur <cite>GitHub Actions</cite>.</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>Retourner sur <cite>Heroku</cite> dans votre application allez dans le menu <cite>Deploy</cite>.</p></li>
+<li><p>Selectionner <cite>Choose a pipeline</cite> et <cite>Create a new pipeline</cite>.</p></li>
+<li><p>Une fois le pipeline créé rendez-vous dans la partie <cite>Settings</cite> et connecter votre <cite>GitHub</cite> et choisissez votre dépôt.</p></li>
+</ul>
+</section>
+<section id="creer-un-review-apps">
+<h4>2. Créer un Review apps<a class="headerlink" href="#creer-un-review-apps" title="Lien permanent vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p>Activez <strong>Enable Review Apps</strong> et cliquer <strong>New app</strong> sélectionnez <cite>Choose a branch to deploy</cite> et la branche <cite>master</cite>, cliquer sur <strong>Create</strong>.</p></li>
+</ul>
+<a href="_static/heroku-configuration-3.PNG" target="_blank">
+    <img src="_static/heroku-configuration-3.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+</a><ul class="simple">
+<li><p>Une fois le build terminer allez dans l’étape <cite>Staging</cite> cliquer sur <strong>Create new app</strong>.</p></li>
+<li><p>Toujours dans l’étape <cite>Staging</cite> après la création de la <cite>new app</cite> cliquer sur le menu déroulant à côté de <cite>Open app</cite> et choisissez <cite>Deploy a branch</cite>, sélectionnez la branche <cite>master</cite> et cliquer sur <strong>Deploy</strong></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Une fois ces étapes effectuées, dans le menu déroulant, vous pourrez choisir de bouger l’application <cite>Move to development</cite> ou <cite>Move to production</cite></p></li>
+</ul>
+</div>
+<a href="_static/heroku-configuration-4.PNG" target="_blank">
+    <img src="_static/heroku-configuration-4.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+</a></section>
+</section>
+<section id="activez-sentry-pour-le-monitoring-sur-heroku">
+<h3>Activez Sentry pour le monitoring sur Heroku<a class="headerlink" href="#activez-sentry-pour-le-monitoring-sur-heroku" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="activez-sentry-dans-heroku">
+<h4>1. Activez Sentry dans Heroku<a class="headerlink" href="#activez-sentry-dans-heroku" title="Lien permanent vers cette rubrique"></a></h4>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Pour que le monitoring avec <cite>Sentry</cite> soit fonctionnelle il faudra rentrer celle-ci dans <cite>Heroku</cite>.</p></li>
+<li><p>Rendez-vous dans l’application principal la partie <cite>Settings</cite> allez dans <cite>Config Vars</cite> et saisissez votre clé <cite>SENTRY_DSN</cite>.</p></li>
+</ul>
+<a href="_static/heroku-configuration-5.PNG" target="_blank">
+   <img src="_static/heroku-configuration-5.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+</a></div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Rendez-vous dans le pipeline dans la partie <cite>Settings</cite> allez dans <cite>Review app config vars</cite> et saisissez votre clé <cite>SENTRY_DSN</cite>.</p></li>
+</ul>
+<a href="_static/heroku-configuration-6.PNG" target="_blank">
+   <img src="_static/heroku-configuration-6.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+</a></div>
+</section>
+</section>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="guide-utilisation.html" class="btn btn-neutral float-left" title="Titre" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="guide-utilisation.html" class="btn btn-neutral float-left" title="Guide d’utilisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
 
   <hr/>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Titre &mdash; Documentation oc-lettings v.1</title>
+  <title>Guide de démarrage rapide &mdash; Documentation oc-lettings v.1</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Titre" href="technologies-et-langages.html" />
-    <link rel="prev" title="Titre" href="installation.html" /> 
+    <link rel="next" title="Technologies et Langages" href="technologies-et-langages.html" />
+    <link rel="prev" title="Installation du projet" href="installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,14 +46,23 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="description-du-projet.html">Description du Projet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Titre</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technologies-et-langages.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structure-base-donnees-modeles.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interfaces-programmation.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide-utilisation.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="procedures-de-deploiement-gestion.html">Titre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description-du-projet.html">Description du Projet - OC Lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Guide de démarrage rapide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prepartion-de-l-environnement">Prépartion de l’environnement</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creation-de-l-environnement-virtuel">1. Création de l’Environnement Virtuel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#activation-de-l-environnement-virtuel">2. Activation de l’Environnement Virtuel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-des-librairies">4. Installation des Librairies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#execution-de-l-application">5. Exécution de l’Application</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="technologies-et-langages.html">Technologies et Langages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure-base-donnees-modeles.html">Description de la structure de la base de données et des modèles de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interfaces-programmation.html">Description des interfaces de programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide-utilisation.html">Guide d’utilisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures-de-deploiement-gestion.html">Procédures de déploiement et de gestion de l’application</a></li>
 </ul>
 
         </div>
@@ -70,7 +79,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Titre</li>
+      <li class="breadcrumb-item active">Guide de démarrage rapide</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/guide-de-demarrage-rapide.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -80,17 +89,89 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="titre">
-<h1>Titre<a class="headerlink" href="#titre" title="Lien permanent vers cette rubrique"></a></h1>
-<p>Contenu du document…</p>
+  <section id="guide-de-demarrage-rapide">
+<span id="id1"></span><h1>Guide de démarrage rapide<a class="headerlink" href="#guide-de-demarrage-rapide" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Pour démarrer le projet, les prérequis suivants sont nécessaires :</p>
+<ul class="simple">
+<li><p>Un compte GitHub <a class="reference internal" href="_images/github.svg"><img alt="GitHub Logo" src="_images/github.svg" width="20px" /></a> (<a class="reference external" href="https://github.com/">https://github.com/</a>)</p></li>
+<li><p>Un compte Docker <a class="reference internal" href="_images/docker.svg"><img alt="Docker Logo" src="_images/docker.svg" width="20px" /></a> (<a class="reference external" href="https://www.docker.com/">https://www.docker.com/</a>)</p></li>
+<li><p>Un compte Sentry <a class="reference internal" href="_images/sentry.svg"><img alt="Sentry Logo" src="_images/sentry.svg" width="20px" /></a> (<a class="reference external" href="https://sentry.io/">https://sentry.io/</a>)</p></li>
+<li><p>Un compte Heroku <a class="reference internal" href="_images/heroku.svg"><img alt="Heroku Logo" src="_images/heroku.svg" width="20px" /></a> (<a class="reference external" href="https://www.heroku.com/">https://www.heroku.com/</a>)</p></li>
+</ul>
+<section id="prepartion-de-l-environnement">
+<h2>Prépartion de l’environnement<a class="headerlink" href="#prepartion-de-l-environnement" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Ce guide vous explique les étapes pour créer et configurer l’environnement nécessaire à l’exécution du programme. Suivez ces instructions pour une mise en place rapide.</p>
+<section id="creation-de-l-environnement-virtuel">
+<h3>1. Création de l’Environnement Virtuel<a class="headerlink" href="#creation-de-l-environnement-virtuel" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour démarrer, suivez ces étapes :</p>
+<ol class="arabic simple">
+<li><p>Installer une version de Python compatible avec votre ordinateur. (<a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>)</p></li>
+<li><p>Ouvrez le terminal (ou invite de commande) et placez-vous dans le dossier principal (dossier racine) du projet.</p></li>
+<li><p>Tapez la commande suivante dans votre terminal pour créer un environnement virtuel nommé « venv » :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</pre></div>
+</div>
+<p>Un répertoire appelé « venv » sera créé dans le dossier.</p>
+</section>
+<section id="activation-de-l-environnement-virtuel">
+<h3>2. Activation de l’Environnement Virtuel<a class="headerlink" href="#activation-de-l-environnement-virtuel" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour activer l’environnement virtuel créé, suivez ces étapes :</p>
+<ol class="arabic simple">
+<li><p>Assurez-vous d’être dans le dossier principal (dossier racine) du projet avec le terminal.</p></li>
+<li><p>Tapez la commande suivante pour activer l’environnement virtuel :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate.bat
+</pre></div>
+</div>
+<p>Cela ajoutera le préfixe « venv » à chaque ligne de commande dans votre terminal.</p>
+<p>Pour désactiver l’environnement virtuel, utilisez cette commande :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>deactivate
+</pre></div>
+</div>
+</section>
+<section id="installation-des-librairies">
+<h3>4. Installation des Librairies<a class="headerlink" href="#installation-des-librairies" title="Lien permanent vers cette rubrique"></a></h3>
+<ol class="arabic simple">
+<li><p>Assurez-vous d’être dans le dossier où se trouve le fichier « requirements.txt » avec l’environnement virtuel activé.</p></li>
+<li><p>Pour installer les librairies requises, utilisez la commande suivante :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="execution-de-l-application">
+<h3>5. Exécution de l’Application<a class="headerlink" href="#execution-de-l-application" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Utilisez ces étapes pour exécuter l’application :</p>
+<ol class="arabic">
+<li><p>Lancez le serveur :</p>
+<ul>
+<li><p>Assurez-vous d’être dans le dossier principal du projet avec l’environnement virtuel activé.</p></li>
+<li><p>Utilisez la commande suivante :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Accédez à l’application dans le navigateur de votre choix :</p>
+<ul class="simple">
+<li><p>Ouvrez votre navigateur web.</p></li>
+<li><p>Rendez-vous à l’adresse : <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p></li>
+</ul>
+</li>
+</ol>
+<p>Commencez dès maintenant à utiliser l’application et à explorer ses fonctionnalités passionnantes !</p>
+</section>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="installation.html" class="btn btn-neutral float-left" title="Titre" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="technologies-et-langages.html" class="btn btn-neutral float-right" title="Titre" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation du projet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="technologies-et-langages.html" class="btn btn-neutral float-right" title="Technologies et Langages" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

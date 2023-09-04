@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Titre &mdash; Documentation oc-lettings v.1</title>
+  <title>Description des interfaces de programmation &mdash; Documentation oc-lettings v.1</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Titre" href="guide-utilisation.html" />
-    <link rel="prev" title="Titre" href="structure-base-donnees-modeles.html" /> 
+    <link rel="next" title="Guide d’utilisation" href="guide-utilisation.html" />
+    <link rel="prev" title="Description de la structure de la base de données et des modèles de données" href="structure-base-donnees-modeles.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,14 +46,50 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="description-du-projet.html">Description du Projet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide-de-demarrage-rapide.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technologies-et-langages.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structure-base-donnees-modeles.html">Titre</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide-utilisation.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="procedures-de-deploiement-gestion.html">Titre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description-du-projet.html">Description du Projet - OC Lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide-de-demarrage-rapide.html">Guide de démarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies-et-langages.html">Technologies et Langages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure-base-donnees-modeles.html">Description de la structure de la base de données et des modèles de données</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Description des interfaces de programmation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#interface-de-programmation">Interface de programmation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python-python-logo">Python </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fichier-python">1. Fichier Python</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#github-github-logo">GitHub </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ouvrez-git-bash">1. Ouvrez Git Bash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#naviguez-vers-le-repertoire-de-votre-referentiel-local">2. Naviguez vers le répertoire de votre référentiel local</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verifiez-l-etat-actuel-de-votre-referentiel">3. Vérifiez l’état actuel de votre référentiel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ajoutez-les-fichiers-que-vous-souhaitez-inclure-dans-votre-prochaine-validation">4. Ajoutez les fichiers que vous souhaitez inclure dans votre prochaine validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#validez-vos-modifications-avec-un-message-de-commit-significatif">5. Validez vos modifications avec un message de commit significatif</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pousser-vos-modifications-vers-le-referentiel-distant">6. Pousser vos modifications vers le référentiel distant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#effectuer-le-merge">7. Effectuer le merge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creez-une-demande-de-fusion-pull-request-sur-github-si-necessaire">8. Créez une demande de fusion (pull request) sur GitHub (si nécessaire)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#github-actions-github-actions-logo">GitHub Actions </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fichier-yaml">1. Fichier yaml</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#docker-docker-logo">Docker </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fichier-dockerfile">1. Fichier Dockerfile</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sentry-sentry-logo">Sentry </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#integration-de-sentry">1. Intégration de Sentry</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#heroku-heroku-logo">Heroku </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#heroku-cli">1. Heroku CLI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide-utilisation.html">Guide d’utilisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures-de-deploiement-gestion.html">Procédures de déploiement et de gestion de l’application</a></li>
 </ul>
 
         </div>
@@ -70,7 +106,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Titre</li>
+      <li class="breadcrumb-item active">Description des interfaces de programmation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/interfaces-programmation.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -80,17 +116,453 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="titre">
-<h1>Titre<a class="headerlink" href="#titre" title="Lien permanent vers cette rubrique"></a></h1>
-<p>Contenu du document…</p>
+  <section id="description-des-interfaces-de-programmation">
+<h1>Description des interfaces de programmation<a class="headerlink" href="#description-des-interfaces-de-programmation" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="interface-de-programmation">
+<h2>Interface de programmation<a class="headerlink" href="#interface-de-programmation" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Ce projet Django repose sur un ensemble d’interfaces de programmation (API) bien définies qui facilitent la gestion, la collaboration et le déploiement de l’application. Ces API sont au cœur de notre stack technologique et garantissent un fonctionnement harmonieux de bout en bout.</p>
+<section id="python-python-logo">
+<h3>Python <a class="reference internal" href="_images/python-logo-only.svg"><img alt="Python Logo" src="_images/python-logo-only.svg" width="20px" /></a><a class="headerlink" href="#python-python-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="fichier-python">
+<h4>1. Fichier Python<a class="headerlink" href="#fichier-python" title="Lien permanent vers cette rubrique"></a></h4>
+<ol class="arabic simple">
+<li><p><strong>API Python :</strong> Python est le langage de programmation principal de ce projet. Il expose des API internes qui permettent à notre code Django de s’interfacer avec différentes parties de l’application. Ces API Python sont structurées de manière à simplifier le développement, la maintenance et l’extensibilité de l’application.</p></li>
+</ol>
+<ul>
+<li><p>Importation du modèle Profile personnalisé :</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Profile</span>
+
+<span class="k">def</span> <span class="nf">profile</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Affiche le profil de l&#39;utilisateur avec le nom d&#39;utilisateur donné.</span>
+<span class="sd">Si le profil n&#39;existe pas, affiche une page personnaliséé error 500.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">if</span> <span class="n">Profile</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">user__username</span><span class="o">=</span><span class="n">username</span><span class="p">):</span>
+    <span class="n">profile</span> <span class="o">=</span> <span class="n">Profile</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user__username</span><span class="o">=</span><span class="n">username</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;profile&#39;</span><span class="p">:</span> <span class="n">profile</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;profiles/profile.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span>
+        <span class="n">request</span><span class="p">,</span>
+        <span class="s1">&#39;oc_lettings_site/error_template.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">500</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="github-github-logo">
+<h3>GitHub <a class="reference internal" href="_images/github.svg"><img alt="GitHub Logo" src="_images/github.svg" width="20px" /></a><a class="headerlink" href="#github-github-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<ol class="arabic simple" start="2">
+<li><p><strong>GitHub API :</strong> GitHub est la plateforme de gestion de code source sur laquelle notre projet est hébergé. L’API GitHub est utilisée pour automatiser la gestion du code, notamment la création de demandes de fusion (pull requests), la gestion des problèmes (issues), et le suivi des modifications de code. Elle permet également de déclencher des actions d’intégration continue.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Création d’une demande de fusion (pull request) via l’API GitHub en utilisant Git Bash:</p></li>
+</ul>
+<p>Ce document vous guidera à travers un flux de travail de base en utilisant Git Bash pour gérer vos projets Git localement et sur GitHub.</p>
+<section id="ouvrez-git-bash">
+<h4>1. Ouvrez Git Bash<a class="headerlink" href="#ouvrez-git-bash" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Si Git Bash n’est pas déjà installé, téléchargez-le depuis le site officiel de Git (<a class="reference external" href="https://git-scm.com/">https://git-scm.com/</a>).</p>
+</section>
+<section id="naviguez-vers-le-repertoire-de-votre-referentiel-local">
+<h4>2. Naviguez vers le répertoire de votre référentiel local<a class="headerlink" href="#naviguez-vers-le-repertoire-de-votre-referentiel-local" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Utilisez la commande <cite>cd</cite> pour accéder au répertoire de votre projet :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>chemin/vers/votre/referentiel
+</pre></div>
+</div>
+<p>Assurez-vous d’être dans le répertoire racine de votre référentiel.</p>
+</section>
+<section id="verifiez-l-etat-actuel-de-votre-referentiel">
+<h4>3. Vérifiez l’état actuel de votre référentiel<a class="headerlink" href="#verifiez-l-etat-actuel-de-votre-referentiel" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Utilisez <cite>git status</cite> pour voir les modifications en attente :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<p>Cela affichera les fichiers modifiés, non suivis, etc.</p>
+</section>
+<section id="ajoutez-les-fichiers-que-vous-souhaitez-inclure-dans-votre-prochaine-validation">
+<h4>4. Ajoutez les fichiers que vous souhaitez inclure dans votre prochaine validation<a class="headerlink" href="#ajoutez-les-fichiers-que-vous-souhaitez-inclure-dans-votre-prochaine-validation" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Utilisez <cite>git add</cite> pour ajouter les fichiers :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>nom_du_fichier
+</pre></div>
+</div>
+<p>Vous pouvez également ajouter tous les fichiers modifiés en utilisant :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="validez-vos-modifications-avec-un-message-de-commit-significatif">
+<h4>5. Validez vos modifications avec un message de commit significatif<a class="headerlink" href="#validez-vos-modifications-avec-un-message-de-commit-significatif" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Utilisez <cite>git commit</cite> pour créer un commit :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Ajout de nouvelles fonctionnalités&quot;</span>
+</pre></div>
+</div>
+<p>Assurez-vous que le message de commit décrit clairement les modifications apportées.</p>
+</section>
+<section id="pousser-vos-modifications-vers-le-referentiel-distant">
+<h4>6. Pousser vos modifications vers le référentiel distant<a class="headerlink" href="#pousser-vos-modifications-vers-le-referentiel-distant" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Utilisez <cite>git push</cite> pour pousser vers le référentiel distant (remplacez <cite>development</cite> par le nom de votre branche) :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>development
+</pre></div>
+</div>
+<p>Par exemple, pour pousser vers la branche <cite>development</cite> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+</section>
+<section id="effectuer-le-merge">
+<h4>7. Effectuer le merge<a class="headerlink" href="#effectuer-le-merge" title="Lien permanent vers cette rubrique"></a></h4>
+<dl class="simple">
+<dt>Pour effectuer le merge de la branche <cite>development</cite> vers la branche <cite>master</cite>, suivez ces étapes sur GitHub :</dt><dd><ul class="simple">
+<li><p>Allez dans votre demande de fusion (pull request).</p></li>
+<li><p>Cliquez sur « Merge Pull Request ».</p></li>
+<li><p>Sélectionnez « Create a merge commit » ou « Squash and merge » selon votre préférence.</p></li>
+<li><p>Cliquez sur « Confirm Merge » pour effectuer le merge.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Ceci est un exemple de flux de travail Git de base en utilisant Git Bash pour effectuer des modifications locales, valider et pousser ces modifications vers un référentiel distant, ainsi que pour créer une demande de fusion sur GitHub.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>L’étape 7 permet d’effectuer le merge vers la branche <strong>master</strong>. Le processus de demande de fusion peut varier selon votre flux de travail et votre plateforme d’hébergement de code.</p>
+</div>
+</section>
+<section id="creez-une-demande-de-fusion-pull-request-sur-github-si-necessaire">
+<h4>8. Créez une demande de fusion (pull request) sur GitHub (si nécessaire)<a class="headerlink" href="#creez-une-demande-de-fusion-pull-request-sur-github-si-necessaire" title="Lien permanent vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p>Allez sur la page de votre référentiel GitHub.</p></li>
+<li><p>Cliquez sur « New Pull Request ».</p></li>
+<li><p>Sélectionnez la branche que vous souhaitez fusionner dans le menu déroulant.</p></li>
+<li><p>Cliquez sur « Create Pull Request ».</p></li>
+<li><p>Donnez un titre et une description significatifs.</p></li>
+<li><p>Cliquez sur « Create Pull Request » pour ouvrir la demande de fusion.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Attendez la révision et la fusion de votre demande de fusion par les collaborateurs.</p>
+</div>
+<p>Ceci est un exemple de flux de travail Git de base en utilisant Git Bash pour effectuer des modifications locales, valider et pousser ces modifications vers un référentiel distant. Le processus de demande de fusion peut varier selon votre flux de travail et votre plateforme d’hébergement de code.</p>
+</section>
+</section>
+<section id="github-actions-github-actions-logo">
+<h3>GitHub Actions <a class="reference internal" href="_images/githubactions.svg"><img alt="GitHub Actions Logo" src="_images/githubactions.svg" width="20px" /></a><a class="headerlink" href="#github-actions-github-actions-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="fichier-yaml">
+<h4>1. Fichier yaml<a class="headerlink" href="#fichier-yaml" title="Lien permanent vers cette rubrique"></a></h4>
+<ol class="arabic simple" start="3">
+<li><p><strong>GitHub Actions :</strong> GitHub Actions fournit une API pour la configuration et l’automatisation des flux de travail d’intégration continue (CI) et de déploiement continu (CD). Ces actions automatisées sont essentielles pour garantir que chaque modification du code est testée, construite et déployée de manière cohérente.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Fichier de configuration yaml pour GitHub Actions qui déclenche le workflow à chaque <cite>push</cite> ou <cite>pull request</cite> sur la branche master :</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Django CI/CD Master</span>
+
+<span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">on</span><span class="p p-Indicator">:</span>
+<span class="w"> </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">     </span><span class="nt">branches</span><span class="p">:</span>
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
+<span class="w"> </span><span class="nt">pull_request</span><span class="p">:</span>
+<span class="w">     </span><span class="nt">branches</span><span class="p">:</span>
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
+
+<span class="w"> </span><span class="nt">jobs</span><span class="p">:</span>
+<span class="w"> </span><span class="nt">build_and_test</span><span class="p">:</span>
+<span class="w">     </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">     </span><span class="nt">strategy</span><span class="p">:</span>
+<span class="w">     </span><span class="nt">matrix</span><span class="p">:</span>
+<span class="w">         </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;3.7&quot;</span><span class="p p-Indicator">]</span>
+
+<span class="w">     </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout code</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python ${{ matrix.python-version }}</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v3</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+<span class="w">         </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.python-version }}</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Dependencies</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">         </span><span class="no">python -m pip install --upgrade pip</span>
+<span class="w">         </span><span class="no">pip install -r requirements.txt</span>
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run linting</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flake8</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run tests with pytest</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">env</span><span class="p p-Indicator">:</span>
+<span class="w">         </span><span class="nt">SECRET_KEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.DJANGO_SECRET_KEY }}</span>
+<span class="w">         </span><span class="nt">DEBUG</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">         </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pytest</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Django tests</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python manage.py test</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run tests with coverage</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">         </span><span class="no">coverage run --omit=*/tests.py manage.py test</span>
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check test coverage</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coverage report --fail-under=80</span>
+
+<span class="w"> </span><span class="nt">build_and_push_to_dockerhub</span><span class="p">:</span>
+<span class="w">     </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build_and_test</span>
+<span class="w">     </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+
+<span class="w">     </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout repository</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Docker Buildx</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker/setup-buildx-action@v2</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Log into Docker Hub</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker/login-action@v2</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+<span class="w">         </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.DOCKER_USERNAME }}</span>
+<span class="w">         </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.DOCKER_PASSWORD }}</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and push Docker image</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">         </span><span class="no">docker buildx build --load --file Dockerfile --tag bubhux/bubhux-oc-image-build:${{ github.sha }} --tag bubhux/bubhux-oc-image-build:latest .</span>
+<span class="w">         </span><span class="no">docker push bubhux/bubhux-oc-image-build:${{ github.sha }}</span>
+<span class="w">         </span><span class="no">docker push bubhux/bubhux-oc-image-build:latest</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set IMAGE_ID environment variable</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">         </span><span class="no">IMAGE_ID=$(docker inspect --format=&#39;{{.Id}}&#39; bubhux/bubhux-oc-image-build:${{ github.sha }})</span>
+<span class="w">         </span><span class="no">echo &quot;IMAGE_ID=$IMAGE_ID&quot; &gt;&gt; $GITHUB_ENV</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tag Docker image with commit hash</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">         </span><span class="no">docker tag bubhux/bubhux-oc-image-build:${{ github.sha }} bubhux/bubhux-oc-image-build:commit-${{ github.sha }}</span>
+
+<span class="w"> </span><span class="nt">deploy_to_heroku</span><span class="p">:</span>
+<span class="w">     </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build_and_push_to_dockerhub</span>
+<span class="w">     </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+
+<span class="w">     </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout code</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Heroku CLI</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curl https://cli-assets.heroku.com/install.sh | sh</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Purge Heroku cache</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">         </span><span class="no">heroku plugins:install heroku-repo</span>
+<span class="w">         </span><span class="no">heroku repo:purge_cache -a ${{ secrets.HEROKU_APP_NAME }}</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Log in to Heroku Container Registry</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">heroku container:login</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">env</span><span class="p p-Indicator">:</span>
+<span class="w">         </span><span class="nt">HEROKU_API_KEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.HEROKU_API_KEY }}</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Push to Heroku Container Registry</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web</span>
+
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy to Heroku</span>
+<span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">         </span><span class="no">HEROKU_DEBUG=1 heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web</span>
+</pre></div>
+</div>
+<p>Pour voir le flux de travail GitHub Actions correspondant. <a class="reference external" href="https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608">Cliquez ici : workflow GitHub Actions</a></p>
+</section>
+</section>
+<section id="docker-docker-logo">
+<h3>Docker <a class="reference internal" href="_images/docker.svg"><img alt="Docker Logo" src="_images/docker.svg" width="20px" /></a><a class="headerlink" href="#docker-docker-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="fichier-dockerfile">
+<h4>1. Fichier Dockerfile<a class="headerlink" href="#fichier-dockerfile" title="Lien permanent vers cette rubrique"></a></h4>
+<ol class="arabic simple" start="4">
+<li><p><strong>Docker API :</strong> Docker est utilisé pour la conteneurisation de notre application. Bien que la plupart de nos interactions avec Docker se fassent via la ligne de commande, l’API Docker permet une gestion programmatique des conteneurs. Elle joue un rôle crucial dans la création, la mise à l’échelle et la gestion des conteneurs pour nos services.</p></li>
+</ol>
+<ul>
+<li><p>Configutation et construction de l’image en local :</p>
+<blockquote>
+<div><div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># Étape 1 : Installation des dépendances de construction</span>
+<span class="c"># Utilisation de l&#39;image Python 3.7.2 basée sur Alpine Linux</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.7.2-alpine</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
+
+<span class="c"># Installation des bibliothèques PostgreSQL</span>
+<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>--no-cache<span class="w"> </span>postgresql-libs
+
+<span class="c"># Installation des dépendances de construction temporaires et d&#39;outils</span>
+<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>--no-cache<span class="w"> </span>--virtual<span class="w"> </span>.build-deps<span class="w"> </span>gcc<span class="w"> </span>musl-dev<span class="w"> </span>postgresql-dev
+
+<span class="c"># Étape 2 : Installation des dépendances Python</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">builder</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">python-dependencies</span>
+
+<span class="c"># Création du répertoire /app dans le conteneur</span>
+<span class="k">RUN</span><span class="w"> </span>mkdir<span class="w"> </span>/app
+
+<span class="c"># Définition du répertoire de travail comme /app</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+
+<span class="c"># Copie du fichier requirements.txt dans le répertoire /app/</span>
+<span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>/app/
+
+<span class="c"># Création d&#39;un environnement virtuel</span>
+<span class="k">RUN</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+
+<span class="c"># Mise à jour de pip dans l&#39;environnement virtuel</span>
+<span class="k">RUN</span><span class="w"> </span>/app/venv/bin/pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+
+<span class="c"># Installation des dépendances Python depuis requirements.txt</span>
+<span class="k">RUN</span><span class="w"> </span>/app/venv/bin/pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="c"># Étape 3 : Construction de l&#39;image finale</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.7.2-alpine</span>
+
+<span class="c"># Configuration du répertoire de travail</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+
+<span class="c"># Configuration des variables d&#39;environnement pour Python</span>
+<span class="k">ENV</span><span class="w"> </span>PYTHONDONTWRITEBYTECODE<span class="w"> </span><span class="m">1</span>
+<span class="k">ENV</span><span class="w"> </span>PYTHONUNBUFFERED<span class="w"> </span><span class="m">1</span>
+
+<span class="c"># Configuration des variables d&#39;environnement spécifiques à l&#39;application</span>
+<span class="k">ENV</span><span class="w"> </span>SENTRY_DSN<span class="w"> </span><span class="nv">$SENTRY_DSN</span>
+<span class="k">ENV</span><span class="w"> </span>HEROKU_APP_NAME<span class="w"> </span><span class="nv">$HEROKU_APP_NAME</span>
+<span class="k">ENV</span><span class="w"> </span>PORT<span class="w"> </span><span class="m">8080</span>
+
+<span class="c"># Copie du contenu local dans le répertoire /app du conteneur</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/app/
+
+<span class="c"># Copie des dépendances Python de l&#39;étape python-dependencies</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>python-dependencies<span class="w"> </span>/app/venv<span class="w"> </span>/app/venv
+
+<span class="c"># Collecte des fichiers statiques de l&#39;application</span>
+<span class="k">RUN</span><span class="w"> </span>/app/venv/bin/python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic<span class="w"> </span>--noinput<span class="w"> </span>--settings<span class="o">=</span>oc_lettings_site.settings
+
+<span class="c"># Création d&#39;un dump de la base de données dans data.json</span>
+<span class="k">RUN</span><span class="w"> </span>/app/venv/bin/python<span class="w"> </span>manage.py<span class="w"> </span>dumpdata<span class="w"> </span>-o<span class="w"> </span>data.json
+
+<span class="c"># Commande par défaut pour exécuter le serveur Django</span>
+<span class="k">CMD</span><span class="w"> </span>/app/venv/bin/python<span class="w"> </span>manage.py<span class="w"> </span>runserver<span class="w"> </span><span class="m">0</span>.0.0.0:<span class="nv">$PORT</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Création de l’image du projet et de son lancement sur le serveur local en ligne de commande Docker :</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Connexion au démon Docker</span>
+$<span class="w"> </span>docker<span class="w"> </span>login
+
+<span class="c1"># Téléchargement de l&#39;image Docker depuis un registre (par exemple, Docker Hub)</span>
+$<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span>bubhux/bubhux-oc-image-build:latest
+
+<span class="c1"># Création et exécution d&#39;un conteneur à partir de l&#39;image</span>
+$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>bubhux/bubhux-oc-image-build:latest
+
+<span class="c1"># Accéder au dossier du container</span>
+docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>bubhux/bubhux-oc-image-build:latest<span class="w"> </span>/bin/sh
+
+<span class="c1"># Pour lister les conteneurs en cours d&#39;exécution</span>
+$<span class="w"> </span>docker<span class="w"> </span>ps
+
+<span class="c1"># Pour arrêter le conteneur par son nom</span>
+$<span class="w"> </span>docker<span class="w"> </span>stop<span class="w"> </span>nom_conteneur
+
+<span class="c1"># OU pour arrêter le conteneur par son ID (remplacez &#39;id_conteneur&#39; par l&#39;ID réel)</span>
+$<span class="w"> </span>docker<span class="w"> </span>stop<span class="w"> </span>id_conteneur
+
+<span class="c1"># Pour supprimer le conteneur (après l&#39;arrêt)</span>
+$<span class="w"> </span>docker<span class="w"> </span>rm<span class="w"> </span>nom_conteneur
+
+<span class="c1"># OU pour supprimer le conteneur par son ID (après l&#39;arrêt)</span>
+$<span class="w"> </span>docker<span class="w"> </span>rm<span class="w"> </span>id_conteneur
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="sentry-sentry-logo">
+<h3>Sentry <a class="reference internal" href="_images/sentry.svg"><img alt="Sentry Logo" src="_images/sentry.svg" width="20px" /></a><a class="headerlink" href="#sentry-sentry-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="integration-de-sentry">
+<h4>1. Intégration de Sentry<a class="headerlink" href="#integration-de-sentry" title="Lien permanent vers cette rubrique"></a></h4>
+<ol class="arabic simple" start="5">
+<li><p><strong>Sentry API :</strong> Sentry est notre plateforme de gestion d’erreurs en temps réel. Son API nous permet de surveiller activement les erreurs et les exceptions dans notre application, ce qui facilite la détection et la correction rapides des problèmes. Les rapports d’erreurs envoyés via cette API sont précieux pour le débogage.</p></li>
+</ol>
+<ul>
+<li><p>Intégration de Sentry dans l’application Django pour capturer les erreurs :</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sentry_sdk</span>
+
+<span class="kn">from</span> <span class="nn">sentry_sdk.integrations.django</span> <span class="kn">import</span> <span class="n">DjangoIntegration</span>
+
+<span class="c1"># Initialisation de Sentry</span>
+<span class="n">sentry_sdk</span><span class="o">.</span><span class="n">init</span><span class="p">(</span>
+    <span class="n">dsn</span><span class="o">=</span><span class="n">SENTRY_DSN</span><span class="p">,</span>
+    <span class="n">integrations</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">DjangoIntegration</span><span class="p">(</span>
+            <span class="n">transaction_style</span><span class="o">=</span><span class="s1">&#39;url&#39;</span><span class="p">,</span>
+            <span class="n">middleware_spans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">signals_spans</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">cache_spans</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">traces_sample_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">send_default_pii</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="heroku-heroku-logo">
+<h3>Heroku <a class="reference internal" href="_images/heroku.svg"><img alt="Heroku Logo" src="_images/heroku.svg" width="20px" /></a><a class="headerlink" href="#heroku-heroku-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="heroku-cli">
+<h4>1. Heroku CLI<a class="headerlink" href="#heroku-cli" title="Lien permanent vers cette rubrique"></a></h4>
+<ol class="arabic simple" start="6">
+<li><p><strong>Heroku API :</strong> Heroku est notre plateforme d’hébergement cloud pour l’application. L’API Heroku est utilisée pour gérer les ressources de l’application, notamment le scaling automatique, le déploiement continu et la surveillance des performances.</p></li>
+</ol>
+<ul>
+<li><p>Connexion à Heroku CLI et affichage de la liste des applications associées à votre compte :</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Connexion à Heroku</span>
+$<span class="w"> </span>heroku<span class="w"> </span>login
+
+<span class="c1"># Vous serez redirigé vers une page web pour vous authentifier.</span>
+<span class="c1"># Une fois authentifié, vous serez connecté à Heroku via la CLI.</span>
+
+<span class="c1"># Affichage de la liste des applications associées à votre compte</span>
+$<span class="w"> </span>heroku<span class="w"> </span>apps
+
+<span class="c1"># Utilisation de la commande &#39;heroku info&#39; pour obtenir des informations sur l&#39;application actuelle (en option)</span>
+$<span class="w"> </span>heroku<span class="w"> </span>info
+
+<span class="c1"># Connexion au registre de conteneurs Heroku</span>
+$<span class="w"> </span>heroku<span class="w"> </span>container:login
+
+<span class="c1"># Pousser votre conteneur local vers Heroku</span>
+$<span class="w"> </span>heroku<span class="w"> </span>container:push<span class="w"> </span>web
+
+<span class="c1"># Libération (déploiement) du conteneur sur Heroku</span>
+$<span class="w"> </span>heroku<span class="w"> </span>container:release<span class="w"> </span>web
+
+<span class="c1"># Si vous avez également des modifications dans votre dépôt Git local,</span>
+<span class="c1"># vous pouvez les pousser vers le dépôt Heroku (branche master)</span>
+$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>heroku<span class="w"> </span>master
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="structure-base-donnees-modeles.html" class="btn btn-neutral float-left" title="Titre" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="guide-utilisation.html" class="btn btn-neutral float-right" title="Titre" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="structure-base-donnees-modeles.html" class="btn btn-neutral float-left" title="Description de la structure de la base de données et des modèles de données" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="guide-utilisation.html" class="btn btn-neutral float-right" title="Guide d’utilisation" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

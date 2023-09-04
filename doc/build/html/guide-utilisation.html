@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Titre &mdash; Documentation oc-lettings v.1</title>
+  <title>Guide d’utilisation &mdash; Documentation oc-lettings v.1</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Titre" href="procedures-de-deploiement-gestion.html" />
-    <link rel="prev" title="Titre" href="interfaces-programmation.html" /> 
+    <link rel="next" title="Procédures de déploiement et de gestion de l’application" href="procedures-de-deploiement-gestion.html" />
+    <link rel="prev" title="Description des interfaces de programmation" href="interfaces-programmation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,14 +46,48 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="description-du-projet.html">Description du Projet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide-de-demarrage-rapide.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technologies-et-langages.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structure-base-donnees-modeles.html">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interfaces-programmation.html">Titre</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Titre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="procedures-de-deploiement-gestion.html">Titre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description-du-projet.html">Description du Projet - OC Lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide-de-demarrage-rapide.html">Guide de démarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies-et-langages.html">Technologies et Langages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure-base-donnees-modeles.html">Description de la structure de la base de données et des modèles de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interfaces-programmation.html">Description des interfaces de programmation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Guide d’utilisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introdcution">Introdcution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creation-des-variables-d-environnement">Création des variables d’environnement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#execution-du-fichier-creating-environment-variables-py">1. Exécution du fichier creating_environment_variables.py</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configurer-le-fichier-env">2. Configurer le fichier <strong>.env</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-creating_environment_variables">3. Code source de creating_environment_variables.py</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#utilisation-de-docker-docker-logo">Utilisation de Docker </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installation-de-docker">1. Installation  de Docker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creation-et-push-de-l-image-vers-votre-depot-docker">2. Création et push de l’image vers votre dépôt Docker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tester-le-fonctionnement-de-l-image">3. Tester le fonctionnement de l’image</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-est-creation-des-utilisateurs-avec-django-django-logo">Gestion est création des utilisateurs avec Django </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#administration-des-utilisateurs">1. Administration des utilisateurs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#utilisation-de-sentry-sentry-logo">Utilisation de Sentry </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-de-sentry">1. Configuration de Sentry</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#utilisation-de-github-actions-github-actions-logo">Utilisation de GitHub Actions </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-de-github-actions">1. Configuration de GitHub Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lancer-le-workflow">2. Lancer le workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#lancement-de-l-apllication">Lancement de l’apllication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lancez-le-serveur-local">1. Lancez le serveur local</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="procedures-de-deploiement-gestion.html">Procédures de déploiement et de gestion de l’application</a></li>
 </ul>
 
         </div>
@@ -70,7 +104,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Titre</li>
+      <li class="breadcrumb-item active">Guide d’utilisation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/guide-utilisation.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -80,17 +114,500 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="titre">
-<h1>Titre<a class="headerlink" href="#titre" title="Lien permanent vers cette rubrique"></a></h1>
-<p>Contenu du document…</p>
+  <section id="guide-dutilisation">
+<h1>Guide d’utilisation<a class="headerlink" href="#guide-dutilisation" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="introdcution">
+<h2>Introdcution<a class="headerlink" href="#introdcution" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Bienvenue dans le chapitre du « Guide d’Utilisation » de notre projet. Dans cette section, nous allons vous guider à travers divers cas d’utilisation de notre application, vous montrant comment tirer le meilleur parti de ses fonctionnalités dans des situations courantes.</p>
+<p>Que vous soyez un développeur débutant cherchant à configurer votre environnement de développement ou un utilisateur expérimenté explorant des fonctionnalités avancées, ce guide est conçu pour vous accompagner à chaque étape du processus.</p>
+<p>Nous avons préparé une série d’exemples pratiques, de guides détaillés et de conseils utiles pour vous aider à maîtriser notre projet et à l’utiliser de manière efficace. Que vous souhaitiez exécuter l’application localement, gérer des utilisateurs, ou intégrer des technologies tierces telles que Docker, Heroku ou Sentry, nous avons tout couvert.</p>
+<p>N’hésitez pas à explorer les différentes sections de ce guide pour trouver des informations spécifiques à votre cas d’utilisation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Pour que les étapes de ce chapitre fonctionnent, vous devez au préalable avoir exécuté les étapes du chapitre : <a class="reference internal" href="guide-de-demarrage-rapide.html#guide-de-demarrage-rapide"><span class="std std-ref">Guide de démarrage rapide</span></a></p>
+</div>
+<section id="creation-des-variables-d-environnement">
+<h3>Création des variables d’environnement<a class="headerlink" href="#creation-des-variables-d-environnement" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="execution-du-fichier-creating-environment-variables-py">
+<h4>1. Exécution du fichier creating_environment_variables.py<a class="headerlink" href="#execution-du-fichier-creating-environment-variables-py" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Placez-vous à la racine du projet et taper la commande suivante :</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>L’environment virtuel doit être activé</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyton<span class="w"> </span>creating_environment_variables.py
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\B</span>ubhux<span class="se">\D</span>esktop<span class="se">\O</span>P<span class="w"> </span>projet<span class="w"> </span><span class="m">13</span><span class="se">\O</span>range-County-Lettings<span class="se">\P</span>ython-OC-Lettings-FR&gt;python<span class="w"> </span>creating_environment_variables.py
+
+.env<span class="w"> </span>file<span class="w"> </span>created!
+</pre></div>
+</div>
+<p>Si vous voyez le message <strong>.env file created!</strong> c’est que le fichier a bien été créé.</p>
+</section>
+<section id="configurer-le-fichier-env">
+<h4>2. Configurer le fichier <strong>.env</strong><a class="headerlink" href="#configurer-le-fichier-env" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Ouvrir le fichier <em>.env</em></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">DJANGO_SECRET_KEY</span><span class="o">=</span>^*ncmcxmaspa!*urn<span class="nv">$bzu</span>%apd<span class="o">=</span>gntp3gkeqz8q<span class="o">(</span>y6*<span class="o">)</span>t!guzr5
+<span class="nv">SENTRY_DSN</span><span class="o">=</span>
+<span class="nv">HEROKU_APP_NAME</span><span class="o">=</span>
+<span class="nv">DEBUG</span><span class="o">=</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>DJANGO_SECRET_KEY</strong> est générer aléatoirement avec <em>get_random_secret_key</em>.</p></li>
+<li><p><strong>SENTRY_DSN :</strong> doit être récupérée sur votre compte Sentry.</p></li>
+<li><p><strong>HEROKU_APP_NAME :</strong> est le nom de l’application que vous avez attribué sur Heroku.</p></li>
+<li><p><strong>DEBUG :</strong> doit être mis à 0.</p></li>
+</ul>
+</section>
+<section id="module-creating_environment_variables">
+<span id="code-source-de-creating-environment-variables-py"></span><h4>3. Code source de creating_environment_variables.py<a class="headerlink" href="#module-creating_environment_variables" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Créer un modèle de fichier .env pour oc_lettings_site
+avec une clé secrète générée aléatoirement et des variables d’environnement préconfigurées.</p>
+<p>Ce script génère un fichier .env qui peut être utilisé pour configurer
+l’environnement de l’application oc_lettings_site
+Il génère une clé secrète aléatoire pour la configuration de Django
+et inclut également des noms de variables d’environnement
+préconfigurés tels que :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>“DJANGO_SECRET_KEY”</p></li>
+<li><p>“SENTRY_DSN”</p></li>
+<li><p>“HEROKU_APP_NAME”</p></li>
+<li><p>“DEBUG”</p></li>
+</ul>
+</div></blockquote>
+<p>Le fichier .env généré doit être configuré avec des valeurs appropriées
+pour chaque variable d’environnement avant utilisation.</p>
+<p>Exemple d’utilisation :</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Exécutez ce script pour générer un fichier .env.</p></li>
+<li><p>Configurez les valeurs des variables d’environnement
+dans le fichier .env généré.</p></li>
+<li><p>Utilisez le fichier .env pour configurer
+l’environnement de votre application oc_lettings_site.</p></li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remarque :
+Le fichier .env généré ne doit pas être partagé publiquement
+car il contient des informations sensibles.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">creating_environment_variables.py</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Créer un modèle de fichier .env pour oc_lettings_site</span>
+<span class="sd">avec une clé secrète générée aléatoirement et des variables d&#39;environnement préconfigurées.</span>
+
+<span class="sd">Ce script génère un fichier .env qui peut être utilisé pour configurer</span>
+<span class="sd">l&#39;environnement de l&#39;application oc_lettings_site</span>
+<span class="sd">Il génère une clé secrète aléatoire pour la configuration de Django</span>
+<span class="sd">et inclut également des noms de variables d&#39;environnement</span>
+<span class="sd">préconfigurés tels que :</span>
+
+<span class="sd">    - &#39;DJANGO_SECRET_KEY&#39;</span>
+<span class="sd">    - &#39;SENTRY_DSN&#39;</span>
+<span class="sd">    - &#39;HEROKU_APP_NAME&#39;</span>
+<span class="sd">    - &#39;DEBUG&#39;</span>
+
+<span class="sd">Le fichier .env généré doit être configuré avec des valeurs appropriées</span>
+<span class="sd">pour chaque variable d&#39;environnement avant utilisation.</span>
+
+<span class="sd">Exemple d&#39;utilisation :</span>
+
+<span class="sd">    1. Exécutez ce script pour générer un fichier .env.</span>
+<span class="sd">    2. Configurez les valeurs des variables d&#39;environnement</span>
+<span class="sd">       dans le fichier .env généré.</span>
+<span class="sd">    3. Utilisez le fichier .env pour configurer</span>
+<span class="sd">       l&#39;environnement de votre application oc_lettings_site.</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">    Remarque :</span>
+<span class="sd">    Le fichier .env généré ne doit pas être partagé publiquement</span>
+<span class="sd">    car il contient des informations sensibles.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">django.core.management.utils</span> <span class="kn">import</span> <span class="n">get_random_secret_key</span>
+
+<span class="c1"># Liste des noms de variables d&#39;environnement</span>
+<span class="n">env_variable_names</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;DJANGO_SECRET_KEY&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;SENTRY_DSN&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;HEROKU_APP_NAME&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Générer la clé secrète aléatoire</span>
+<span class="n">secret_key</span> <span class="o">=</span> <span class="n">get_random_secret_key</span><span class="p">()</span>
+
+<span class="c1"># Ouvrir le fichier .env en mode écriture</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;.env&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># Écrire les noms des variables d&#39;environnement avec leurs valeurs</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DJANGO_SECRET_KEY=</span><span class="si">{</span><span class="n">secret_key</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">env_var</span> <span class="ow">in</span> <span class="n">env_variable_names</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">env_var</span><span class="si">}</span><span class="s2">=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Afficher un message indiquant que le modèle de fichier .env a été créé</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">.env file created!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="utilisation-de-docker-docker-logo">
+<h3>Utilisation de Docker <a class="reference internal" href="_images/docker.svg"><img alt="Docker Logo" src="_images/docker.svg" width="20px" /></a><a class="headerlink" href="#utilisation-de-docker-docker-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="installation-de-docker">
+<h4>1. Installation  de Docker<a class="headerlink" href="#installation-de-docker" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Pour utiliser Docker Hub, il est nécessaire de créer un compte et d’installer Docker sur son ordinateur. (<a class="reference external" href="https://www.docker.com/">https://www.docker.com/</a>)</p>
+<p>Une fois le compte créé et docker installer sur votre ordinateur, vous pourrez envoyer des images sur votre dépôt Docker Hub</p>
+<p>Créer un dépôt et donner lui le nom que vous souhaitez.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le dépôt créé doit être public.</p>
+</div>
+<p>Pour push une image sur votre dépôt Docker, vous devez utiliser un fichier <em>Dockerfile</em>, comme celui présent dans le projet.
+Vous pouvez en créer un ou utiliser celui existant et le modifier selon vos besoins.</p>
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># Étape 1 : Installation des dépendances de construction</span>
+<span class="c"># Utilisation de l&#39;image Python 3.7.2 basée sur Alpine Linux</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.7.2-alpine</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
+
+<span class="c"># Installation des bibliothèques PostgreSQL</span>
+<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>--no-cache<span class="w"> </span>postgresql-libs
+
+<span class="c"># Installation des dépendances de construction temporaires et d&#39;outils</span>
+<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>--no-cache<span class="w"> </span>--virtual<span class="w"> </span>.build-deps<span class="w"> </span>gcc<span class="w"> </span>musl-dev<span class="w"> </span>postgresql-dev
+
+<span class="c"># Étape 2 : Installation des dépendances Python</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">builder</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">python-dependencies</span>
+
+<span class="c"># Création du répertoire /app dans le conteneur</span>
+<span class="k">RUN</span><span class="w"> </span>mkdir<span class="w"> </span>/app
+
+<span class="c"># Définition du répertoire de travail comme /app</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+
+<span class="c"># Copie du fichier requirements.txt dans le répertoire /app/</span>
+<span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>/app/
+
+<span class="c"># Création d&#39;un environnement virtuel</span>
+<span class="k">RUN</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+
+<span class="c"># Mise à jour de pip dans l&#39;environnement virtuel</span>
+<span class="k">RUN</span><span class="w"> </span>/app/venv/bin/pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+
+<span class="c"># Installation des dépendances Python depuis requirements.txt</span>
+<span class="k">RUN</span><span class="w"> </span>/app/venv/bin/pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="c"># Étape 3 : Construction de l&#39;image finale</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.7.2-alpine</span>
+
+<span class="c"># Configuration du répertoire de travail</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+
+<span class="c"># Configuration des variables d&#39;environnement pour Python</span>
+<span class="k">ENV</span><span class="w"> </span>PYTHONDONTWRITEBYTECODE<span class="w"> </span><span class="m">1</span>
+<span class="k">ENV</span><span class="w"> </span>PYTHONUNBUFFERED<span class="w"> </span><span class="m">1</span>
+
+<span class="c"># Configuration des variables d&#39;environnement spécifiques à l&#39;application</span>
+<span class="k">ENV</span><span class="w"> </span>SENTRY_DSN<span class="w"> </span><span class="nv">$SENTRY_DSN</span>
+<span class="k">ENV</span><span class="w"> </span>HEROKU_APP_NAME<span class="w"> </span><span class="nv">$HEROKU_APP_NAME</span>
+<span class="k">ENV</span><span class="w"> </span>PORT<span class="w"> </span><span class="m">8080</span>
+
+<span class="c"># Copie du contenu local dans le répertoire /app du conteneur</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/app/
+
+<span class="c"># Copie des dépendances Python de l&#39;étape python-dependencies</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>python-dependencies<span class="w"> </span>/app/venv<span class="w"> </span>/app/venv
+
+<span class="c"># Collecte des fichiers statiques de l&#39;application</span>
+<span class="k">RUN</span><span class="w"> </span>/app/venv/bin/python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic<span class="w"> </span>--noinput<span class="w"> </span>--settings<span class="o">=</span>oc_lettings_site.settings
+
+<span class="c"># Création d&#39;un dump de la base de données dans data.json</span>
+<span class="k">RUN</span><span class="w"> </span>/app/venv/bin/python<span class="w"> </span>manage.py<span class="w"> </span>dumpdata<span class="w"> </span>-o<span class="w"> </span>data.json
+
+<span class="c"># Commande par défaut pour exécuter le serveur Django</span>
+<span class="k">CMD</span><span class="w"> </span>/app/venv/bin/python<span class="w"> </span>manage.py<span class="w"> </span>runserver<span class="w"> </span><span class="m">0</span>.0.0.0:<span class="nv">$PORT</span>
+</pre></div>
+</div>
+</section>
+<section id="creation-et-push-de-l-image-vers-votre-depot-docker">
+<h4>2. Création et push de l’image vers votre dépôt Docker<a class="headerlink" href="#creation-et-push-de-l-image-vers-votre-depot-docker" title="Lien permanent vers cette rubrique"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construction de l&#39;image</span>
+$<span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>bubhux-oc-image-build<span class="w"> </span>.
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du tag de l&#39;image</span>
+$<span class="w"> </span>docker<span class="w"> </span>tag<span class="w"> </span>bubhux-oc-image-build:latest<span class="w"> </span>bubhux/bubhux-oc-image-build:latest
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Push de l&#39;image sur votre dépôt Docker</span>
+$<span class="w"> </span>docker<span class="w"> </span>push<span class="w"> </span>bubhux/bubhux-oc-image-build:latest
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remplacer bubhux par le “Namespace” et le “repository name” choisis sur Docker Hub</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>push<span class="w"> </span>Namespace/repository_name-oc-image-build:latest
+</pre></div>
+</div>
+</div>
+</section>
+<section id="tester-le-fonctionnement-de-l-image">
+<h4>3. Tester le fonctionnement de l’image<a class="headerlink" href="#tester-le-fonctionnement-de-l-image" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Pour lancer l’image créée localement exécuter les étapes suivantes.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Si vous utilisez <em>Docker Desktop</em> n’oubliez pas de le lancer avant.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Connexion à Docker</span>
+$<span class="w"> </span>docker<span class="w"> </span>login
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lancement de l&#39;image en local</span>
+$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>bubhux/bubhux-oc-image-build:latest
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Si vous souhaitez naviguer dans le projet pour vérifier des dossiers ou des fichiers.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>bubhux/bubhux-oc-image-build:latest<span class="w"> </span>/bin/sh
+</pre></div>
+</div>
+</section>
+</section>
+<section id="gestion-est-creation-des-utilisateurs-avec-django-django-logo">
+<h3>Gestion est création des utilisateurs avec Django <a class="reference internal" href="_images/django.svg"><img alt="Django Logo" src="_images/django.svg" width="20px" /></a><a class="headerlink" href="#gestion-est-creation-des-utilisateurs-avec-django-django-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="administration-des-utilisateurs">
+<h4>1. Administration des utilisateurs<a class="headerlink" href="#administration-des-utilisateurs" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Pour créer et gérer des utilisateurs, cela peut être fait de plusieurs manières par le shell Django ou par l’interface d’administration de Django.
+Qui est accessible à l’adresse. (<a class="reference external" href="http://127.0.0.1:8000/admin/">http://127.0.0.1:8000/admin/</a>)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>nom d’utilisateur : admin</p></li>
+<li><p>mots de passe : Abc1234!</p></li>
+</ul>
+</div>
+<a href="_static/django-admin.PNG" target="_blank">
+    <img src="_static/django-admin.PNG" alt="Django Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+</a><p>Une fois connecter, vous pourrez administrer les utilisateurs et les objets <em>Lettings</em> et <em>Addresses</em>.</p>
+<a href="_static/django-admin-connect.PNG" target="_blank">
+    <img src="_static/django-admin-connect.PNG" alt="Django Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+</a></section>
+</section>
+<section id="utilisation-de-sentry-sentry-logo">
+<h3>Utilisation de Sentry <a class="reference internal" href="_images/sentry.svg"><img alt="Sentry Logo" src="_images/sentry.svg" width="20px" /></a><a class="headerlink" href="#utilisation-de-sentry-sentry-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="configuration-de-sentry">
+<h4>1. Configuration de Sentry<a class="headerlink" href="#configuration-de-sentry" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Pour utiliser Sentry et pouvoir utiliser le monitoring sur le projet accédé à votre compte.</p>
+<ol class="arabic simple">
+<li><p>Créer un nouveau projet</p></li>
+<li><p>Choisissez une plateforme pour le projet, dans notre cas Django.</p></li>
+<li><p>Choisissez une équipe pour votre projet ensuite cliquer sur : <strong>Créer un projet</strong></p></li>
+<li><p>Une fois le projet créé, vous pourrez récupérer la clé <strong>SENTRY_DSN</strong> à intégrer dans le fichier <strong>.env</strong></p></li>
+</ol>
+<p>Une fois toutes ces étapes exécutées et le serveur local lancer, vous pourrez visualiser sur Sentry l’activité de l’application.</p>
+<p>Des erreurs intentionnelles, on était introduite dans l’application qui ont pour objectif de déclencher des notifications d’alertes dans Sentry.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Exemple lors de la saisie d’une url avec un id invalide dans la base de données.</p>
+</div>
+<div style="border: 1px solid #ccc; background-color: #f9f9f9; padding: 10px;">
+    <a href="http://127.0.0.1:8000/lettings/50/">http://127.0.0.1:8000/lettings/50/</a>
+</div><p>Une page personnalisée sera affichée et l’erreur remontera sur Sentry comme montrer sur la capture d’écran.
+Elle correspond à « <strong>Erreur 500</strong> » »</p>
+<a href="_static/sentry-screen.PNG" target="_blank">
+    <img src="_static/sentry-screen.PNG" alt="Sentry Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+</a></section>
+</section>
+<section id="utilisation-de-github-actions-github-actions-logo">
+<h3>Utilisation de GitHub Actions <a class="reference internal" href="_images/githubactions.svg"><img alt="GitHub Actions Logo" src="_images/githubactions.svg" width="20px" /></a><a class="headerlink" href="#utilisation-de-github-actions-github-actions-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour utiliser l’outil d’intégration continue GitHub Actions</p>
+<p>GitHub Actions est un service d’intégration continue (CI) et de déploiement continu (CD) fourni par GitHub. Il vous permet d’automatiser diverses tâches liées à votre projet, telles que les tests, les déploiements et plus encore. Dans ce chapitre, nous allons expliquer comment configurer et utiliser GitHub Actions pour améliorer votre flux de travail de développement.</p>
+<section id="configuration-de-github-actions">
+<h4>1. Configuration de GitHub Actions<a class="headerlink" href="#configuration-de-github-actions" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Pour que le workflow de GitHub Actions fonctionne il vous faudra parametrer <cite>Secrets and variables</cite> dans la partie <cite>Settings</cite> de votre projet.
+Ouvrez le menu déroulant <cite>Secrets and variables</cite> et cliquer sur <cite>Actions</cite>.</p>
+<p>Ensuite cliquer <strong>New repository secret</strong></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Il faudra créer les secrets suivants :</p>
+<ul class="simple">
+<li><p>DJANGO_SECRET_KEY</p></li>
+<li><p>DOCKER_PASSWORD</p></li>
+<li><p>DOCKER_USERNAME</p></li>
+<li><p>HEROKU_API_KEY</p></li>
+<li><p>HEROKU_APP_NAME</p></li>
+<li><p>HEROKU_EMAIL</p></li>
+<li><p>SENTRY_DSN</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>Fichier de configuration yaml pour GitHub Actions qui déclenche le workflow à chaque <cite>push</cite> ou <cite>pull request</cite> sur la branche master :</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Django CI/CD Master</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
+<span class="nt">pull_request</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="nt">build_and_test</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">strategy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matrix</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;3.7&quot;</span><span class="p p-Indicator">]</span>
+
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout code</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python ${{ matrix.python-version }}</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v3</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.python-version }}</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Dependencies</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">python -m pip install --upgrade pip</span>
+<span class="w">        </span><span class="no">pip install -r requirements.txt</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run linting</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flake8</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run tests with pytest</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">env</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">SECRET_KEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.DJANGO_SECRET_KEY }}</span>
+<span class="w">        </span><span class="nt">DEBUG</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pytest</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Django tests</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python manage.py test</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run tests with coverage</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">coverage run --omit=*/tests.py manage.py test</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check test coverage</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coverage report --fail-under=80</span>
+
+<span class="nt">build_and_push_to_dockerhub</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build_and_test</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout repository</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Docker Buildx</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker/setup-buildx-action@v2</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Log into Docker Hub</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker/login-action@v2</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.DOCKER_USERNAME }}</span>
+<span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.DOCKER_PASSWORD }}</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and push Docker image</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">docker buildx build --load --file Dockerfile --tag bubhux/bubhux-oc-image-build:${{ github.sha }} --tag bubhux/bubhux-oc-image-build:latest .</span>
+<span class="w">        </span><span class="no">docker push bubhux/bubhux-oc-image-build:${{ github.sha }}</span>
+<span class="w">        </span><span class="no">docker push bubhux/bubhux-oc-image-build:latest</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set IMAGE_ID environment variable</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">IMAGE_ID=$(docker inspect --format=&#39;{{.Id}}&#39; bubhux/bubhux-oc-image-build:${{ github.sha }})</span>
+<span class="w">        </span><span class="no">echo &quot;IMAGE_ID=$IMAGE_ID&quot; &gt;&gt; $GITHUB_ENV</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tag Docker image with commit hash</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">docker tag bubhux/bubhux-oc-image-build:${{ github.sha }} bubhux/bubhux-oc-image-build:commit-${{ github.sha }}</span>
+
+<span class="nt">deploy_to_heroku</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build_and_push_to_dockerhub</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout code</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Heroku CLI</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curl https://cli-assets.heroku.com/install.sh | sh</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Purge Heroku cache</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">heroku plugins:install heroku-repo</span>
+<span class="w">        </span><span class="no">heroku repo:purge_cache -a ${{ secrets.HEROKU_APP_NAME }}</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Log in to Heroku Container Registry</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">heroku container:login</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">env</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">HEROKU_API_KEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.HEROKU_API_KEY }}</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Push to Heroku Container Registry</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy to Heroku</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">HEROKU_DEBUG=1 heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web</span>
+</pre></div>
+</div>
+</section>
+<section id="lancer-le-workflow">
+<h4>2. Lancer le workflow<a class="headerlink" href="#lancer-le-workflow" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Dans cet exemple, nous avons configuré un workflow qui s’exécute à chaque <cite>push</cite> sur la branche <cite>master</cite>. Le workflow vérifie le code en installant les dépendances, puis en exécutant les tests à l’aide de Pytest ainsi quel les tests avec Coverage.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Capture d’écran du workflow créer par le fichier <cite>ci_cd_branch_master.yml</cite> du projet.</p>
+</div>
+<a href="_static/github-actions-workflow.PNG" target="_blank">
+    <img src="_static/github-actions-workflow.PNG" alt="GitHub Actions Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+</a><p>Vous pouvez voir ce flux de travail avec plus de détails sur toutes les étapes :</p>
+<ul class="simple">
+<li><p><cite>build_and_test</cite></p></li>
+<li><p><cite>build_and_push_to_dockerhub</cite></p></li>
+<li><p><cite>deploy_to_heroku</cite></p></li>
+<li><p><a class="reference external" href="https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608">Cliquez ici : workflow GitHub Actions</a></p></li>
+</ul>
+</section>
+</section>
+<section id="lancement-de-l-apllication">
+<h3>Lancement de l’apllication<a class="headerlink" href="#lancement-de-l-apllication" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Utilisez ces étapes pour exécuter l’application :</p>
+<section id="lancez-le-serveur-local">
+<h4>1. Lancez le serveur local<a class="headerlink" href="#lancez-le-serveur-local" title="Lien permanent vers cette rubrique"></a></h4>
+<blockquote>
+<div><ul>
+<li><p>Assurez-vous d’être dans le dossier principal du projet avec l’environnement virtuel activé.</p></li>
+<li><p>Utilisez la commande suivante :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Accédez à l’application dans le navigateur de votre choix :
+- Ouvrez votre navigateur web.
+- Rendez-vous à l’adresse : <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p></li>
+</ol>
+</section>
+</section>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="interfaces-programmation.html" class="btn btn-neutral float-left" title="Titre" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="procedures-de-deploiement-gestion.html" class="btn btn-neutral float-right" title="Titre" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="interfaces-programmation.html" class="btn btn-neutral float-left" title="Description des interfaces de programmation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="procedures-de-deploiement-gestion.html" class="btn btn-neutral float-right" title="Procédures de déploiement et de gestion de l’application" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

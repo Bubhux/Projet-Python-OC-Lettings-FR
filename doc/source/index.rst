@@ -3,8 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+*************************************
 Documentation du Projet - OC Lettings
-=====================================
+*************************************
+
+.. raw:: html
+
+   <a href="_static/Orange-County-Lettings.PNG" target="_blank">
+       <img src="_static/Orange-County-Lettings.PNG" alt="Orange County Lettings Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+   </a>
 
 .. toctree::
    :maxdepth: 2
@@ -36,6 +43,7 @@ La documentation est divisée en plusieurs sections pour couvrir divers aspects 
 - **Procédures de Déploiement et de Gestion** : Suivez les étapes pour déployer et gérer l'application.
 
 Nous espérons que cette documentation vous sera utile pour tirer le meilleur parti de notre projet OC Lettings.
+
 
 Indices et tables
 =================
