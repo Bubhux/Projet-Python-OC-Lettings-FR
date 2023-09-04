@@ -44,7 +44,7 @@ Création des variables d'environnement
 
 Placez-vous à la racine du projet et taper la commande suivante :
 
-.. note::
+.. important::
     L'environment virtuel doit être activé
 
 .. code-block:: bash
