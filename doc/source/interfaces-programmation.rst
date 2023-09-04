@@ -282,8 +282,23 @@ GitHub Actions |github-actions-logo|
             run: |
             HEROKU_DEBUG=1 heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
 
+.. note::
+    Capture d'écran du workflow créer par le fichier `ci_cd_branch_master.yml` du projet.
 
-Pour voir le flux de travail GitHub Actions correspondant. `Cliquez ici : workflow GitHub Actions <https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608>`_
+.. raw:: html
+
+   <a href="_static/github-actions-workflow.png" target="_blank">
+       <img src="_static/github-actions-workflow.png" alt="GitHub Actions Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+   </a>
+
+Vous pouvez voir ce flux de travail avec plus de détails sur toutes les étapes :
+
+- `build_and_test`
+- `build_and_push_to_dockerhub`
+- `deploy_to_heroku`
+
+.. note::
+    - `Cliquez ici : workflow GitHub Actions <https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608>`_
 
 
 Docker |docker-logo| 

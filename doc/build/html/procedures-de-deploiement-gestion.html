@@ -54,7 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="guide-utilisation.html">Guide d’utilisation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Procédures de déploiement et de gestion de l’application</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#deploiement-et-gestion">Déploiement et gestion</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configuration-de-heroku-heroku-logo">Configuration de Heroku </a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#config-de-heroku-heroku-logo">config de Heroku </a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#parametrer-heroku">1. Paramétrer Heroku</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#creer-une-appplication-sur-heroku">2. Créer une appplication sur Heroku</a></li>
 </ul>
@@ -106,8 +106,8 @@
 <h1>Procédures de déploiement et de gestion de l’application<a class="headerlink" href="#procedures-de-deploiement-et-de-gestion-de-l-application" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="deploiement-et-gestion">
 <h2>Déploiement et gestion<a class="headerlink" href="#deploiement-et-gestion" title="Lien permanent vers cette rubrique"></a></h2>
-<section id="configuration-de-heroku-heroku-logo">
-<h3>Configuration de Heroku <a class="reference internal" href="_images/heroku.svg"><img alt="Heroku Logo" src="_images/heroku.svg" width="20px" /></a><a class="headerlink" href="#configuration-de-heroku-heroku-logo" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="config-de-heroku-heroku-logo">
+<h3>config de Heroku <a class="reference internal" href="_images/heroku.svg"><img alt="Heroku Logo" src="_images/heroku.svg" width="20px" /></a><a class="headerlink" href="#config-de-heroku-heroku-logo" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La plateforme d’hébergement utilisé pour le déploiement de l’application est Heroku.</p>
 <section id="parametrer-heroku">
 <h4>1. Paramétrer Heroku<a class="headerlink" href="#parametrer-heroku" title="Lien permanent vers cette rubrique"></a></h4>
@@ -128,8 +128,8 @@
 <li><p>Une fois, votre application créée, rentrée dans celle-ci, se rendre dans le menu <cite>Deploy</cite> comme montré sur la capture d’écran et connectez-vous à votre compte <cite>GitHub</cite>.</p></li>
 <li><p>Et connecter votre <cite>repository</cite>.</p></li>
 </ul>
-<a href="_static/heroku-configuration-1.PNG" target="_blank">
-    <img src="_static/heroku-configuration-1.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+<a href="_static/heroku-config-1.png" target="_blank">
+    <img src="_static/heroku-config-1.png" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
 </a></section>
 </section>
 <section id="lancer-un-premier-deploiement-sur-heroku-heroku-logo">
@@ -147,8 +147,8 @@
 <li><p>Retourner sur <cite>Heroku</cite> dans votre apllication allez dans le menu <cite>Deploy</cite> comme montré sur la capture d’écran.</p></li>
 <li><p>Dans la partie <cite>Manual deploy</cite> choisissez la branche <cite>master</cite> et cliquer sur <strong>`Deploy Branch`</strong>.</p></li>
 </ul>
-<a href="_static/heroku-configuration-2.PNG" target="_blank">
-    <img src="_static/heroku-configuration-2.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+<a href="_static/heroku-config-2.png" target="_blank">
+    <img src="_static/heroku-config-2.png" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
 </a><div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -179,8 +179,8 @@
 <ul class="simple">
 <li><p>Activez <strong>Enable Review Apps</strong> et cliquer <strong>New app</strong> sélectionnez <cite>Choose a branch to deploy</cite> et la branche <cite>master</cite>, cliquer sur <strong>Create</strong>.</p></li>
 </ul>
-<a href="_static/heroku-configuration-3.PNG" target="_blank">
-    <img src="_static/heroku-configuration-3.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+<a href="_static/heroku-config-3.png" target="_blank">
+    <img src="_static/heroku-config-3.png" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
 </a><ul class="simple">
 <li><p>Une fois le build terminer allez dans l’étape <cite>Staging</cite> cliquer sur <strong>Create new app</strong>.</p></li>
 <li><p>Toujours dans l’étape <cite>Staging</cite> après la création de la <cite>new app</cite> cliquer sur le menu déroulant à côté de <cite>Open app</cite> et choisissez <cite>Deploy a branch</cite>, sélectionnez la branche <cite>master</cite> et cliquer sur <strong>Deploy</strong></p></li>
@@ -191,8 +191,8 @@
 <li><p>Une fois ces étapes effectuées, dans le menu déroulant, vous pourrez choisir de bouger l’application <cite>Move to development</cite> ou <cite>Move to production</cite></p></li>
 </ul>
 </div>
-<a href="_static/heroku-configuration-4.PNG" target="_blank">
-    <img src="_static/heroku-configuration-4.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+<a href="_static/heroku-config-4.png" target="_blank">
+    <img src="_static/heroku-config-4.png" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
 </a></section>
 </section>
 <section id="activez-sentry-pour-le-monitoring-sur-heroku">
@@ -205,16 +205,16 @@
 <li><p>Pour que le monitoring avec <cite>Sentry</cite> soit fonctionnelle il faudra rentrer celle-ci dans <cite>Heroku</cite>.</p></li>
 <li><p>Rendez-vous dans l’application principal la partie <cite>Settings</cite> allez dans <cite>Config Vars</cite> et saisissez votre clé <cite>SENTRY_DSN</cite>.</p></li>
 </ul>
-<a href="_static/heroku-configuration-5.PNG" target="_blank">
-   <img src="_static/heroku-configuration-5.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+<a href="_static/heroku-config-5.png" target="_blank">
+   <img src="_static/heroku-config-5.png" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
 </a></div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <ul class="simple">
 <li><p>Rendez-vous dans le pipeline dans la partie <cite>Settings</cite> allez dans <cite>Review app config vars</cite> et saisissez votre clé <cite>SENTRY_DSN</cite>.</p></li>
 </ul>
-<a href="_static/heroku-configuration-6.PNG" target="_blank">
-   <img src="_static/heroku-configuration-6.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+<a href="_static/heroku-config-6.png" target="_blank">
+   <img src="_static/heroku-config-6.png" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
 </a></div>
 </section>
 </section>

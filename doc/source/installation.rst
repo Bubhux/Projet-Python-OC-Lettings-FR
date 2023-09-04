@@ -12,7 +12,7 @@ Récupération et installation du projet
 .. raw:: html
 
    <div class="admonition note">
-     <p>Forker le projet :</p>
+     <p>Forker le projet</p>
    </div>
 
 1. Rendez-vous sur la page du projet à l'adresse https://github.com/Bubhux/Python-OC-Lettings-FR et suivez ces étapes :
@@ -26,7 +26,7 @@ Récupération et installation du projet
 .. raw:: html
 
    <div class="admonition note">
-     <p>Cloner le projet :</p>
+     <p>Cloner le projet</p>
    </div>
 
 1. Une fois que vous avez forké le projet et qu'il est dans votre compte, vous pouvez le cloner sur votre ordinateur pour travailler dessus. Voici comment faire cela en utilisant la ligne de commande (assurez-vous que Git est installé sur votre ordinateur) :
