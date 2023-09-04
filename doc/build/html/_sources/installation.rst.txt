@@ -44,4 +44,5 @@ Récupération et installation du projet
 
 5. Après avoir exécuté la commande, le projet sera cloné dans un nouveau dossier sur votre ordinateur. Vous pouvez maintenant naviguer dans ce dossier et travailler sur le projet.
 
-N'oubliez pas de consulter la documentation du projet et de la plateforme GitHub pour plus d'informations sur la contribution et l'utilisation de Git.
+.. tip::
+   - N'oubliez pas de consulter la documentation du projet et de la plateforme GitHub pour plus d'informations sur la contribution et l'utilisation de Git.

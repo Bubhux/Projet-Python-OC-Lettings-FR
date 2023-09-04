@@ -29,9 +29,15 @@ Documentation du Projet - OC Lettings
 Introduction
 ------------
 
-Bienvenue dans la documentation du projet OC Lettings. Cette documentation vise à vous guider à travers les différentes étapes de l'utilisation et du déploiement de notre application.
+.. raw:: html
 
-La documentation est divisée en plusieurs sections pour couvrir divers aspects du projet. Voici un aperçu de chaque section :
+   <div class="admonition note">
+     <p><h3>Bienvenue dans la documentation du projet OC Lettings.</h3></P>
+     <p>Cette documentation vise à vous guider à travers les différentes étapes de l'utilisation et du déploiement de notre application.</p>
+   </div>
+
+.. hint::
+   La documentation est divisée en plusieurs sections pour couvrir divers aspects du projet. Voici un aperçu de chaque section :
 
 - **Description du Projet** : Découvrez notre démarche d'amélioration de l'architecture modulaire.
 - **Installation** : Apprenez comment installer notre application sur votre environnement de développement.
@@ -46,8 +52,18 @@ Nous espérons que cette documentation vous sera utile pour tirer le meilleur pa
 
 
 Indices et tables
-=================
+-----------------
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. table::
+   :widths: 10 90
+   :align: center
+
+   +-------------+-----------------------------------+
+   | Élément     | Description                       |
+   +=============+===================================+
+   | * :ref:`genindex` | Table des matières générales|
+   +-------------+-----------------------------------+
+   | * :ref:`modindex` | Index des modules           |
+   +-------------+-----------------------------------+
+   | * :ref:`search`   | Recherche                   |
+   +-------------+-----------------------------------+
