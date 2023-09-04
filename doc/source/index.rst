@@ -39,14 +39,14 @@ Introduction
 .. hint::
    La documentation est divisée en plusieurs sections pour couvrir divers aspects du projet. Voici un aperçu de chaque section :
 
-- **Description du Projet** : Découvrez notre démarche d'amélioration de l'architecture modulaire.
-- **Installation** : Apprenez comment installer notre application sur votre environnement de développement.
-- **Guide de Démarrage Rapide** : Obtenez rapidement votre application en marche.
-- **Technologies et Langages** : Explorez les technologies et langages utilisés dans le projet.
-- **Structure de la Base de Données et Modèles de Données** : Comprenez la structure de la base de données.
-- **Interfaces de Programmation** : Découvrez les API exposées par l'application.
-- **Guide d'Utilisation** : Apprenez comment utiliser notre application avec des cas d'utilisation.
-- **Procédures de Déploiement et de Gestion** : Suivez les étapes pour déployer et gérer l'application.
+1. **Description du Projet** : Découvrez notre démarche d'amélioration de l'architecture modulaire.
+2. **Installation** : Apprenez comment installer notre application sur votre environnement de développement.
+3. **Guide de Démarrage Rapide** : Obtenez rapidement votre application en marche.
+4. **Technologies et Langages** : Explorez les technologies et langages utilisés dans le projet.
+5. **Structure de la Base de Données et Modèles de Données** : Comprenez la structure de la base de données.
+6. **Interfaces de Programmation** : Découvrez les API exposées par l'application.
+7. **Guide d'Utilisation** : Apprenez comment utiliser notre application avec des cas d'utilisation.
+8. **Procédures de Déploiement et de Gestion** : Suivez les étapes pour déployer et gérer l'application.
 
 Nous espérons que cette documentation vous sera utile pour tirer le meilleur parti de notre projet OC Lettings.
 
