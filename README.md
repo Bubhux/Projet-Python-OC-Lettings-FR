@@ -65,7 +65,7 @@ Monitoring de l'application et suivi des erreurs via [Sentry](https://sentry.io/
 Bienvenue dans notre documentation complète disponible sur **Read the Docs / Sphinx**.
 - Vous trouverez toutes les informations essentielles pour comprendre et travailler avec notre projet.   
 
-- La documentation est disponible à l'adresse suivante &rarr; [Read the Docs](python-oc-lettings.readthedocs.io)   
+- La documentation est disponible à l'adresse suivante &rarr; [Read the Docs](https://python-oc-lettings.readthedocs.io/fr/latest/)   
 N'hésitez pas à explorer les différents chapitres ci-dessous  :   
 
 1. **Description du Projet** : Découvrez notre démarche d'amélioration de l'architecture modulaire.   
