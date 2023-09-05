@@ -366,7 +366,24 @@
 <span class="w">         </span><span class="no">HEROKU_DEBUG=1 heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web</span>
 </pre></div>
 </div>
-<p>Pour voir le flux de travail GitHub Actions correspondant. <a class="reference external" href="https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608">Cliquez ici : workflow GitHub Actions</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Capture d’écran du workflow créer par le fichier <cite>ci_cd_branch_master.yml</cite> du projet.</p>
+</div>
+<a href="_static/github-workflow.png" target="_blank">
+    <img src="_static/github-workflow.png" alt="GitHub Actions Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+</a><p>Vous pouvez voir ce flux de travail avec plus de détails sur toutes les étapes :</p>
+<ul class="simple">
+<li><p><cite>build_and_test</cite></p></li>
+<li><p><cite>build_and_push_to_dockerhub</cite></p></li>
+<li><p><cite>deploy_to_heroku</cite></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608">Cliquez ici : workflow GitHub Actions</a></p></li>
+</ul>
+</div>
 </section>
 </section>
 <section id="docker-docker-logo">

@@ -10,7 +10,7 @@ Déploiement et gestion
    :width: 20px
 
 
-Configuration de Heroku |heroku-logo|
+config de Heroku |heroku-logo|
 =====================================
 La plateforme d'hébergement utilisé pour le déploiement de l'application est Heroku.
 
@@ -31,8 +31,8 @@ La plateforme d'hébergement utilisé pour le déploiement de l'application est 
 
 .. raw:: html
 
-   <a href="_static/heroku-configuration-1.PNG" target="_blank">
-       <img src="_static/heroku-configuration-1.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+   <a href="_static/heroku-config-1.png" target="_blank">
+       <img src="_static/heroku-config-1.png" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
    </a>
 
 
@@ -51,8 +51,8 @@ Lancer un premier déploiement sur Heroku |heroku-logo|
 
 .. raw:: html
 
-   <a href="_static/heroku-configuration-2.PNG" target="_blank">
-       <img src="_static/heroku-configuration-2.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+   <a href="_static/heroku-config-2.png" target="_blank">
+       <img src="_static/heroku-config-2.png" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
    </a>
 
 .. note::
@@ -81,8 +81,8 @@ Pour déployer une nouvelle version de l'application, vous devez créer un pipel
 
 .. raw:: html
 
-   <a href="_static/heroku-configuration-3.PNG" target="_blank">
-       <img src="_static/heroku-configuration-3.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+   <a href="_static/heroku-config-3.png" target="_blank">
+       <img src="_static/heroku-config-3.png" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
    </a>
 
 - Une fois le build terminer allez dans l'étape `Staging` cliquer sur **Create new app**.
@@ -93,8 +93,8 @@ Pour déployer une nouvelle version de l'application, vous devez créer un pipel
 
 .. raw:: html
 
-   <a href="_static/heroku-configuration-4.PNG" target="_blank">
-       <img src="_static/heroku-configuration-4.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+   <a href="_static/heroku-config-4.png" target="_blank">
+       <img src="_static/heroku-config-4.png" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
    </a>
 
 
@@ -110,8 +110,8 @@ Activez Sentry pour le monitoring sur Heroku
 
    .. raw:: html
 
-      <a href="_static/heroku-configuration-5.PNG" target="_blank">
-         <img src="_static/heroku-configuration-5.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+      <a href="_static/heroku-config-5.png" target="_blank">
+         <img src="_static/heroku-config-5.png" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
       </a>
 
 .. important::
@@ -119,6 +119,6 @@ Activez Sentry pour le monitoring sur Heroku
 
    .. raw:: html
 
-      <a href="_static/heroku-configuration-6.PNG" target="_blank">
-         <img src="_static/heroku-configuration-6.PNG" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+      <a href="_static/heroku-config-6.png" target="_blank">
+         <img src="_static/heroku-config-6.png" alt="Heroku Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
       </a>

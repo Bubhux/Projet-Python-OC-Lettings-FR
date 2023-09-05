@@ -4,8 +4,8 @@ Description du Projet - OC Lettings
 
 .. raw:: html
 
-   <a href="_static/Orange-County-Lettings.PNG" target="_blank">
-       <img src="_static/Orange-County-Lettings.PNG" alt="Orange County Lettings Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
+   <a href="_static/oc-lettings.png" target="_blank">
+       <img src="_static/oc-lettings.png" alt="Orange County Lettings Screenshot" style="max-width: 100%; border: 1px solid #ccc;">
    </a>
 
 Amélioration de l'Architecture Modulaire
