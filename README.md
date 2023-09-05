@@ -1,8 +1,8 @@
 ![Static Badge](static/badges/build-with-python.svg) ![Static Badge](static/badges/build-with-django.svg) ![Static Badge](static/badges/build-with-bootstrap.svg) ![Static Badge](static/badges/docker.svg) ![Static Badge](static/badges/read-the-docs.svg) ![Static Badge](static/badges/sentry.svg) ![Static Badge](static/badges/heroku.svg) ![Static Badge](static/badges/github-actions.svg) 
 
-[![Documentation Status](https://readthedocs.org/projects/python-oc-lettings/badge/?version=latest)](https://python-oc-lettings.readthedocs.io/fr/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/python-oc-lettings/badge/?version=latest)](https://python-oc-lettings.readthedocs.io/fr/latest/?badge=latest) &rarr; [Read the Docs](https://python-oc-lettings.readthedocs.io/fr/latest/)
 
-[![Django CI/CD Master](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml/badge.svg)](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml)
+[![Django CI/CD Master](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml/badge.svg)](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml) &rarr; [Workflow GitHub Actions](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608)
 
 
 ## Menu   
@@ -35,11 +35,11 @@ Plusieurs domaines du site *OC Lettings* ont été améliorés à partir du proj
 __Réduction de la dette technique__   
 
    - remplacer les templates de manière cohérente dans les nouvelles applications.   
-   - Correction des erreurs de linting.    
-   - Correction de la pluralisation des noms de modèles dans le site d'administration.    
+   - Correction des erreurs de linting.   
+   - Correction de la pluralisation des noms de modèles dans le site d'administration.   
 
 
-__Amélioration de l'architecture modulaire__    
+__Amélioration de l'architecture modulaire__   
 
    - Créer 2 applications *lettings*, *profiles* pour séparer les fonctionnalités de l'application.   
    - remplir les nouvelles tables avec les données déjà présentes dans la base de données en utilisant les fichiers de migration Django.   
@@ -54,7 +54,7 @@ __Ajout d'un pipeline CI/CD avec [GitHub Actions](https://github.com) et déploi
    - *Déploiement* : exécuter le déploiement de l'application avec Heroku.   
 
 
-Monitoring de l'application et suivi des erreurs via [Sentry](https://sentry.io/welcome/).  
+Monitoring de l'application et suivi des erreurs via [Sentry](https://sentry.io/welcome/).   
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -62,7 +62,7 @@ Monitoring de l'application et suivi des erreurs via [Sentry](https://sentry.io/
 
 ### Documentation Read the Docs   
 
-Bienvenue dans notre documentation complète disponible sur **Read the Docs / Sphinx**.
+Bienvenue dans notre documentation complète disponible sur **Read the Docs / Sphinx**.   
 - Vous trouverez toutes les informations essentielles pour comprendre et travailler avec notre projet.   
 
 - La documentation est disponible à l'adresse suivante &rarr; [Read the Docs](https://python-oc-lettings.readthedocs.io/fr/latest/)   
@@ -100,12 +100,12 @@ N'hésitez pas à explorer les différents chapitres ci-dessous  :
 
 <div id="interface-administration-django"></div>
 
-### Interface d'administration Django    
+### Interface d'administration Django   
 
 - L'interface d'administration Django est disponible et fonctionnelle.   
   
-Identifiant : **admin** | Mot de passe : **Abc1234!**
-&rarr; http://127.0.0.1:8000/admin/
+Identifiant : **admin** | Mot de passe : **Abc1234!**   
+&rarr; http://127.0.0.1:8000/admin/   
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -113,20 +113,20 @@ Identifiant : **admin** | Mot de passe : **Abc1234!**
 
 ### Liste pré-requis   
 
-- Compte GitHub avec accès en lecture à ce repository
-- Git CLI
-- SQLite3 CLI
-- Interpréteur Python, version 3.6 ou supérieure
+- Compte GitHub avec accès en lecture à ce repository   
+- Git CLI   
+- SQLite3 CLI   
+- Interpréteur Python, version 3.6 ou supérieure   
 
 Programme élaboré avec les logiciels suivants:   
-- Python v3.7.2 choisissez la version adaptée à votre ordinateur et système. Python est disponible à l'adresse suivante &rarr; https://www.python.org/downloads/    
-- Django 3.2.20
-- Bootstrap 5.3.1
-- Docker Toolbox v.19.03.1
-- Sentry
-- Heroku CLI
-- SqLite Tools
-- GitHub Actions
+- Python v3.7.2 choisissez la version adaptée à votre ordinateur et système. Python est disponible à l'adresse suivante &rarr; https://www.python.org/downloads/   
+- Django 3.2.20   
+- Bootstrap 5.3.1   
+- Docker Toolbox v.19.03.1   
+- Sentry   
+- Heroku CLI   
+- SqLite Tools   
+- GitHub Actions   
 - Visual Studio Code 1.70.2   
 - Windows 7 professionnel SP1   
 
@@ -143,7 +143,7 @@ Programme élaboré avec les logiciels suivants:
 
 - Nous effectuons des tests de plusieurs manières pour garantir la qualité de notre code.   
 
-##### Exécution de Pytest
+##### Exécution de Pytest   
 
 - Pour exécuter des tests à l'aide de Pytest, utilisez la commande suivante :   
 
@@ -170,17 +170,17 @@ oc_lettings_site/tests.py::test_dummy PASSED                                    
 
 #### Exécution des tests Django   
 
-- Utilisation des tests Django, créer dans les fichiers tests.py des applications *lettings* et *profiles* 
+- Utilisation des tests Django, créer dans les fichiers tests.py des applications *lettings* et *profiles*   
 ```bash
 $ python manage.py test
 ```
 
 renvoie :
 ```bash
-Ran 12 tests in 2.981s                       
-                                                    
-OK                                                  
-Destroying test database for alias 'default'...     
+Ran 12 tests in 2.981s                            
+                                                  
+OK                                                
+Destroying test database for alias 'default'...   
 ```
 #### Exécution des tests Coverage   
 
@@ -201,7 +201,7 @@ renvoie : **84%** de couverture de code
 ```bash
 $ coverage html
 ```
-- Cela générera un dossier "htmlcov" dans lequel vous pouvez ouvrir le fichier "index.html" pour visualiser un rapport interactif de la couverture de code dans votre navigateur. 
+- Cela générera un dossier "htmlcov" dans lequel vous pouvez ouvrir le fichier "index.html" pour visualiser un rapport interactif de la couverture de code dans votre navigateur.   
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -212,7 +212,7 @@ $ coverage html
 -Installer une version de Python compatible pour votre ordinateur.   
 -Une fois installer ouvrer le cmd (terminal) placer vous dans le dossier principal (dossier racine).   
 
-*Taper dans votre terminal :*  
+*Taper dans votre terminal :*   
 
 ```bash
 $ python -m venv venv
@@ -255,9 +255,9 @@ $ pip install -r requirements.txt
 
 <div id="execution-application"></div>
 
-### Exécution de l'application
+### Exécution de l'application   
 
-##### Utilisation
+##### Utilisation   
 
 1. Lancement du serveur Django.   
 - Placez-vous avec le terminal dans le dossier principal.   
@@ -281,7 +281,7 @@ Se rendre à l'adresse. &rarr; http://127.0.0.1:8000/
 
 ### Rapport avec flake8   
 
-*Tapez dans votre terminal la commande :*  
+*Tapez dans votre terminal la commande :*   
 
 ```bash
 $ flake8
