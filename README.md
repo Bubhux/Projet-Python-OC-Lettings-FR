@@ -151,21 +151,21 @@ Programme élaboré avec les logiciels suivants:
 $ pytest
 ```
 ```bash
-lettings/tests.py::TestLettingsApp::test_address_model PASSED                                       [  7%]
-lettings/tests.py::TestLettingsApp::test_letting_detail_url PASSED                                  [ 15%]
-lettings/tests.py::TestLettingsApp::test_letting_detail_view PASSED                                 [ 23%]
-lettings/tests.py::TestLettingsApp::test_letting_model PASSED                                       [ 30%]
-lettings/tests.py::TestLettingsApp::test_lettings_index_url PASSED                                  [ 38%]
-lettings/tests.py::TestLettingsApp::test_lettings_index_view PASSED                                 [ 46%]
-profiles/tests.py::TestProfilesApp::test_profile_detail_url PASSED                                  [ 53%]
-profiles/tests.py::TestProfilesApp::test_profile_detail_view PASSED                                 [ 61%]
-profiles/tests.py::TestProfilesApp::test_profile_model PASSED                                       [ 69%]
-profiles/tests.py::TestProfilesApp::test_profiles_index_url PASSED                                  [ 76%]
-profiles/tests.py::TestProfilesApp::test_profiles_index_view PASSED                                 [ 84%]
-profiles/tests.py::TestProfilesApp::test_user_model PASSED                                          [ 92%]
-oc_lettings_site/tests.py::test_dummy PASSED                                                        [100%]
+lettings/tests.py::TestLettingsApp::test_address_model PASSED                                [  7%]
+lettings/tests.py::TestLettingsApp::test_letting_detail_url PASSED                           [ 15%]
+lettings/tests.py::TestLettingsApp::test_letting_detail_view PASSED                          [ 23%]
+lettings/tests.py::TestLettingsApp::test_letting_model PASSED                                [ 30%]
+lettings/tests.py::TestLettingsApp::test_lettings_index_url PASSED                           [ 38%]
+lettings/tests.py::TestLettingsApp::test_lettings_index_view PASSED                          [ 46%]
+profiles/tests.py::TestProfilesApp::test_profile_detail_url PASSED                           [ 53%]
+profiles/tests.py::TestProfilesApp::test_profile_detail_view PASSED                          [ 61%]
+profiles/tests.py::TestProfilesApp::test_profile_model PASSED                                [ 69%]
+profiles/tests.py::TestProfilesApp::test_profiles_index_url PASSED                           [ 76%]
+profiles/tests.py::TestProfilesApp::test_profiles_index_view PASSED                          [ 84%]
+profiles/tests.py::TestProfilesApp::test_user_model PASSED                                   [ 92%]
+oc_lettings_site/tests.py::test_dummy PASSED                                                 [100%]
 
-================================== 13 passed in 5.79s ====================================================
+================================== 13 passed in 5.79s =============================================
 ``` 
 
 #### Exécution des tests Django   
@@ -215,9 +215,9 @@ $ coverage html
 *Taper dans votre terminal :*  
 
 ```bash
-$ python -m venv env
+$ python -m venv venv
 ```
-Un répertoire appelé env doit être créé.   
+Un répertoire appelé "venv" doit être créé.   
 
 
 <div id="activation-environnement"></div>
@@ -228,9 +228,9 @@ Un répertoire appelé env doit être créé.
 
 *Pour activer l'environnement virtuel créé, il vous suffit de taper dans votre terminal :*   
 ```bash
-$ env\Scripts\activate.bat
+$ venv\Scripts\activate.bat
 ```
-- Ce qui ajoutera à chaque ligne de commande de votre terminal (env) :   
+- Ce qui ajoutera à chaque ligne de commande de votre terminal (venv) :   
 *Pour désactiver l'environnement virtuel, il suffit de taper dans votre terminal :*   
 
 ```bash
