@@ -23,7 +23,7 @@
 
 <div id="informations-générales"></div>
 
-#### Projet Orange County Lettings   
+### Projet Orange County Lettings   
 
 - L'objectif de ce projet est de mettre à l'échelle une application Django en utilisant une architecture modulaire   
 
@@ -60,7 +60,8 @@ Monitoring de l'application et suivi des erreurs via [Sentry](https://sentry.io/
 
 <div id="documentation"></div>
 
-#### Documentation Read the Docs   
+### Documentation Read the Docs   
+
 Bienvenue dans notre documentation complète disponible sur **Read the Docs / Sphinx**.
 - Vous trouverez toutes les informations essentielles pour comprendre et travailler avec notre projet.   
 
@@ -89,7 +90,7 @@ N'hésitez pas à explorer les différents chapitres ci-dessous  :
 
 <div id="fonctionnalitées"></div>
 
-#### Fonctionnalitées   
+### Fonctionnalitées   
 
 - Opérations CRUD par le site d'administration de Django.   
 - Navigation au travers des end points de l'API.   
@@ -99,7 +100,7 @@ N'hésitez pas à explorer les différents chapitres ci-dessous  :
 
 <div id="interface-administration-django"></div>
 
-#### Interface d'administration Django    
+### Interface d'administration Django    
 
 - L'interface d'administration Django est disponible et fonctionnelle.   
   
@@ -110,7 +111,7 @@ Identifiant : **admin** | Mot de passe : **Abc1234!**
 
 <div id="liste-pre-requis"></div>
 
-#### Liste pré-requis   
+### Liste pré-requis   
 
 - Compte GitHub avec accès en lecture à ce repository
 - Git CLI
@@ -138,7 +139,7 @@ Programme élaboré avec les logiciels suivants:
 
 <div id="tests-et-couverture-de-code"></div>
 
-#### Tests et couverture de code   
+### Tests et couverture de code   
 
 - Nous effectuons des tests de plusieurs manières pour garantir la qualité de notre code.   
 
@@ -150,24 +151,24 @@ Programme élaboré avec les logiciels suivants:
 $ pytest
 ```
 ```bash
-lettings/tests.py::TestLettingsApp::test_address_model PASSED                                               [  7%]
-lettings/tests.py::TestLettingsApp::test_letting_detail_url PASSED                                          [ 15%]
-lettings/tests.py::TestLettingsApp::test_letting_detail_view PASSED                                         [ 23%]
-lettings/tests.py::TestLettingsApp::test_letting_model PASSED                                               [ 30%]
-lettings/tests.py::TestLettingsApp::test_lettings_index_url PASSED                                          [ 38%]
-lettings/tests.py::TestLettingsApp::test_lettings_index_view PASSED                                         [ 46%]
-profiles/tests.py::TestProfilesApp::test_profile_detail_url PASSED                                          [ 53%]
-profiles/tests.py::TestProfilesApp::test_profile_detail_view PASSED                                         [ 61%]
-profiles/tests.py::TestProfilesApp::test_profile_model PASSED                                               [ 69%]
-profiles/tests.py::TestProfilesApp::test_profiles_index_url PASSED                                          [ 76%]
-profiles/tests.py::TestProfilesApp::test_profiles_index_view PASSED                                         [ 84%]
-profiles/tests.py::TestProfilesApp::test_user_model PASSED                                                  [ 92%]
-oc_lettings_site/tests.py::test_dummy PASSED                                                                [100%]
+lettings/tests.py::TestLettingsApp::test_address_model PASSED                                       [  7%]
+lettings/tests.py::TestLettingsApp::test_letting_detail_url PASSED                                  [ 15%]
+lettings/tests.py::TestLettingsApp::test_letting_detail_view PASSED                                 [ 23%]
+lettings/tests.py::TestLettingsApp::test_letting_model PASSED                                       [ 30%]
+lettings/tests.py::TestLettingsApp::test_lettings_index_url PASSED                                  [ 38%]
+lettings/tests.py::TestLettingsApp::test_lettings_index_view PASSED                                 [ 46%]
+profiles/tests.py::TestProfilesApp::test_profile_detail_url PASSED                                  [ 53%]
+profiles/tests.py::TestProfilesApp::test_profile_detail_view PASSED                                 [ 61%]
+profiles/tests.py::TestProfilesApp::test_profile_model PASSED                                       [ 69%]
+profiles/tests.py::TestProfilesApp::test_profiles_index_url PASSED                                  [ 76%]
+profiles/tests.py::TestProfilesApp::test_profiles_index_view PASSED                                 [ 84%]
+profiles/tests.py::TestProfilesApp::test_user_model PASSED                                          [ 92%]
+oc_lettings_site/tests.py::test_dummy PASSED                                                        [100%]
 
-================================== 13 passed in 5.79s ============================================================
+================================== 13 passed in 5.79s ====================================================
 ``` 
 
-##### Exécution des tests Django   
+#### Exécution des tests Django   
 
 - Utilisation des tests Django, créer dans les fichiers tests.py des applications *lettings* et *profiles* 
 ```bash
@@ -181,7 +182,7 @@ Ran 12 tests in 2.981s
 OK                                                  
 Destroying test database for alias 'default'...     
 ```
-##### Exécution des tests Coverage   
+#### Exécution des tests Coverage   
 
 - Utilisation de Coverage pour mesurer la couverture de code.   
 
@@ -206,7 +207,7 @@ $ coverage html
 
 <div id="creation-environnement"></div>
 
-#### Création de l'environnement virtuel   
+### Création de l'environnement virtuel   
 
 -Installer une version de Python compatible pour votre ordinateur.   
 -Une fois installer ouvrer le cmd (terminal) placer vous dans le dossier principal (dossier racine).   
@@ -221,7 +222,7 @@ Un répertoire appelé env doit être créé.
 
 <div id="activation-environnement"></div>
 
-#### Activation de l'environnement virtuel   
+### Activation de l'environnement virtuel   
 
 - Placez-vous avec le terminal dans le dossier principale (dossier racine).   
 
@@ -239,7 +240,7 @@ $ deactivate
 
 <div id="installation-librairies"></div>
 
-#### Installation des librairies   
+### Installation des librairies   
 
 - Le programme utilise plusieurs librairies externes et modules de Python, qui sont répertoriés dans le fichier ``requirements.txt``.   
 - Placez-vous dans le dossier où se trouve le fichier requirements.txt avec le terminal, l'environnement virtuel doit être activé.   
@@ -254,7 +255,7 @@ $ pip install -r requirements.txt
 
 <div id="execution-application"></div>
 
-#### Exécution de l'application
+### Exécution de l'application
 
 ##### Utilisation
 
@@ -278,7 +279,7 @@ Se rendre à l'adresse. &rarr; http://127.0.0.1:8000/
 
 <div id="rapport-flake8"></div>
 
-#### Rapport avec flake8   
+### Rapport avec flake8   
 
 *Tapez dans votre terminal la commande :*  
 
@@ -291,7 +292,7 @@ $ flake8
 
 <div id="informations-importantes"></div>
 
-#### Informations importantes sur les différents fichiers et dossiers   
+### Informations importantes sur les différents fichiers et dossiers   
 
 **Le dossier lettings**   
   - Le dossier est une apps Django qui contient :   
@@ -309,7 +310,7 @@ $ flake8
   - Á la racine du dossier ``profiles`` les fichiers tels que views.py, tests.py. &rarr; ([profiles](profiles))   
 
 **Le dossier .github**   
-  - Le dossier contient le fichier ``ci_cd_branch_master.yml`` ([.github](.github/workflow))   
+  - Le dossier contient le fichier ``ci_cd_branch_master.yml`` ([.github](.github/workflows))   
 
 **Le dossier doc**   
   - Le dossir contient toute la configuration de ``Read the Docs`` et de ``Sphinx`` ([doc](doc))   
