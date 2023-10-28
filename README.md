@@ -59,8 +59,9 @@ Monitoring de l'application et suivi des erreurs via [Sentry](https://sentry.io/
 
 --------------------------------------------------------------------------------------------------------------------------------
 
+
 <div id="documentation"></div>
-<a href="#top" style="float: none;>Retour en haut ↑</a>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Documentation Read the Docs   
 
