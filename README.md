@@ -23,7 +23,6 @@
 
 
 <div id="informations-générales"></div>
-<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Projet Orange County Lettings   
 
@@ -332,7 +331,6 @@ $ flake8
 - Dossier qui contient qui contient les images svg des badges et les dossiers nécessaire à ```Bootstrap```.   
 
 <div id="auteur-contact"></div>
-<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 #### Auteur et contact   
 
