@@ -4,6 +4,7 @@
 
 [![Django CI/CD Master](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml/badge.svg)](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml) &rarr; [Workflow GitHub Actions](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608)
 
+<div id="top"></div>
 
 ## Menu   
 1. **[Informations générales](#informations-générales)**   
@@ -22,6 +23,7 @@
 
 
 <div id="informations-générales"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Projet Orange County Lettings   
 
@@ -59,6 +61,7 @@ Monitoring de l'application et suivi des erreurs via [Sentry](https://sentry.io/
 --------------------------------------------------------------------------------------------------------------------------------
 
 <div id="documentation"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Documentation Read the Docs   
 
@@ -89,6 +92,7 @@ N'hésitez pas à explorer les différents chapitres ci-dessous  :
 --------------------------------------------------------------------------------------------------------------------------------
 
 <div id="fonctionnalitées"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Fonctionnalitées   
 
@@ -99,6 +103,7 @@ N'hésitez pas à explorer les différents chapitres ci-dessous  :
 
 
 <div id="interface-administration-django"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Interface d'administration Django   
 
@@ -110,6 +115,7 @@ Identifiant : **admin** | Mot de passe : **Abc1234!**
 --------------------------------------------------------------------------------------------------------------------------------
 
 <div id="liste-pre-requis"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Liste pré-requis   
 
@@ -138,6 +144,7 @@ Programme élaboré avec les logiciels suivants:
 --------------------------------------------------------------------------------------------------------------------------------
 
 <div id="tests-et-couverture-de-code"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Tests et couverture de code   
 
@@ -206,6 +213,7 @@ $ coverage html
 --------------------------------------------------------------------------------------------------------------------------------
 
 <div id="creation-environnement"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Création de l'environnement virtuel   
 
@@ -221,6 +229,7 @@ Un répertoire appelé "venv" doit être créé.
 
 
 <div id="activation-environnement"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Activation de l'environnement virtuel   
 
@@ -239,6 +248,7 @@ $ deactivate
 --------------------------------------------------------------------------------------------------------------------------------
 
 <div id="installation-librairies"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Installation des librairies   
 
@@ -254,6 +264,7 @@ $ pip install -r requirements.txt
 ```
 
 <div id="execution-application"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Exécution de l'application   
 
@@ -278,6 +289,7 @@ Se rendre à l'adresse. &rarr; http://127.0.0.1:8000/
 --------------------------------------------------------------------------------------------------------------------------------
 
 <div id="rapport-flake8"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Rapport avec flake8   
 
@@ -291,6 +303,7 @@ $ flake8
 --------------------------------------------------------------------------------------------------------------------------------
 
 <div id="informations-importantes"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 ### Informations importantes sur les différents fichiers et dossiers   
 
@@ -319,6 +332,7 @@ $ flake8
 - Dossier qui contient qui contient les images svg des badges et les dossiers nécessaire à ```Bootstrap```.   
 
 <div id="auteur-contact"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
 #### Auteur et contact   
 
