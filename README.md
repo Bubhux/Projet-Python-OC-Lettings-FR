@@ -2,7 +2,7 @@
 
 [![Documentation Status](https://readthedocs.org/projects/python-oc-lettings/badge/?version=latest)](https://python-oc-lettings.readthedocs.io/fr/latest/?badge=latest) &rarr; [Read the Docs](https://python-oc-lettings.readthedocs.io/fr/latest/)
 
-[![Django CI/CD Master](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml/badge.svg)](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml) &rarr; [Workflow GitHub Actions](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608)
+[![Django CI/CD Master](https://github.com/Bubhux/Projet-Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml/badge.svg?branch=master)](https://github.com/Bubhux/Projet-Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml) &rarr; [Workflow GitHub Actions](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608)
 
 <div id="top"></div>
 
@@ -55,7 +55,7 @@ __Ajout d'un pipeline CI/CD avec [GitHub Actions](https://github.com) et déploi
    - *Déploiement* : exécuter le déploiement de l'application avec Heroku.   
 
 
-Monitoring de l'application et suivi des erreurs via [Sentry](https://sentry.io/welcome/).   
+> Note : Monitoring de l'application et suivi des erreurs via [Sentry](https://sentry.io/welcome/).   
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -99,7 +99,7 @@ N'hésitez pas à explorer les différents chapitres ci-dessous  :
 - Opérations CRUD par le site d'administration de Django.   
 - Navigation au travers des end points de l'API.   
 
->_Testé sous Windows 7 - Python 3.7.2 - Django 3.2.20_   
+>*Note : Testé sous Windows 7 - Python 3.7.2 - Django 3.2.20*   
 
 
 <div id="interface-administration-django"></div>
@@ -182,7 +182,7 @@ oc_lettings_site/tests.py::test_dummy PASSED                                    
 $ python manage.py test
 ```
 
-renvoie :
+Renvoie :
 ```bash
 Ran 12 tests in 2.981s                            
                                                   
@@ -203,7 +203,8 @@ $ coverage run manage.py test
 ```bash
 $ coverage report
 ```
-renvoie : **84%** de couverture de code
+
+>*Renvoie : **84%** de couverture de code*
 
 ```bash
 $ coverage html
@@ -217,8 +218,8 @@ $ coverage html
 
 ### Création de l'environnement virtuel   
 
--Installer une version de Python compatible pour votre ordinateur.   
--Une fois installer ouvrer le cmd (terminal) placer vous dans le dossier principal (dossier racine).   
+- Installer une version de Python compatible pour votre ordinateur.   
+- Une fois installer ouvrer le cmd (terminal) placer vous dans le dossier principal (dossier racine).   
 
 *Taper dans votre terminal :*   
 
@@ -235,12 +236,12 @@ Un répertoire appelé "venv" doit être créé.
 
 - Placez-vous avec le terminal dans le dossier principale (dossier racine).   
 
-*Pour activer l'environnement virtuel créé, il vous suffit de taper dans votre terminal :*   
+>*Note : Pour activer l'environnement virtuel créé, il vous suffit de taper dans votre terminal :*   
 ```bash
 $ venv\Scripts\activate.bat
 ```
 - Ce qui ajoutera à chaque ligne de commande de votre terminal (venv) :   
-*Pour désactiver l'environnement virtuel, il suffit de taper dans votre terminal :*   
+>*Note : Pour désactiver l'environnement virtuel, il suffit de taper dans votre terminal :*   
 
 ```bash
 $ deactivate
@@ -331,9 +332,11 @@ $ flake8
 **Le dossier static**   
 - Dossier qui contient qui contient les images svg des badges et les dossiers nécessaire à ```Bootstrap```.   
 
+--------------------------------------------------------------------------------------------------------------------------------
 <div id="auteur-contact"></div>
+<a href="#top" style="float: right;">Retour en haut ↑</a>
 
-#### Auteur et contact   
+### Auteur et contact   
 
 Pour toute information suplémentaire, vous pouvez me contacter.   
-**Bubhux:** bubhuxpaindepice@gmail.com   
+**Bubhux :** bubhuxpaindepice@gmail.com   
