@@ -28,31 +28,31 @@
 
 - L'objectif de ce projet est de mettre à l'échelle une application Django en utilisant une architecture modulaire   
 
-Plusieurs domaines du site *OC Lettings* ont été améliorés à partir du projet forker et cloner à l'adresse suivante :   
+Plusieurs domaines du site **OC Lettings** ont été améliorés à partir du projet forker et cloner à l'adresse suivante :   
 &rarr; [Python-OC-Lettings-FR](https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR)   
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 __Réduction de la dette technique__   
 
-   - remplacer les templates de manière cohérente dans les nouvelles applications.   
+   - Remplacer les templates de manière cohérente dans les nouvelles applications.   
    - Correction des erreurs de linting.   
    - Correction de la pluralisation des noms de modèles dans le site d'administration.   
 
 
 __Amélioration de l'architecture modulaire__   
 
-   - Créer 2 applications *lettings*, *profiles* pour séparer les fonctionnalités de l'application.   
-   - remplir les nouvelles tables avec les données déjà présentes dans la base de données en utilisant les fichiers de migration Django.   
-   - Convertir *oc_lettings_site* en projet Django.   
+   - Créer 2 applications ``lettings``, ``profiles`` pour séparer les fonctionnalités de l'application.   
+   - Remplir les nouvelles tables avec les données déjà présentes dans la base de données en utilisant les fichiers de migration Django.   
+   - Convertir ``oc_lettings_site`` en projet Django.   
    - Développer une suite de tests.   
 
 
 __Ajout d'un pipeline CI/CD avec [GitHub Actions](https://github.com) et déploiement sur [Heroku](https://www.heroku.com)__   
 
-   - *Compilation* : exécuter le linting et la suite de tests.
-   - *Conteneurisation* : construire et push une image du site avec [Docker](https://www.docker.com).   
-   - *Déploiement* : exécuter le déploiement de l'application avec Heroku.   
+   - **Compilation** : exécuter le linting et la suite de tests.
+   - **Conteneurisation** : construire et push une image du site avec [Docker](https://www.docker.com).   
+   - **Déploiement** : exécuter le déploiement de l'application avec Heroku.   
 
 
 > Note : Monitoring de l'application et suivi des erreurs via [Sentry](https://sentry.io/welcome/).   
@@ -209,7 +209,7 @@ $ coverage report
 ```bash
 $ coverage html
 ```
-- Cela générera un dossier "htmlcov" dans lequel vous pouvez ouvrir le fichier "index.html" pour visualiser un rapport interactif de la couverture de code dans votre navigateur.   
+- Cela générera un dossier ``htmlcov`` dans lequel vous pouvez ouvrir le fichier ``index.html`` pour visualiser un rapport interactif de la couverture de code dans votre navigateur.   
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -226,7 +226,7 @@ $ coverage html
 ```bash
 $ python -m venv venv
 ```
-Un répertoire appelé "venv" doit être créé.   
+Un répertoire appelé ``venv`` doit être créé.   
 
 
 <div id="activation-environnement"></div>
@@ -240,7 +240,7 @@ Un répertoire appelé "venv" doit être créé.
 ```bash
 $ venv\Scripts\activate.bat
 ```
-- Ce qui ajoutera à chaque ligne de commande de votre terminal (venv) :   
+- Ce qui ajoutera à chaque ligne de commande de votre terminal ``(venv)`` :   
 >*Note : Pour désactiver l'environnement virtuel, il suffit de taper dans votre terminal :*   
 
 ```bash
@@ -256,7 +256,7 @@ $ deactivate
 - Le programme utilise plusieurs librairies externes et modules de Python, qui sont répertoriés dans le fichier ``requirements.txt``.   
 - Placez-vous dans le dossier où se trouve le fichier requirements.txt avec le terminal, l'environnement virtuel doit être activé.   
 - Pour faire fonctionner le programme, il vous faudra installer les librairies requises.   
-- À l'aide du fichiers requirements.txt mis à disposition.   
+- À l'aide du fichiers ``requirements.txt`` mis à disposition.   
 
 *Taper dans votre terminal la commande :*   
 
