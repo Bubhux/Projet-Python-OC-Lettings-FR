@@ -24,7 +24,7 @@
 
 <div id="informations-générales"></div>
 
-### Projet Orange County Lettings   
+### Projet Orange County Lettings FR  
 
 - L'objectif de ce projet est de mettre à l'échelle une application Django en utilisant une architecture modulaire   
 
