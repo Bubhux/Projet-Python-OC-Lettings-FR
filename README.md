@@ -11,7 +11,7 @@
 
 [![Documentation Status](https://readthedocs.org/projects/python-oc-lettings/badge/?version=latest)](https://python-oc-lettings.readthedocs.io/fr/latest/?badge=latest) ➔ [Read the Docs](https://python-oc-lettings.readthedocs.io/fr/latest/)
 
-[![Django CI/CD Master](https://github.com/Bubhux/Projet-Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml/badge.svg?branch=master)](https://github.com/Bubhux/Projet-Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml) &rarr; [Workflow GitHub Actions](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608)
+[![Django CI/CD Master](https://github.com/Bubhux/Projet-Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml/badge.svg?branch=master)](https://github.com/Bubhux/Projet-Python-OC-Lettings-FR/actions/workflows/ci_cd_branch_master.yml) ➔ [Workflow GitHub Actions](https://github.com/Bubhux/Python-OC-Lettings-FR/actions/runs/6032226608)
 
 <div id="top"></div>
 
@@ -78,39 +78,32 @@ Bienvenue dans notre documentation complète disponible sur **Read the Docs / Sp
 - Vous trouverez toutes les informations essentielles pour comprendre et travailler avec notre projet.   
 
 - La documentation est disponible à l'adresse suivante ➔ [Read the Docs](https://python-oc-lettings.readthedocs.io/fr/latest/)   
+  &nbsp;   
 
 1. **Description du Projet :** Découvrez notre démarche d'amélioration de l'architecture modulaire.   
     - Amélioration de l’architecture Modulaire   
-      &nbsp;   
 
 2. **Installation :** Apprenez comment installer notre application sur votre environnement de développement.   
     - Récupération et installation du projet   
-      &nbsp;   
 
 3. **Guide de Démarrage Rapide :** Obtenez rapidement votre application en marche.   
     - Prépartion de l’environnement   
-      &nbsp;   
 
 4. **Technologies et Langages :** Explorez les technologies et langages utilisés dans le projet.   
     - Les technologies et les langages utilisés   
-      &nbsp;   
 
 5. **Structure de la Base de Données et Modèles de Données :** Comprenez la structure de la base de données.   
     - Structure de la base de données   
     - Modèles de données   
-      &nbsp;   
 
 6. **Interfaces de Programmation :** Découvrez les API exposées par l'application.   
     - Interface de programmation   
-      &nbsp;   
 
 7. **Guide d'Utilisation :** Apprenez comment utiliser notre application avec des cas d'utilisation.   
     - Introdcution   
-      &nbsp;   
 
 8. **Procédures de Déploiement et de Gestion :** Suivez les étapes pour déployer et gérer l'application.   
     - Déploiement et gestion   
-      &nbsp;   
 
   >_**Note :** N'hésitez pas à explorer les différents chapitres ci-dessus._   
 
