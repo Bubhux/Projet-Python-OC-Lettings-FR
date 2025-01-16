@@ -12,6 +12,8 @@ venv/
 # Exclure le dossier de couverture de code HTML (coverage report)
 htmlcov/
 
+# Exclure le dossier .vscode
+.vscode/
 # Exclure le fichier .env (variables d'environnement)
 .env
 
