@@ -37,9 +37,14 @@
 
 ### Projet Orange County Lettings   
 
+
 - L'objectif de ce projet est de mettre à l'échelle une application **Django** en utilisant une architecture modulaire.   
 
 - Plusieurs domaines du site **OC Lettings** ont été améliorés à partir du projet forker et cloner à l'adresse suivante ➔ [Python-OC-Lettings-FR](https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR)   
+- L'objectif de ce projet est de mettre à l'échelle une application **Django** en utilisant une architecture modulaire   
+
+Plusieurs domaines du site **OC Lettings** ont été améliorés.   
+À partir du projet forker et cloner à l'adresse suivante : ➔ [Python-OC-Lettings-FR](https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR)   
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -54,6 +59,7 @@ __Amélioration de l'architecture modulaire__
 
    - Créer 2 applications ``lettings``, ``profiles`` pour séparer les fonctionnalités de l'application.   
    - remplir les nouvelles tables avec les données déjà présentes dans la base de données en utilisant les fichiers de migration **Django**.   
+   - Remplir les nouvelles tables avec les données déjà présentes dans la base de données en utilisant les fichiers de migration **Django**.   
    - Convertir ``oc_lettings_site`` en projet **Django**.   
    - Développer une suite de tests.   
 
@@ -63,11 +69,15 @@ __Ajout d'un pipeline CI/CD avec [GitHub Actions](https://github.com) et déploi
    - *Compilation* : exécuter le linting et la suite de tests.
    - *Conteneurisation* : construire et push une image du site avec [Docker](https://www.docker.com).   
    - *Déploiement* : exécuter le déploiement de l'application avec **Heroku**.   
+   - **Compilation :** exécuter le linting et la suite de tests.
+   - **Conteneurisation :** construire et push une image du site avec [Docker](https://www.docker.com).   
+   - **Déploiement :** exécuter le déploiement de l'application avec **Heroku**.   
 
 
-Monitoring de l'application et suivi des erreurs via [Sentry](https://sentry.io/welcome/).   
+>_**Note :** Monitoring de l'application et suivi des erreurs via [Sentry](https://sentry.io/welcome/)._   
 
 --------------------------------------------------------------------------------------------------------------------------------
+
 
 <div id="documentation"></div>
 <a href="#top" style="float: right;">Retour en haut 🡅</a>
@@ -79,24 +89,34 @@ Bienvenue dans notre documentation complète disponible sur **Read the Docs / Sp
 
 - La documentation est disponible à l'adresse suivante ➔ [Read the Docs](https://python-oc-lettings.readthedocs.io/fr/latest/)   
 >**Note : N'hésitez pas à explorer les différents chapitres ci-dessous.**   
+  &nbsp;   
 
-1. **Description du Projet** : Découvrez notre démarche d'amélioration de l'architecture modulaire.   
+1. **Description du Projet :** Découvrez notre démarche d'amélioration de l'architecture modulaire.   
     - Amélioration de l’architecture Modulaire   
-2. **Installation** : Apprenez comment installer notre application sur votre environnement de développement.   
+
+2. **Installation :** Apprenez comment installer notre application sur votre environnement de développement.   
     - Récupération et installation du projet   
-3. **Guide de Démarrage Rapide** : Obtenez rapidement votre application en marche.   
+
+3. **Guide de Démarrage Rapide :** Obtenez rapidement votre application en marche.   
     - Prépartion de l’environnement   
-4. **Technologies et Langages** : Explorez les technologies et langages utilisés dans le projet.   
+
+4. **Technologies et Langages :** Explorez les technologies et langages utilisés dans le projet.   
     - Les technologies et les langages utilisés   
-5. **Structure de la Base de Données et Modèles de Données** : Comprenez la structure de la base de données.   
+
+5. **Structure de la Base de Données et Modèles de Données :** Comprenez la structure de la base de données.   
     - Structure de la base de données   
     - Modèles de données   
-6. **Interfaces de Programmation** : Découvrez les API exposées par l'application.   
+
+6. **Interfaces de Programmation :** Découvrez les API exposées par l'application.   
     - Interface de programmation   
-7. **Guide d'Utilisation** : Apprenez comment utiliser notre application avec des cas d'utilisation.   
+
+7. **Guide d'Utilisation :** Apprenez comment utiliser notre application avec des cas d'utilisation.   
     - Introdcution   
-8. **Procédures de Déploiement et de Gestion** : Suivez les étapes pour déployer et gérer l'application.   
+
+8. **Procédures de Déploiement et de Gestion :** Suivez les étapes pour déployer et gérer l'application.   
     - Déploiement et gestion   
+
+  >_**Note :** N'hésitez pas à explorer les différents chapitres ci-dessus._   
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -109,9 +129,11 @@ Bienvenue dans notre documentation complète disponible sur **Read the Docs / Sp
 - Navigation au travers des end points de l'API.   
 
 >**Note :Testé sous Windows 7 - Python 3.12.0 - Django 3.2.20**   
+>_**Note :** Testé sous **Window**s 7 - **Python** 3.7.2 - **Django** 3.2.20_   
 
 
 <div id="interface-administration-django"></div>
+<a href="#top" style="float: right;">Retour en haut 🡅</a>
 
 ### Interface d'administration Django   
 
@@ -134,6 +156,13 @@ Identifiant : **admin** | Mot de passe : **Abc1234!**
 
 Programme élaboré avec les logiciels suivants:   
 - **Python** v3.12.0 choisissez la version adaptée à votre ordinateur et système. **Python** est disponible à l'adresse suivante ➔ https://www.python.org/downloads/   
+- **Git** CLI   
+- **SQLite3** CLI   
+- Interpréteur **Python**, version 3.6 ou supérieure   
+
+Programme élaboré avec les logiciels suivants:   
+- **Python** v3.7.2 choisissez la version adaptée à votre ordinateur et système.   
+- **Python** est disponible à l'adresse suivante ➔ https://www.python.org/downloads/   
 - **Django** 3.2.20   
 - **Bootstrap** 5.3.1   
 - **Docker Toolbox** v.19.03.1   
@@ -143,6 +172,12 @@ Programme élaboré avec les logiciels suivants:
 - **GitHub Actions**   
 - **Visual Studio Code** 1.70.2   
 - **Windows** 7 professionnel SP1   
+- **Heroku** CLI   
+- **SqLite** Tools   
+- **GitHub Actions**   
+- **Visual Studio Code** 1.70.2   
+- **Windows** 7 professionnel SP1   
+  &nbsp;   
 
 - Les scripts **Python** s'exécutent depuis un terminal.   
 - Pour ouvrir un terminal sur **Windows**, pressez la touche ``windows + r`` et entrez ``cmd``.   
@@ -156,7 +191,7 @@ Programme élaboré avec les logiciels suivants:
 
 ### Tests et couverture de code   
 
-- Nous effectuons des tests de plusieurs manières pour garantir la qualité de notre code.   
+- Exécution des tests de plusieurs manières pour garantir la qualité du code.   
 
 ##### Exécution de Pytest   
 
@@ -186,11 +221,14 @@ oc_lettings_site/tests.py::test_dummy PASSED                                    
 #### Exécution des tests Django   
 
 - Utilisation des tests **Django**, créer dans les fichiers tests.py des applications ``lettings`` et ``profiles``   
+- Utilisation des tests **Django**, créer dans les fichiers tests.py des applications **``lettings``** et **``profiles``**   
+
 ```bash
 $ python manage.py test
 ```
 
-renvoie :
+Renvoie :   
+
 ```bash
 Ran 12 tests in 2.981s                            
                                                   
@@ -200,18 +238,21 @@ Destroying test database for alias 'default'...
 #### Exécution des tests Coverage   
 
 - Utilisation de **Coverage** pour mesurer la couverture de code.   
-
 - Cette commande exécute vos tests en utilisant **Coverage** pour collecter les informations de couverture.   
+- Cette commande exécute vos tests en utilisant coverage pour collecter les informations de couverture.   
+
 ```bash
 $ coverage run manage.py test
 ```
 
 - Cela affichera un rapport de couverture indiquant le pourcentage de code couvert par vos tests.   
 - Vous verrez également les lignes de code qui ont été exécutées (couvertes) ou non exécutées (non couvertes).   
+
 ```bash
 $ coverage report
 ```
-renvoie : **84%** de couverture de code
+
+>_**Renvoie :** **84%** de couverture de code_
 
 ```bash
 $ coverage html
@@ -227,6 +268,7 @@ $ coverage html
 
 - Installer une version de **Python** compatible pour votre ordinateur.   
 - Une fois installer ouvrer le cmd (terminal) placer vous dans le dossier principal (dossier racine).   
+- Une fois installer ouvrer **le cmd (terminal)** placer vous dans le dossier principal **(dossier racine)**.   
 
 Taper dans votre terminal :   
 
@@ -242,14 +284,17 @@ Un répertoire appelé ``venv`` doit être créé.
 
 ### Activation de l'environnement virtuel   
 
-- Placez-vous avec le terminal dans le dossier principale (dossier racine).   
+- Placez-vous avec le terminal dans le dossier principale **(dossier racine)**.   
 
 Pour activer l'environnement virtuel créé, il vous suffit de taper dans votre terminal :   
+>_**Note :** Pour activer l'environnement virtuel créé, il vous suffit de taper dans votre terminal :_   
+
 ```bash
 $ venv\Scripts\activate.bat
 ```
 - Ce qui ajoutera à chaque ligne de commande de votre terminal ``(venv)`` :   
 **Pour désactiver l'environnement virtuel, il suffit de taper dans votre terminal :**   
+>_**Note :** Pour désactiver l'environnement virtuel, il suffit de taper dans votre terminal :_   
 
 ```bash
 $ deactivate
@@ -265,6 +310,7 @@ $ deactivate
 
 - Le programme utilise plusieurs librairies externes et modules de **Python**, qui sont répertoriés dans le fichier ``requirements.txt``.   
 - Placez-vous dans le dossier où se trouve le fichier requirements.txt avec le terminal, l'environnement virtuel doit être activé.   
+- Placez-vous dans le dossier où se trouve le fichier ``requirements.txt`` avec le terminal, l'environnement virtuel doit être activé.   
 - Pour faire fonctionner le programme, il vous faudra installer les librairies requises.   
 - À l'aide du fichiers ``requirements.txt`` mis à disposition.   
 
@@ -444,6 +490,9 @@ vi .env
 - Après avoir collé le contenu, appuyez sur ``Esc`` pour quitter le mode d'insertion.
 
 - Enregistrez vos modifications en tapant ``:wq`` et appuyez sur Enter.
+Se rendre à l'adresse. ➔ http://127.0.0.1:8000/   
+ 
+>_**Note navigateur :** Les tests ont était fait sur **Firefox** et **Google Chrome**._   
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -481,13 +530,28 @@ $ flake8
   - Un dossier ``migrations`` contenant les fichiers de configuration pour la base de données ➔ ([migrations](profiles/migrations))   
   - Á la racine du dossier ``profiles`` les fichiers tels que views.py, tests.py ➔ ([profiles](profiles))   
 
-**Le dossier .github**   
+**Le dossier ``lettings``**   
+  - Le dossier est une apps **Django** qui contient :   
+  - Un dossier ``migrations`` contenant les fichiers de configuration pour la base de données. ➔ ([migrations](lettings/migrations))   
+  - Á la racine du dossier ``lettings`` les fichiers tels que views.py, tests.py. ➔ ([lettings](lettings))   
+
+**Le dossier ``oc_lettings_site``**   
+  - Le dossier est une apps **Django** qui contient :   
+  - Un dossier ``migrations`` contenant les fichiers de configuration pour la base de données. ➔ ([migrations](oc_lettings_site/migrations))   
+  - Á la racine du dossier ``oc_lettings_site`` les fichiers tels que settings.py. ➔ ([oc_lettings_site](oc_lettings_site))   
+
+**Le dossier ``profiles``**   
+  - Le dossier est une apps **Django** qui contient :   
+  - Un dossier ``migrations`` contenant les fichiers de configuration pour la base de données. ➔ ([migrations](profiles/migrations))   
+  - Á la racine du dossier ``profiles`` les fichiers tels que views.py, tests.py. ➔ ([profiles](profiles))   
+
+**Le dossier ``.github``**   
   - Le dossier contient le fichier ``ci_cd_branch_master.yml`` ([.github](.github/workflows))   
 
-**Le dossier doc**   
+**Le dossier ``doc``**   
   - Le dossir contient toute la configuration de ``Read the Docs`` et de ``Sphinx`` ([doc](doc))   
 
-**Le dossier static**   
+**Le dossier ``static``**   
 - Dossier qui contient qui contient les images svg des badges et les dossiers nécessaire à ```Bootstrap```.   
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -495,7 +559,7 @@ $ flake8
 <div id="auteur-contact"></div>
 <a href="#top" style="float: right;">Retour en haut 🡅</a>
 
-#### Auteur et contact   
+### Auteur et contact   
 
-Pour toute information suplémentaire, vous pouvez me contacter.   
-**Bubhux:** bubhuxpaindepice@gmail.com   
+Pour toute information supplémentaire, vous pouvez me contacter.   
+**Bubhux :** bubhuxpaindepice@gmail.com   
