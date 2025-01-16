@@ -1,5 +1,6 @@
 # Exclure les fichiers et dossiers générés par Python lors de la compilation
 **/__pycache__/
+.vscode/
 *.pyc
 
 # Exclure les caches de fichiers générés par pytest
@@ -27,3 +28,5 @@ htmlcov/
 
 # Exclure le fichier de débogage debug.log
 debug.log
+
+node_modules
