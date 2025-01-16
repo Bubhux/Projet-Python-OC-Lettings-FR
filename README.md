@@ -34,7 +34,6 @@
 
 
 <div id="informations-générales"></div>
-<a href="#top" style="float: right;">Retour en haut 🡅</a>
 
 ### Projet Orange County Lettings   
 
