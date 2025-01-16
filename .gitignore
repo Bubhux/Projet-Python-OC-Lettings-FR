@@ -26,3 +26,5 @@ htmlcov/
 
 # Exclure le fichier de débogage debug.log
 debug.log
+
+node_modules
