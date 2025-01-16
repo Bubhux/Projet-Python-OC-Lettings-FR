@@ -128,9 +128,11 @@ Bienvenue dans notre documentation complète disponible sur **Read the Docs / Sp
 - Opérations **CRUD** par le site d'administration de **Django**.   
 - Navigation au travers des end points de l'API.   
 
->**Note :Testé sous Windows 7 - Python 3.12.0 - Django 3.2.20**   
->_**Note :** Testé sous **Window**s 7 - **Python** 3.7.2 - **Django** 3.2.20_   
+>**Note : Testé sous Windows 10 - Python 3.12.0 - Django 3.2.20**   
 
+>**Note : Testé sous Windows 7 - Python 3.7.2 - Django 3.2.20**   
+
+--------------------------------------------------------------------------------------------------------------------------------
 
 <div id="interface-administration-django"></div>
 <a href="#top" style="float: right;">Retour en haut 🡅</a>
