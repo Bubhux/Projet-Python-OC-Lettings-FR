@@ -14,7 +14,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('DJANGO_SECRET_KEY', default=get_random_secret_key())
 SENTRY_DSN = config('SENTRY_DSN', default='')
-HEROKU_APP_NAME = config('HEROKU_APP_NAME', default='')
+RAILWAY_APP_NAME = config('RAILWAY_APP_NAME', default='')
 
 # Affiche le contenu de SENTRY_DSN (pour débogage)
 # Décommenter pour vérifier la clé "SENTRY_DSN"
@@ -23,7 +23,7 @@ HEROKU_APP_NAME = config('HEROKU_APP_NAME', default='')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.99.100', f'{HEROKU_APP_NAME}.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.99.100', f'{RAILWAY_APP_NAME}.railway.app']
 
 # Initialisation de Sentry
 sentry_sdk.init(

@@ -1,6 +1,5 @@
 # Étape 1 : Installation des dépendances de construction
-# Utilisation de l'image Python 3.7.2 basée sur Alpine Linux
-FROM python:3.7.2-alpine AS builder
+FROM python:3.10-alpine AS builder
 
 # Installation des bibliothèques PostgreSQL
 RUN apk add --no-cache postgresql-libs
@@ -30,7 +29,7 @@ RUN /app/venv/bin/pip install --upgrade pip
 RUN /app/venv/bin/pip install -r requirements.txt
 
 # Étape 3 : Construction de l'image finale
-FROM python:3.7.2-alpine
+FROM python:3.10-alpine
 
 # Configuration du répertoire de travail
 WORKDIR /app
@@ -41,7 +40,6 @@ ENV PYTHONUNBUFFERED 1
 
 # Configuration des variables d'environnement spécifiques à l'application
 ENV SENTRY_DSN $SENTRY_DSN
-ENV HEROKU_APP_NAME $HEROKU_APP_NAME
 ENV PORT 8080
 
 # Copie du contenu local dans le répertoire /app du conteneur
@@ -52,9 +50,6 @@ COPY --from=python-dependencies /app/venv /app/venv
 
 # Collecte des fichiers statiques de l'application
 RUN /app/venv/bin/python manage.py collectstatic --noinput --settings=oc_lettings_site.settings
-
-# Création d'un dump de la base de données dans data.json
-RUN /app/venv/bin/python manage.py dumpdata -o data.json
 
 # Commande par défaut pour exécuter le serveur Django
 CMD /app/venv/bin/python manage.py runserver 0.0.0.0:$PORT
