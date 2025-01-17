@@ -78,8 +78,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install Node.js (to use npm for Railway CLI)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Version LTS de Node.js
+
+      - name: Install Railway CLI
+        run: npm install -g railway
+
       - name: Deploy to Railway
+        env:
+          RAILWAY_API_KEY: ${{ secrets.RAILWAY_API_KEY }}
         run: |
-          curl -fsSL https://railway.app/install | sh
-          railway login --token ${{ secrets.RAILWAY_API_KEY }}
+          railway login --token $RAILWAY_API_KEY
           railway up
