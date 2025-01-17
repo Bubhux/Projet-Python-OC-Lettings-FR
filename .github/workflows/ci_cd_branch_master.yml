@@ -88,5 +88,5 @@ jobs:
         env:
           RAILWAY_API_KEY: ${{ secrets.RAILWAY_API_KEY }}
         run: |
-          railway login
+          # Authentifier via la clé API (pas besoin de `railway login` interactif)
           railway up
