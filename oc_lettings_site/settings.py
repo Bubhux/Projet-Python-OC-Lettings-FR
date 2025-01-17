@@ -14,7 +14,6 @@ SECRET_KEY = config('DJANGO_SECRET_KEY', default=get_random_secret_key())
 SENTRY_DSN = config('SENTRY_DSN', default='')
 RAILWAY_APP_NAME = config('RAILWAY_APP_NAME', default=None)
 RAILWAY_API_KEY = config('RAILWAY_API_KEY', default='')
-DATABASE_URL = config('DATABASE_URL', default='sqlite:///db.sqlite3')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.99.100']
@@ -107,10 +106,9 @@ DATABASES = {
     }
 }
 
-if DATABASE_URL:
-    DATABASES['default'].update(
-        dj_database_url.config(conn_max_age=600, ssl_require=True)
-    )
+if 'DATABASE_URL' in os.environ:
+    check_db_config = dj_database_url.config(conn_max_age=600, ssl_require=True)
+    DATABASES['default'].update(check_db_config)
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},

@@ -52,4 +52,4 @@ COPY --from=python-dependencies /app/venv /app/venv
 RUN /app/venv/bin/python manage.py collectstatic --noinput --settings=oc_lettings_site.settings
 
 # Commande par défaut pour exécuter le serveur Django
-CMD /app/venv/bin/gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:$PORT
+CMD /app/venv/bin/python manage.py runserver 0.0.0.0:$PORT
