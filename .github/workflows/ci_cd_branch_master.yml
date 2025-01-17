@@ -69,3 +69,17 @@ jobs:
           docker buildx build --load --file Dockerfile --tag bubhux/bubhux-oc-image-build:${{ github.sha }} --tag bubhux/bubhux-oc-image-build:latest .
           docker push bubhux/bubhux-oc-image-build:${{ github.sha }}
           docker push bubhux/bubhux-oc-image-build:latest
+
+  deploy_to_railway:
+    needs: build_and_push_to_dockerhub
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Railway
+        run: |
+          curl -fsSL https://cli.railway.app/install.sh | sh
+          railway login --token ${{ secrets.RAILWAY_API_KEY }}
+          railway up
