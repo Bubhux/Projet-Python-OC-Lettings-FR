@@ -81,9 +81,10 @@ jobs:
       - name: Install Railway CLI via npm
         run: npm install -g @railway/cli
 
+      - name: Authenticate with Railway
+        run: railway login --apiKey ${{ secrets.RAILWAY_API_KEY }}
+
       - name: Deploy to Railway
-        env:
-          RAILWAY_API_KEY: ${{ secrets.RAILWAY_API_KEY }}
         run: |
           # Authentifier via la clé API (pas besoin de `railway login` interactif)
           railway up
