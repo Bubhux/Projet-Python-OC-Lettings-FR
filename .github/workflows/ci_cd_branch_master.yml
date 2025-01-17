@@ -81,8 +81,12 @@ jobs:
       - name: Install Railway CLI via npm
         run: npm install -g @railway/cli
 
-      - name: Authenticate with Railway
-        run: railway login --token ${{ secrets.RAILWAY_API_KEY }}
+      - name: Export Railway API Key
+        run: echo "RAILWAY_API_KEY=${{ secrets.RAILWAY_API_KEY }}" >> $GITHUB_ENV
 
       - name: Deploy to Railway
-        run: railway up
+        env:
+          RAILWAY_API_KEY: ${{ secrets.RAILWAY_API_KEY }}
+        run: |
+          railway login
+          railway up
