@@ -13,11 +13,14 @@ WORKDIR /app
 # Copie du fichier requirements.txt dans le répertoire /app/
 COPY requirements.txt /app/
 
-# Mise à jour de pip
-RUN pip install --upgrade pip
+# Création d'un environnement virtuel
+RUN python -m venv venv
+
+# Mise à jour de pip dans l'environnement virtuel
+RUN /app/venv/bin/pip install --upgrade pip
 
 # Installation des dépendances Python depuis requirements.txt
-RUN pip install -r requirements.txt
+RUN /app/venv/bin/pip install -r requirements.txt
 
 # Étape 3 : Construction de l'image finale
 FROM python:3.10-alpine
@@ -35,19 +38,16 @@ ENV PORT 8080
 COPY . /app/
 
 # Copie des dépendances Python de l'étape python-dependencies
-COPY --from=python-dependencies /app /app
-
-# Installation globale de Gunicorn
-RUN pip install gunicorn
+COPY --from=python-dependencies /app/venv /app/venv
 
 # Collecte des fichiers statiques de l'application
-RUN python manage.py collectstatic --noinput --settings=oc_lettings_site.settings
+RUN /app/venv/bin/python manage.py collectstatic --noinput --settings=oc_lettings_site.settings
 
 # Création d'un dump de la base de données dans data.json
-RUN python manage.py dumpdata -o data.json
+RUN /app/venv/bin/python manage.py dumpdata -o data.json
 
 # Vérification de l'installation de Gunicorn
-RUN gunicorn --version
+RUN /app/venv/bin/gunicorn --version
 
 # Commande par défaut pour exécuter le serveur Django avec Gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "oc_lettings_site.wsgi:application"]
