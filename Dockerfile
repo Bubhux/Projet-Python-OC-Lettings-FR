@@ -34,6 +34,9 @@ ENV PYTHONUNBUFFERED 1
 ENV SENTRY_DSN $SENTRY_DSN
 ENV PORT 8080
 
+# Ajout du répertoire de l'environnement virtuel au PATH pour accéder à gunicorn sans chemin absolu
+ENV PATH="/app/venv/bin:$PATH"
+
 # Copie du contenu local dans le répertoire /app du conteneur
 COPY . /app/
 
@@ -47,7 +50,7 @@ RUN /app/venv/bin/python manage.py collectstatic --noinput --settings=oc_letting
 # 1. Migration des modèles
 RUN /app/venv/bin/python manage.py migrate --settings=oc_lettings_site.settings
 
-# Vérification de l'installation de Gunicorn
+# Vérification de l'installation de Gunicorn (débogage)
 RUN /app/venv/bin/gunicorn --version
 
 # Commande par défaut pour exécuter le serveur Django avec Gunicorn
