@@ -18,7 +18,13 @@ RAILWAY_SERVICE_ID = config('RAILWAY_SERVICE_ID', default=None)
 RAILWAY_PROJECT_ID = config('RAILWAY_PROJECT_ID', default=None)
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.99.100', 'oc-lettings-apps-production.up.railway.app']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '192.168.99.100',
+    'oc-lettings-apps-production.up.railway.app'
+]
+
 if RAILWAY_APP_NAME:
     ALLOWED_HOSTS.append(f'{RAILWAY_APP_NAME}.railway.app')
 
