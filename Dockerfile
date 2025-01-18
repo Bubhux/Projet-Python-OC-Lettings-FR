@@ -43,11 +43,12 @@ COPY --from=python-dependencies /app/venv /app/venv
 # Collecte des fichiers statiques de l'application
 RUN /app/venv/bin/python manage.py collectstatic --noinput --settings=oc_lettings_site.settings
 
-# Création d'un dump de la base de données dans data.json
-RUN /app/venv/bin/python manage.py dumpdata -o data.json
+# Préparation de la base de données PostgreSQL
+# 1. Migration des modèles
+RUN /app/venv/bin/python manage.py migrate --settings=oc_lettings_site.settings
 
 # Vérification de l'installation de Gunicorn
 RUN /app/venv/bin/gunicorn --version
 
 # Commande par défaut pour exécuter le serveur Django avec Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "oc_lettings_site.wsgi:application"]
+CMD ["/app/venv/bin/gunicorn", "--bind", "0.0.0.0:$PORT", "--workers=4", "oc_lettings_site.wsgi:application"]
