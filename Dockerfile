@@ -55,4 +55,4 @@ RUN /app/venv/bin/python manage.py collectstatic --noinput --settings=oc_letting
 RUN /app/venv/bin/python manage.py dumpdata -o data.json
 
 # Commande par défaut pour exécuter le serveur Django
-CMD /app/venv/bin/python manage.py runserver 0.0.0.0:$PORT
+CMD /app/venv/bin/gunicorn --bind 0.0.0.0:$PORT oc_lettings_site.wsgi:application
