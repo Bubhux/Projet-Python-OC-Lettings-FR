@@ -50,4 +50,4 @@ RUN /app/venv/bin/python manage.py dumpdata -o data.json
 RUN /app/venv/bin/gunicorn --version
 
 # Commande par défaut pour exécuter le serveur Django avec Gunicorn
-CMD /app/venv/bin/gunicorn --bind 0.0.0.0:$PORT oc_lettings_site.wsgi:application
+CMD . /app/venv/bin/activate && gunicorn --bind 0.0.0.0:$PORT oc_lettings_site.wsgi:application
