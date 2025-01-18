@@ -13,7 +13,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('DJANGO_SECRET_KEY', default=get_random_secret_key())
 SENTRY_DSN = config('SENTRY_DSN', default='')
 RAILWAY_APP_NAME = config('RAILWAY_APP_NAME', default=None)
-RAILWAY_API_KEY = config('RAILWAY_API_KEY', default='')
+RAILWAY_TOKEN = config('RAILWAY_TOKEN', default=None)
+RAILWAY_SERVICE_ID = config('RAILWAY_SERVICE_ID', default=None)
+RAILWAY_PROJECT_ID = config('RAILWAY_PROJECT_ID', default=None)
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.99.100']

@@ -51,5 +51,8 @@ COPY --from=python-dependencies /app/venv /app/venv
 # Collecte des fichiers statiques de l'application
 RUN /app/venv/bin/python manage.py collectstatic --noinput --settings=oc_lettings_site.settings
 
+# Création d'un dump de la base de données dans data.json
+RUN /app/venv/bin/python manage.py dumpdata -o data.json
+
 # Commande par défaut pour exécuter le serveur Django
 CMD /app/venv/bin/python manage.py runserver 0.0.0.0:$PORT
