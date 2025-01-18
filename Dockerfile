@@ -54,4 +54,4 @@ RUN /app/venv/bin/python manage.py migrate --settings=oc_lettings_site.settings
 RUN /app/venv/bin/gunicorn --version
 
 # Commande par défaut pour exécuter le serveur Django avec Gunicorn
-CMD ["sh", "-c", "/app/venv/bin/gunicorn --bind 0.0.0.0:$PORT --workers=4 oc_lettings_site.wsgi:application"]
+CMD ["sh", "-c", "/app/venv/bin/gunicorn --bind 0.0.0.0:${PORT} --workers=4 oc_lettings_site.wsgi:application"]
