@@ -1,6 +1,4 @@
 import os
-print(f"Running on port: {os.environ.get('PORT')}")
-import os
 import sentry_sdk
 import dj_database_url
 
@@ -137,3 +135,4 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+print(f"Running on port: {os.environ.get('PORT')}")
