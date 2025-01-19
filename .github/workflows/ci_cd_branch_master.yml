@@ -1,4 +1,4 @@
-name: OC Lettings apps CI/CD Master
+name: Django CI/CD Master
 
 on:
   push:
@@ -10,10 +10,10 @@ on:
 
 jobs:
   build_and_test:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.10"]
+        python-version: ["3.7"]
 
     steps:
       - name: Checkout code
@@ -49,7 +49,7 @@ jobs:
 
   build_and_push_to_dockerhub:
     needs: build_and_test
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -70,20 +70,39 @@ jobs:
           docker push bubhux/bubhux-oc-image-build:${{ github.sha }}
           docker push bubhux/bubhux-oc-image-build:latest
 
-  deploy_to_railway:
-    needs: build_and_push_to_dockerhub
-    runs-on: ubuntu-22.04
+      - name: Set IMAGE_ID environment variable
+        run: |
+          IMAGE_ID=$(docker inspect --format='{{.Id}}' bubhux/bubhux-oc-image-build:${{ github.sha }})
+          echo "IMAGE_ID=$IMAGE_ID" >> $GITHUB_ENV
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Tag Docker image with commit hash
+        run: |
+          docker tag bubhux/bubhux-oc-image-build:${{ github.sha }} bubhux/bubhux-oc-image-build:commit-${{ github.sha }}
 
-      - name: Install Railway CLI via npm
-        run: npm install -g @railway/cli
-
-      - name: Deploy to Railway
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-          RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
-          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
-        run: railway up --service=$RAILWAY_SERVICE_ID
+#  deploy_to_heroku:
+#    needs: build_and_push_to_dockerhub
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v3
+#
+#      - name: Install Heroku CLI
+#        run: curl https://cli-assets.heroku.com/install.sh | sh
+#
+#      - name: Purge Heroku cache
+#        run: |
+#          heroku plugins:install heroku-repo
+#          heroku repo:purge_cache -a ${{ secrets.HEROKU_APP_NAME }}
+#
+#      - name: Log in to Heroku Container Registry
+#        run: heroku container:login
+#        env:
+#          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+#
+#      - name: Push to Heroku Container Registry
+#        run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
+#
+#      - name: Deploy to Heroku
+#        run: |
+#          HEROKU_DEBUG=1 heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
