@@ -32,7 +32,7 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV SENTRY_DSN $SENTRY_DSN
-ENV PORT 8080
+ENV PORT=${PORT:-8080}
 
 # Ajout du répertoire de l'environnement virtuel au PATH pour accéder à gunicorn sans chemin absolu
 ENV PATH="/app/venv/bin:$PATH"
@@ -55,4 +55,5 @@ RUN /app/venv/bin/gunicorn --version
 
 # Commande par défaut pour exécuter le serveur Django avec Gunicorn
 CMD ["sh", "-c", "/app/venv/bin/gunicorn --bind 0.0.0.0:$PORT --workers=4 oc_lettings_site.wsgi:application"]
-RUN echo "Port is: $PORT"
+RUN echo "Port is: ${PORT:-8080}"
+RUN env
