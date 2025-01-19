@@ -1,6 +1,6 @@
 # Étape 1 : Installation des dépendances de construction
 # Utilisation de l'image Python 3.7.2 basée sur Alpine Linux
-FROM python:3.7.2-alpine AS builder
+FROM python:3.10-alpine AS builder
 
 # Installation des bibliothèques PostgreSQL
 RUN apk add --no-cache postgresql-libs
@@ -30,7 +30,7 @@ RUN /app/venv/bin/pip install --upgrade pip
 RUN /app/venv/bin/pip install -r requirements.txt
 
 # Étape 3 : Construction de l'image finale
-FROM python:3.7.2-alpine
+FROM python:3.10-alpine
 
 # Configuration du répertoire de travail
 WORKDIR /app
@@ -49,6 +49,10 @@ COPY . /app/
 
 # Copie des dépendances Python de l'étape python-dependencies
 COPY --from=python-dependencies /app/venv /app/venv
+RUN /app/venv/bin/pip install --upgrade pip
+RUN apk del .build-deps
+RUN apk add zlib-dev jpeg-dev libjpeg
+
 
 # Collecte des fichiers statiques de l'application
 RUN /app/venv/bin/python manage.py collectstatic --noinput --settings=oc_lettings_site.settings

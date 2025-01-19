@@ -10,7 +10,7 @@ on:
 
 jobs:
   build_and_test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         python-version: ["3.10"]
@@ -49,7 +49,7 @@ jobs:
 
   build_and_push_to_dockerhub:
     needs: build_and_test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout repository
@@ -81,7 +81,7 @@ jobs:
 
 #  deploy_to_heroku:
 #    needs: build_and_push_to_dockerhub
-#    runs-on: ubuntu-latest
+#    runs-on: ubuntu-22.04
 #
 #    steps:
 #      - name: Checkout code
