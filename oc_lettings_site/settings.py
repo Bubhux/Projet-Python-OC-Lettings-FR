@@ -118,6 +118,8 @@ if 'DATABASE_URL' in os.environ:
     check_db_config = dj_database_url.config(conn_max_age=600, ssl_require=True)
     DATABASES['default'].update(check_db_config)
 
+print(f"Running on port: {os.environ.get('PORT')}")
+
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -135,4 +137,3 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-print(f"Running on port: {os.environ.get('PORT')}")
