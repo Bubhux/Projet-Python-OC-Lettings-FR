@@ -1,4 +1,6 @@
 import os
+print(f"Running on port: {os.environ.get('PORT')}")
+import os
 import sentry_sdk
 import dj_database_url
 
