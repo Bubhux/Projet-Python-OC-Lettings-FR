@@ -6,62 +6,62 @@ from sentry_sdk.integrations.django import DjangoIntegration
 from decouple import config
 from django.core.management.utils import get_random_secret_key
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Chargement des variables d'environnement depuis le fichier .env
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('DJANGO_SECRET_KEY', default=get_random_secret_key())
 SENTRY_DSN = config('SENTRY_DSN', default='')
-RAILWAY_APP_NAME = config('RAILWAY_APP_NAME', default=None)
-RAILWAY_TOKEN = config('RAILWAY_TOKEN', default=None)
-RAILWAY_SERVICE_ID = config('RAILWAY_SERVICE_ID', default=None)
-RAILWAY_PROJECT_ID = config('RAILWAY_PROJECT_ID', default=None)
+HEROKU_APP_NAME = config('HEROKU_APP_NAME', default='')
+
+# Affiche le contenu de SENTRY_DSN (pour débogage)
+# Décommenter pour vérifier la clé "SENTRY_DSN"
+# print("SENTRY_DSN:", SENTRY_DSN)
+
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    '192.168.99.100',
-    'oc-lettings-apps-production.up.railway.app'
-]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.99.100', f'{HEROKU_APP_NAME}.herokuapp.com']
 
-if RAILWAY_APP_NAME:
-    ALLOWED_HOSTS.append(f'{RAILWAY_APP_NAME}.railway.app')
+# Initialisation de Sentry
+sentry_sdk.init(
+    dsn=SENTRY_DSN,
+    integrations=[
+        DjangoIntegration(
+            transaction_style='url',
+            middleware_spans=True,
+            signals_spans=False,
+            cache_spans=False,
+        ),
+    ],
+    traces_sample_rate=1.0,
+    send_default_pii=True
+)
 
-# Initialisation de Sentry (si DSN fourni)
-if SENTRY_DSN:
-    sentry_sdk.init(
-        dsn=SENTRY_DSN,
-        integrations=[
-            DjangoIntegration(
-                transaction_style='url',
-                middleware_spans=True,
-                signals_spans=False,
-                cache_spans=False,
-            ),
-        ],
-        traces_sample_rate=1.0,
-        send_default_pii=True
-    )
-
+# Configuration du modèle de logging
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
         'sentry': {
-            'level': 'ERROR',
+            'level': 'ERROR',  # Niveau de logging minimum à envoyer à Sentry
             'class': 'sentry_sdk.integrations.logging.EventHandler',
         },
         'console': {
-            'level': 'INFO',
+            'level': 'DEBUG',  # Niveau de logging minimum à afficher dans la console
             'class': 'logging.StreamHandler',
         },
     },
     'root': {
-        'handlers': ['sentry', 'console'],
-        'level': 'INFO',
+        'handlers': ['sentry', 'console'],  # Utilisez à la fois Sentry et la console
+        'level': 'DEBUG',                   # Niveau de logging minimum global (peut être ajusté)
     },
 }
+
+
+# Application definition
 
 INSTALLED_APPS = [
     'oc_lettings_site.apps.OCLettingsSiteConfig',
@@ -105,7 +105,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'oc_lettings_site.wsgi.application'
 
+# Configuration du modèle de clé primaire automatique par défaut
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -114,26 +118,55 @@ DATABASES = {
     }
 }
 
+# Vérifier si la variable d'environnement DATABASE_URL est définie
 if 'DATABASE_URL' in os.environ:
+    # Récupérer les paramètres de connexion de la base de données à partir de DATABASE_URL
+    # Définis une durée maximale de connexion de 600 secondes.
+    # Exige le chiffrement SSL pour les connexions à la base de données.
     check_db_config = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+    # Mettre à jour la configuration de la base de données existante avec les paramètres récupérés
     DATABASES['default'].update(check_db_config)
 
-print(f"Running on port: {os.environ.get('PORT')}")
+
+# Password validation
+# https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
 ]
 
+
+# Internationalization
+# https://docs.djangoproject.com/en/3.0/topics/i18n/
+
 LANGUAGE_CODE = 'en-us'
+
 TIME_ZONE = 'UTC'
+
 USE_I18N = True
+
 USE_L10N = True
+
 USE_TZ = True
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
