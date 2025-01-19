@@ -1,5 +1,4 @@
 # Étape 1 : Installation des dépendances de construction
-# Utilisation de l'image Python 3.7.2 basée sur Alpine Linux
 FROM python:3.10-alpine AS builder
 
 # Installation des bibliothèques PostgreSQL
@@ -35,6 +34,9 @@ FROM python:3.10-alpine
 # Configuration du répertoire de travail
 WORKDIR /app
 
+# Installation des dépendances nécessaires pour l'exécution
+RUN apk add --no-cache zlib-dev jpeg-dev libjpeg postgresql-libs
+
 # Configuration des variables d'environnement pour Python
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -49,10 +51,6 @@ COPY . /app/
 
 # Copie des dépendances Python de l'étape python-dependencies
 COPY --from=python-dependencies /app/venv /app/venv
-RUN /app/venv/bin/pip install --upgrade pip
-RUN apk del .build-deps
-RUN apk add zlib-dev jpeg-dev libjpeg
-
 
 # Collecte des fichiers statiques de l'application
 RUN /app/venv/bin/python manage.py collectstatic --noinput --settings=oc_lettings_site.settings
