@@ -3,15 +3,21 @@ Créer un modèle de fichier .env pour oc_lettings_site
 avec une clé secrète générée aléatoirement et des variables d'environnement préconfigurées.
 
 Ce script génère un fichier .env qui peut être utilisé pour configurer
-l'environnement de l'application oc_lettings_site
+l'environnement de l'application oc_lettings_site.
 Il génère une clé secrète aléatoire pour la configuration de Django
 et inclut également des noms de variables d'environnement
 préconfigurés tels que :
 
+    - 'ENVIRONMENT'
     - 'DJANGO_SECRET_KEY'
     - 'SENTRY_DSN'
     - 'HEROKU_APP_NAME'
-    - 'DEBUG'
+    - 'RAILWAY_APP_NAME'
+    - 'RAILWAY_TOKEN'
+    - 'RAILWAY_SERVICE_ID'
+    - 'RAILWAY_PROJECT_ID'
+    - 'DATABASE_URL'
+    - 'DEBUG': '0' 
 
 Le fichier .env généré doit être configuré avec des valeurs appropriées
 pour chaque variable d'environnement avant utilisation.
@@ -33,23 +39,26 @@ Exemple d'utilisation :
 
 from django.core.management.utils import get_random_secret_key
 
-# Liste des noms de variables d'environnement
-env_variable_names = [
-    'DJANGO_SECRET_KEY',
-    'SENTRY_DSN',
-    'HEROKU_APP_NAME',
-    'DEBUG',
-]
+# Liste des noms de variables d'environnement et de leurs valeurs par défaut
+env_variables = {
+    'ENVIRONMENT': 'development',
+    'DJANGO_SECRET_KEY': get_random_secret_key(),
+    'SENTRY_DSN': '',                                                                                                  # À configurer avec votre DSN Sentry
+    'HEROKU_APP_NAME': 'oc-lettings-apps',                                                                             # À configurer avec le nom de votre application Heroku
+    'RAILWAY_APP_NAME' : 'oc-lettings-apps',
+    'RAILWAY_TOKEN' : '',
+    'RAILWAY_SERVICE_ID' : '',
+    'RAILWAY_PROJECT_ID' : '',
+    'DATABASE_URL' : '',
+    'DEBUG': '0'                                                                                                       # 1 pour activer le mode debug, 0 pour désactiver
+}
 
-# Générer la clé secrète aléatoire
-secret_key = get_random_secret_key()
-
-# Ouvrir le fichier .env en mode écriture
+# Génére le fichier .env
 with open(".env", "w") as f:
-    # Écrire les noms des variables d'environnement avec leurs valeurs
-    f.write(f"DJANGO_SECRET_KEY={secret_key}\n")
-    for env_var in env_variable_names[1:]:
-        f.write(f"{env_var}=\n")
+    for key, value in env_variables.items():
+        f.write(f"{key}={value}\n")
 
-# Afficher un message indiquant que le modèle de fichier .env a été créé
-print("\n.env file created!")
+# Affiche un message indiquant que le fichier .env a été créé
+print("\n.env file created with the following variables:")
+for key in env_variables.keys():
+    print(f" - {key}")

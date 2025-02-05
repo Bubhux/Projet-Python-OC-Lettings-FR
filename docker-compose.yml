@@ -1,0 +1,25 @@
+# docker-compose.yml
+
+services:
+  oc-lettings-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app
+    environment:
+      - DEBUG=True
+      - DATABASE_URL=sqlite:////app/oc-lettings-site.sqlite3
+    restart: no
+    env_file:
+      - .env
+    networks:
+      - oc_lettings_network
+
+networks:
+  oc_lettings_network:
+    driver: bridge

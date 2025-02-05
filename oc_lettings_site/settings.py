@@ -1,4 +1,5 @@
 import os
+import sys
 import sentry_sdk
 import dj_database_url
 
@@ -15,15 +16,33 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('DJANGO_SECRET_KEY', default=get_random_secret_key())
 SENTRY_DSN = config('SENTRY_DSN', default='')
 HEROKU_APP_NAME = config('HEROKU_APP_NAME', default='')
+RAILWAY_APP_NAME = config('RAILWAY_APP_NAME', default='')
+RAILWAY_TOKEN = config('RAILWAY_TOKEN', default='')
+RAILWAY_SERVICE_ID = config('RAILWAY_SERVICE_ID', default='')
+RAILWAY_PROJECT_ID = config('RAILWAY_PROJECT_ID', default='')
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 # Affiche le contenu de SENTRY_DSN (pour débogage)
 # Décommenter pour vérifier la clé "SENTRY_DSN"
 # print("SENTRY_DSN:", SENTRY_DSN)
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+if 'collectstatic' not in sys.argv:
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()],
+        traces_sample_rate=1.0,
+        send_default_pii=True
+    )
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.99.100', f'{HEROKU_APP_NAME}.herokuapp.com']
+ALLOWED_HOSTS = [
+    "0.0.0.0",
+    "localhost",
+    "127.0.0.1",
+    f"{RAILWAY_APP_NAME}.railway.app" if RAILWAY_APP_NAME else "",
+    f"{HEROKU_APP_NAME}.herokuapp.com" if HEROKU_APP_NAME else ""
+]
+
+ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS if host]  # Supprime les entrées vides
 
 # Initialisation de Sentry
 sentry_sdk.init(
@@ -55,8 +74,10 @@ LOGGING = {
         },
     },
     'root': {
-        'handlers': ['sentry', 'console'],  # Utilisez à la fois Sentry et la console
-        'level': 'DEBUG',                   # Niveau de logging minimum global (peut être ajusté)
+        # Utilisez à la fois Sentry et la console
+        'handlers': ['sentry', 'console'],
+        # Niveau de logging minimum global (peut être ajusté)
+        'level': 'DEBUG',
     },
 }
 
@@ -75,15 +96,35 @@ INSTALLED_APPS = [
     'profiles',
 ]
 
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+# Chargement des variables d'environnement depuis le fichier .env
+ENVIRONMENT = config('ENVIRONMENT', default='development')
+
+# Si l'environnement est en production, utilisez Whitenoise, sinon StaticFilesStorage
+if ENVIRONMENT == 'production':
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    # Ajoutez WhiteNoise dans les middleware
+    MIDDLEWARE = [
+        'django.middleware.security.SecurityMiddleware',
+        'whitenoise.middleware.WhiteNoiseMiddleware',
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.middleware.common.CommonMiddleware',
+        'django.middleware.csrf.CsrfViewMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    ]
+else:
+    # En développement, utiliser StaticFilesStorage par défaut
+    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+    MIDDLEWARE = [
+        'django.middleware.security.SecurityMiddleware',
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.middleware.common.CommonMiddleware',
+        'django.middleware.csrf.CsrfViewMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    ]
 
 ROOT_URLCONF = 'oc_lettings_site.urls'
 
@@ -112,21 +153,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'oc-lettings-site.sqlite3'),
-    }
+    'default': dj_database_url.config(
+        default=f"sqlite:///{os.path.join(BASE_DIR, 'oc-lettings-site.sqlite3')}"
+    )
 }
 
-# Vérifier si la variable d'environnement DATABASE_URL est définie
+# Si DATABASE_URL est défini dans l'environnement, il l'utilise, sinon utilise SQLite
 if 'DATABASE_URL' in os.environ:
-    # Récupérer les paramètres de connexion de la base de données à partir de DATABASE_URL
-    # Définis une durée maximale de connexion de 600 secondes.
-    # Exige le chiffrement SSL pour les connexions à la base de données.
-    check_db_config = dj_database_url.config(conn_max_age=600, ssl_require=True)
-
-    # Mettre à jour la configuration de la base de données existante avec les paramètres récupérés
-    DATABASES['default'].update(check_db_config)
+    DATABASES['default'] = dj_database_url.config(default=os.environ['DATABASE_URL'])
 
 
 # Password validation
@@ -168,5 +202,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

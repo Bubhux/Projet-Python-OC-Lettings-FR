@@ -1,62 +1,34 @@
-# Étape 1 : Installation des dépendances de construction
-FROM python:3.10-alpine AS builder
+# Utiliser une image de base officielle avec Python 3.12.0
+FROM python:3.12.0-slim
 
-# Installation des bibliothèques PostgreSQL
-RUN apk add --no-cache postgresql-libs
-
-# Installation des dépendances de construction temporaires et d'outils
-RUN apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev
-
-# Étape 2 : Installation des dépendances Python
-FROM builder AS python-dependencies
-
-# Création du répertoire /app dans le conteneur
-RUN mkdir /app
-
-# Définition du répertoire de travail comme /app
+# Définir le répertoire de travail
 WORKDIR /app
 
-# Copie du fichier requirements.txt dans le répertoire /app/
+# Installer les dépendances système, y compris PostgreSQL et build-essential
+RUN apt-get update && \
+    apt-get install -y sqlite3 postgresql libpq-dev build-essential && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copier le fichier requirements.txt dans le répertoire de travail
 COPY requirements.txt /app/
 
-# Création d'un environnement virtuel
-RUN python -m venv venv
+# Installation des dépendances Python
+RUN python -m venv venv && \
+    /app/venv/bin/pip install --upgrade pip && \
+    /app/venv/bin/pip install -r requirements.txt
 
-# Mise à jour de pip dans l'environnement virtuel
-RUN /app/venv/bin/pip install --upgrade pip
+# Copier le reste de l'application dans le répertoire de travail
+COPY . .
 
-# Installation des dépendances Python depuis requirements.txt
-RUN /app/venv/bin/pip install -r requirements.txt
+# Définir les variables d'environnement
+ENV PYTHONUNBUFFERED=1
+ENV DJANGO_SETTINGS_MODULE=oc_lettings_site.settings
 
-# Étape 3 : Construction de l'image finale
-FROM python:3.10-alpine
+# Exposer le port 8000
+EXPOSE 8000
 
-# Configuration du répertoire de travail
-WORKDIR /app
+# Collecter les fichiers statiques
+RUN /app/venv/bin/python manage.py collectstatic --noinput
 
-# Installation des dépendances nécessaires pour l'exécution
-RUN apk add --no-cache zlib-dev jpeg-dev libjpeg postgresql-libs
-
-# Configuration des variables d'environnement pour Python
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-# Configuration des variables d'environnement spécifiques à l'application
-ENV SENTRY_DSN $SENTRY_DSN
-ENV HEROKU_APP_NAME $HEROKU_APP_NAME
-ENV PORT 8080
-
-# Copie du contenu local dans le répertoire /app du conteneur
-COPY . /app/
-
-# Copie des dépendances Python de l'étape python-dependencies
-COPY --from=python-dependencies /app/venv /app/venv
-
-# Collecte des fichiers statiques de l'application
-RUN /app/venv/bin/python manage.py collectstatic --noinput --settings=oc_lettings_site.settings
-
-# Création d'un dump de la base de données dans data.json
-RUN /app/venv/bin/python manage.py dumpdata -o data.json
-
-# Commande par défaut pour exécuter le serveur Django
-CMD /app/venv/bin/python manage.py runserver 0.0.0.0:$PORT
+# Lancer le serveur Django
+CMD ["/app/venv/bin/gunicorn", "--bind", "0.0.0.0:8000", "oc_lettings_site.wsgi:application"]
