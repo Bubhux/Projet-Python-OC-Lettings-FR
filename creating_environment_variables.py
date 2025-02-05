@@ -45,11 +45,11 @@ env_variables = {
     'DJANGO_SECRET_KEY': get_random_secret_key(),
     'SENTRY_DSN': '',
     'HEROKU_APP_NAME': 'oc-lettings-apps',
-    'RAILWAY_APP_NAME' : 'oc-lettings-apps',
-    'RAILWAY_TOKEN' : '',
-    'RAILWAY_SERVICE_ID' : '',
-    'RAILWAY_PROJECT_ID' : '',
-    'DATABASE_URL' : '',
+    'RAILWAY_APP_NAME': 'oc-lettings-apps',
+    'RAILWAY_TOKEN': '',
+    'RAILWAY_SERVICE_ID': '',
+    'RAILWAY_PROJECT_ID': '',
+    'DATABASE_URL': '',
     'DEBUG': '0'
 }
 
