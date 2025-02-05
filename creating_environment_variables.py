@@ -43,14 +43,14 @@ from django.core.management.utils import get_random_secret_key
 env_variables = {
     'ENVIRONMENT': 'development',
     'DJANGO_SECRET_KEY': get_random_secret_key(),
-    'SENTRY_DSN': '',                                                                                                  # À configurer avec votre DSN Sentry
-    'HEROKU_APP_NAME': 'oc-lettings-apps',                                                                             # À configurer avec le nom de votre application Heroku
+    'SENTRY_DSN': '',                                                     # À configurer avec votre DSN Sentry
+    'HEROKU_APP_NAME': 'oc-lettings-apps',                                # À configurer avec le nom de votre application Heroku
     'RAILWAY_APP_NAME' : 'oc-lettings-apps',
     'RAILWAY_TOKEN' : '',
     'RAILWAY_SERVICE_ID' : '',
     'RAILWAY_PROJECT_ID' : '',
     'DATABASE_URL' : '',
-    'DEBUG': '0'                                                                                                       # 1 pour activer le mode debug, 0 pour désactiver
+    'DEBUG': '0'                                                          # 1 pour activer le mode debug, 0 pour désactiver
 }
 
 # Génére le fichier .env
