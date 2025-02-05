@@ -28,3 +28,4 @@ htmlcov/
 debug.log
 
 node_modules/
+.git
