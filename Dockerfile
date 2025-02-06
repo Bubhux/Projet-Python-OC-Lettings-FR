@@ -27,8 +27,17 @@ ENV DJANGO_SETTINGS_MODULE=oc_lettings_site.settings
 # Exposer le port 8000
 EXPOSE 8000
 
-# Collecter les fichiers statiques
-RUN /app/venv/bin/python manage.py collectstatic --noinput
+# Ajout du répertoire de l'environnement virtuel au PATH pour accéder à gunicorn sans chemin absolu
+ENV PATH="/app/venv/bin:$PATH"
 
-# Lancer le serveur Django
-CMD ["/app/venv/bin/gunicorn", "--bind", "0.0.0.0:8000", "oc_lettings_site.wsgi:application"]
+# Collecte des fichiers statiques de l'application
+RUN /app/venv/bin/python manage.py collectstatic --noinput --settings=oc_lettings_site.settings
+
+# Préparation de la base de données PostgreSQL
+RUN /app/venv/bin/python manage.py migrate --settings=oc_lettings_site.settings
+
+# Vérification de l'installation de Gunicorn (débogage)
+RUN /app/venv/bin/gunicorn --version
+
+# Commande par défaut pour exécuter le serveur Django avec Gunicorn
+CMD ["sh", "-c", "/app/venv/bin/gunicorn --bind 0.0.0.0:8000 --workers=4 oc_lettings_site.wsgi:application"]

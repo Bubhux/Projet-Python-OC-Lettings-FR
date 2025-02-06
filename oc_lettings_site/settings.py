@@ -11,6 +11,11 @@ from django.core.management.utils import get_random_secret_key
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+if ENVIRONMENT == 'development':
+    DEBUG = True
+else:
+    DEBUG = False
+
 # Chargement des variables d'environnement depuis le fichier .env
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('DJANGO_SECRET_KEY', default=get_random_secret_key())
@@ -35,14 +40,16 @@ if 'collectstatic' not in sys.argv:
     )
 
 ALLOWED_HOSTS = [
-    "0.0.0.0",
-    "localhost",
-    "127.0.0.1",
-    f"{RAILWAY_APP_NAME}.railway.app" if RAILWAY_APP_NAME else "",
-    f"{HEROKU_APP_NAME}.herokuapp.com" if HEROKU_APP_NAME else ""
+    '0.0.0.0',
+    'localhost',
+    '127.0.0.1',
+    'oc-lettings-apps-production.up.railway.app',
+    f'{HEROKU_APP_NAME}.herokuapp.com'
 ]
 
 ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS if host]  # Supprime les entrées vides
+
+CSRF_TRUSTED_ORIGINS = [ "https://oc-lettings-apps-production.up.railway.app" ]
 
 # Initialisation de Sentry
 sentry_sdk.init(
