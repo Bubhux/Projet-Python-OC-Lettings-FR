@@ -11,11 +11,6 @@ from django.core.management.utils import get_random_secret_key
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-if ENVIRONMENT == 'development':
-    DEBUG = True
-else:
-    DEBUG = False
-
 # Chargement des variables d'environnement depuis le fichier .env
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('DJANGO_SECRET_KEY', default=get_random_secret_key())
@@ -31,13 +26,13 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 # Décommenter pour vérifier la clé "SENTRY_DSN"
 # print("SENTRY_DSN:", SENTRY_DSN)
 
-if 'collectstatic' not in sys.argv:
-    sentry_sdk.init(
-        dsn=SENTRY_DSN,
-        integrations=[DjangoIntegration()],
-        traces_sample_rate=1.0,
-        send_default_pii=True
-    )
+# Chargement de l'environnement avant d'utiliser `DEBUG`
+ENVIRONMENT = config('ENVIRONMENT', default='development')
+
+if ENVIRONMENT == 'development':
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = [
     '0.0.0.0',
@@ -49,22 +44,16 @@ ALLOWED_HOSTS = [
 
 ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS if host]  # Supprime les entrées vides
 
-CSRF_TRUSTED_ORIGINS = [ "https://oc-lettings-apps-production.up.railway.app" ]
+CSRF_TRUSTED_ORIGINS = ["https://oc-lettings-apps-production.up.railway.app"]
 
-# Initialisation de Sentry
-sentry_sdk.init(
-    dsn=SENTRY_DSN,
-    integrations=[
-        DjangoIntegration(
-            transaction_style='url',
-            middleware_spans=True,
-            signals_spans=False,
-            cache_spans=False,
-        ),
-    ],
-    traces_sample_rate=1.0,
-    send_default_pii=True
-)
+# Initialisation de Sentry (uniquement si `collectstatic` n'est pas exécuté)
+if 'collectstatic' not in sys.argv:
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()],
+        traces_sample_rate=1.0,
+        send_default_pii=True
+    )
 
 # Configuration du modèle de logging
 LOGGING = {
@@ -79,18 +68,21 @@ LOGGING = {
             'level': 'DEBUG',  # Niveau de logging minimum à afficher dans la console
             'class': 'logging.StreamHandler',
         },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'debug.log'),
+        },
     },
     'root': {
-        # Utilisez à la fois Sentry et la console
-        'handlers': ['sentry', 'console'],
+        # Utilisez à la fois Sentry, la console et un fichier de log
+        'handlers': ['sentry', 'console', 'file'],
         # Niveau de logging minimum global (peut être ajusté)
         'level': 'DEBUG',
     },
 }
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'oc_lettings_site.apps.OCLettingsSiteConfig',
     'django.contrib.admin',
@@ -102,9 +94,6 @@ INSTALLED_APPS = [
     'lettings',
     'profiles',
 ]
-
-# Chargement des variables d'environnement depuis le fichier .env
-ENVIRONMENT = config('ENVIRONMENT', default='development')
 
 # Si l'environnement est en production, utilisez Whitenoise, sinon StaticFilesStorage
 if ENVIRONMENT == 'production':
