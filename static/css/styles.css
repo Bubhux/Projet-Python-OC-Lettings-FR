@@ -18599,14 +18599,6 @@ body {
   background-position: center bottom;
 }
 
-.card-waves .card-body {
-  background-image: url("../assets/img/backgrounds/bg-waves.svg");
-}
-
-.card-angles .card-body {
-  background-image: url("../assets/img/backgrounds/bg-angles.svg");
-}
-
 .card-flag {
   position: absolute;
   font-size: 0.7rem;
@@ -20055,12 +20047,6 @@ section {
   cursor: pointer;
 }
 
-.device[data-device=iPhoneX][data-orientation=portrait][data-color=black] {
-  padding-bottom: 198.89807163%;
-  background-image: url("../assets/img/device-mockups/iPhoneX/portrait.png");
-  z-index: initial;
-}
-
 .device[data-device=iPhoneX][data-orientation=portrait][data-color=black] .screen {
   top: 3.254847645%;
   left: 7.162534435%;
@@ -20068,12 +20054,6 @@ section {
   height: 93.49030471%;
   border: 0px;
   z-index: 0;
-}
-
-.device[data-device=iPhoneX][data-orientation=landscape][data-color=black] {
-  padding-bottom: 50.27700831%;
-  background-image: url("../assets/img/device-mockups/iPhoneX/landscape.png");
-  z-index: initial;
 }
 
 .device[data-device=iPhoneX][data-orientation=landscape][data-color=black] .screen {
@@ -20096,11 +20076,6 @@ section {
   height: 93.6288088643%;
 }
 
-.device[data-device=iPhoneX][data-orientation=portrait][data-color=black]::after {
-  content: "";
-  background-image: url("../assets/img/device-mockups/iPhoneX/portrait_black.png");
-}
-
 .device[data-device=iPhoneX][data-orientation=portrait][data-color=black] .button {
   display: none;
   top: 0%;
@@ -20118,11 +20093,6 @@ section {
   left: 3.4626038781%;
   width: 93.0747922438%;
   height: 87.3278236915%;
-}
-
-.device[data-device=iPhoneX][data-orientation=landscape][data-color=black]::after {
-  content: "";
-  background-image: url("../assets/img/device-mockups/iPhoneX/landscape_black.png");
 }
 
 .device[data-device=iPhoneX][data-orientation=landscape][data-color=black] .button {
