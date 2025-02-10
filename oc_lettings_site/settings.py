@@ -29,6 +29,8 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 # Chargement de l'environnement avant d'utiliser `DEBUG`
 ENVIRONMENT = config('ENVIRONMENT', default='development')
 
+print(f"The application is running in {ENVIRONMENT} environment.")
+
 if ENVIRONMENT == 'development':
     DEBUG = True
 else:
@@ -148,15 +150,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(
+DATABASES = {}
+
+if ENVIRONMENT == 'production' and 'DATABASE_URL' in os.environ:
+    DATABASES['default'] = dj_database_url.config(default=os.environ['DATABASE_URL'])
+else:
+    DATABASES['default'] = dj_database_url.config(
         default=f"sqlite:///{os.path.join(BASE_DIR, 'oc-lettings-site.sqlite3')}"
     )
-}
-
-# Si DATABASE_URL est défini dans l'environnement, il l'utilise, sinon utilise SQLite
-if 'DATABASE_URL' in os.environ:
-    DATABASES['default'] = dj_database_url.config(default=os.environ['DATABASE_URL'])
 
 
 # Password validation

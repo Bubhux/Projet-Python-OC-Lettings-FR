@@ -66,9 +66,9 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker buildx build --load --file Dockerfile --tag bubhux/bubhux-oc-image-build:${{ github.sha }} --tag bubhux/bubhux-oc-image-build:latest .
-          docker push bubhux/bubhux-oc-image-build:${{ github.sha }}
-          docker push bubhux/bubhux-oc-image-build:latest
+          docker buildx build --load --file Dockerfile --tag bubhux/repository-oc-image-build:${{ github.sha }} --tag bubhux/repository-oc-image-build:latest .
+          docker push bubhux/repository-oc-image-build:${{ github.sha }}
+          docker push bubhux/repository-oc-image-build:latest
 
   deploy_to_railway:
     needs: build_and_push_to_dockerhub
@@ -87,3 +87,31 @@ jobs:
           RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
           RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
         run: railway up --service=$RAILWAY_SERVICE_ID
+
+#  deploy_to_heroku:
+#    needs: build_and_push_to_dockerhub
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v3
+#
+#      - name: Install Heroku CLI
+#        run: curl https://cli-assets.heroku.com/install.sh | sh
+#
+#      - name: Purge Heroku cache
+#        run: |
+#          heroku plugins:install heroku-repo
+#          heroku repo:purge_cache -a ${{ secrets.HEROKU_APP_NAME }}
+#
+#      - name: Log in to Heroku Container Registry
+#        run: heroku container:login
+#        env:
+#          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+#
+#      - name: Push to Heroku Container Registry
+#        run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
+#
+#      - name: Deploy to Heroku
+#        run: |
+#          HEROKU_DEBUG=1 heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web

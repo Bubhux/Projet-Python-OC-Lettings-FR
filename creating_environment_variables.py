@@ -16,8 +16,19 @@ préconfigurés tels que :
     - 'RAILWAY_TOKEN'
     - 'RAILWAY_SERVICE_ID'
     - 'RAILWAY_PROJECT_ID'
+    - 'DATABASE_PUBLIC_URL'
     - 'DATABASE_URL'
-    - 'DEBUG': '0'
+    - 'PGDATA'
+    - 'PGDATABASE'
+    - 'PGHOST'
+    - 'PGPASSWORD'
+    - 'PGPORT'
+    - 'PGUSER'
+    - 'POSTGRES_DB'
+    - 'POSTGRES_PASSWORD'
+    - 'POSTGRES_USER'
+    - 'SSL_CERT_DAYS'
+    - 'DEBUG'
 
 Le fichier .env généré doit être configuré avec des valeurs appropriées
 pour chaque variable d'environnement avant utilisation.
@@ -49,11 +60,22 @@ env_variables = {
     'RAILWAY_TOKEN': '',
     'RAILWAY_SERVICE_ID': '',
     'RAILWAY_PROJECT_ID': '',
+    'DATABASE_PUBLIC_URL': '',
     'DATABASE_URL': '',
+    'PGDATA': '',
+    'PGDATABASE': '',
+    'PGHOST': '',
+    'PGPASSWORD': '',
+    'PGPORT': '5432',
+    'PGUSER': '',
+    'POSTGRES_DB': '',
+    'POSTGRES_PASSWORD': '',
+    'POSTGRES_USER': '',
+    'SSL_CERT_DAYS': '820',
     'DEBUG': '0'
 }
 
-# Génére le fichier .env
+# Génère le fichier .env
 with open(".env", "w") as f:
     for key, value in env_variables.items():
         f.write(f"{key}={value}\n")
