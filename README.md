@@ -581,10 +581,15 @@ $ vi .env
 
 - Dans un terminal accéder à l'interface de **PostgreSQL** :
 - Se connecter à **PostgreSQL** dans le conteneur via **psql** (l'interface en ligne de commande de **PostgreSQL**).   
-- Exécutez cette commande pour ouvrir un terminal **PostgreSQL** et créer **oc_lettings_db**:   
+- Exécutez cette commande pour ouvrir un terminal **psql** et vérifier **oc_lettings_db**:   
 
 ```bash
   $ docker exec -it my_postgres psql -U postgres -d oc_lettings_db
+```
+- Dans le terminal **psql** taper la commande ``\dt`` pour vérifier que les tables sont bien présentes (pour quitter ``\dt`` taper ``q`` pour quiter **psql** taper ``\q``).   
+
+```bash
+  $ oc_lettings_db=# \dt
 ```
 
 - Vérifier l'adresse IP de ton hôte **Docker** en cas de problème en utilisant la commande suivante (en-dehors du conteneur dans un autre terminal) :   
