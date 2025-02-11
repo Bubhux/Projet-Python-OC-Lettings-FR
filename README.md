@@ -586,7 +586,7 @@ $ vi .env
 ```bash
   $ docker exec -it my_postgres psql -U postgres -d oc_lettings_db
 ```
-- Dans le terminal **psql** taper la commande ``\dt`` pour vérifier que les tables sont bien présentes (pour quitter ``\dt`` taper ``q`` pour quiter **psql** taper ``\q``).   
+- Dans le terminal **psql** taper la commande ``\dt`` pour vérifier que les tables sont bien présentes (pour quitter ``\dt`` taper ``q`` pour quitter **psql** taper ``\q``).   
 
 ```bash
   $ oc_lettings_db=# \dt
