@@ -61,7 +61,6 @@ __Amélioration de l'architecture modulaire__
 
    - Créer 2 applications ``lettings``, ``profiles`` pour séparer les fonctionnalités de l'application.   
    - Remplir les nouvelles tables avec les données déjà présentes dans la base de données en utilisant les fichiers de migration **Django**.   
-   - Remplir les nouvelles tables avec les données déjà présentes dans la base de données en utilisant les fichiers de migration **Django**.   
    - Convertir ``oc_lettings_site`` en projet **Django**.   
    - Développer une suite de tests.   
 
@@ -185,7 +184,7 @@ Programme élaboré avec les logiciels suivants:
 - Les scripts **Python** s'exécutent depuis un terminal.   
 - Pour ouvrir un terminal sur **Windows**, pressez la touche ``windows + r`` et entrez ``cmd``.   
 - Sur **Mac**, pressez la touche ``command + espace`` et entrez ``terminal``.   
-- Sur **Linux**, vous pouvez ouviri un terminal en pressant les touches ``Ctrl + Alt + T``.   
+- Sur **Linux**, vous pouvez ouvrir un terminal en pressant les touches ``Ctrl + Alt + T``.   
 
 --------------------------------------------------------------------------------------------------------------------------------
 
