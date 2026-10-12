@@ -311,7 +311,6 @@ $ deactivate
 ##### 1. Installer les librairies   
 
 - Le programme utilise plusieurs librairies externes et modules de **Python**, qui sont répertoriés dans le fichier ``requirements.txt``.   
-- Placez-vous dans le dossier où se trouve le fichier requirements.txt avec le terminal, l'environnement virtuel doit être activé.   
 - Placez-vous dans le dossier où se trouve le fichier ``requirements.txt`` avec le terminal, l'environnement virtuel doit être activé.   
 - Pour faire fonctionner le programme, il vous faudra installer les librairies requises.   
 - À l'aide du fichiers ``requirements.txt`` mis à disposition.   
@@ -548,7 +547,7 @@ $ vi .env
 <div id="deploiement"></div>
 <a href="#top" style="float: right;">Retour en haut 🡅</a>
 
-### Déploiement avec Heroku ou Ralway   
+### Déploiement avec Heroku ou Railway   
 
 - Vous pouvez choisir de déployer sur **Heroku** ou **Railway**, le déploiement sur **Heroku** est déjà détaillé dans ➔ [Read the Docs](https://python-oc-lettings.readthedocs.io/fr/latest/)   
 - Pour un déploiement sur **Railway**, vous devez créer un compte sur ➔ [Railway](https://railway.com/)   
