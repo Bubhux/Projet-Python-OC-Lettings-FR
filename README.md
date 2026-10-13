@@ -729,17 +729,17 @@ $ flake8
 **Le dossier ``lettings``**   
   - Le dossier est une apps **Django** qui contient :   
   - Un dossier ``migrations`` contenant les fichiers de configuration pour la base de données. ➔ ([migrations](lettings/migrations))   
-  - Á la racine du dossier ``lettings`` les fichiers tels que views.py, tests.py. ➔ ([lettings](lettings))   
+  - Á la racine du dossier ``lettings`` les fichiers tels que views.py, tests.py ➔ ([lettings](lettings))   
 
 **Le dossier ``oc_lettings_site``**   
   - Le dossier est une apps **Django** qui contient :   
   - Un dossier ``migrations`` contenant les fichiers de configuration pour la base de données. ➔ ([migrations](oc_lettings_site/migrations))   
-  - Á la racine du dossier ``oc_lettings_site`` les fichiers tels que settings.py. ➔ ([oc_lettings_site](oc_lettings_site))   
+  - Á la racine du dossier ``oc_lettings_site`` les fichiers tels que settings.py ➔ ([oc_lettings_site](oc_lettings_site))   
 
 **Le dossier ``profiles``**   
   - Le dossier est une apps **Django** qui contient :   
   - Un dossier ``migrations`` contenant les fichiers de configuration pour la base de données. ➔ ([migrations](profiles/migrations))   
-  - Á la racine du dossier ``profiles`` les fichiers tels que views.py, tests.py. ➔ ([profiles](profiles))   
+  - Á la racine du dossier ``profiles`` les fichiers tels que views.py, tests.py ➔ ([profiles](profiles))   
 
 **Le dossier ``.github``**   
   - Le dossier contient le fichier ➔ [ci_cd_branch_master.yml](.github/workflows/ci_cd_branch_master.yml)   
